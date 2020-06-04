@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   }
 
   onRegisterClicked(){
-    this.router.navigate(['/sellerRegistration']);
+    this.router.navigate(['sellerRegistration']);
   }
 
 }

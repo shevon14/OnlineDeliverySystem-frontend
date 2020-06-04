@@ -1,23 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import{FormsModule}from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/mainHeader/header.component';
+import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { SellerRegistrationComponent } from './seller-registration/seller-registration.component';
+import { AdminHeaderComponent } from './admin/admin-header/admin-header.component';
+import { UserChartComponent } from './admin/user-chart/user-chart.component';
+import { RequestShopComponent } from './admin/request-shop/request-shop.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    SellerRegistrationComponent
+    SellerRegistrationComponent,
+    AdminHeaderComponent,
+    UserChartComponent,
+    RequestShopComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     MDBBootstrapModule.forRoot()
   ],
   providers: [],

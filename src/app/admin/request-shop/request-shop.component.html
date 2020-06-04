@@ -1,0 +1,77 @@
+<p>request-shop works!</p>
+<!-- Editable table -->
+<div class="card">
+    <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Shop request table</h3>
+    <div class="card-body">
+      <div id="table" class="table-editable">
+        <table class="table table-bordered table-responsive-md table-striped text-center">
+          <tr>
+            <th class="text-center">Shop Id</th>
+            <th class="text-center">Name</th>
+            <th class="text-center">Owner Name</th>
+            <th class="text-center">Statue</th>
+          </tr>
+
+          <tbody>
+            <tr scope="row" *ngFor="let user of users">
+              <td>{{user.id}}</td>
+              <td>{{user.name}}</td>
+              <td>{{user.name}}</td>
+              <td>
+                <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="shopStatus">
+                        <label class="custom-control-label" for="shopStatus">ON</label>
+                </div>
+                <a class="waves-light" data-toggle="modal" data-target="#basicExample" (click)="frame.show()" >see more...</a>  
+              </td>
+              
+            </tr>
+          </tbody>
+
+          
+        </table>
+      </div>
+    </div>
+  </div>
+  <div mdbModal #frame="mdbModal" class="modal fade right" id="frameModalTop" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
+  <div class="modal-dialog modal-full-height modal-right modal-notify modal-info" role="document">
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header">
+        <p class="heading lead">Shop Request
+        </p>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+          <span aria-hidden="true" class="white-text">×</span>
+        </button>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+        <div class="text-center">
+          <mdb-icon far icon="file-alt" size="4x" class="mb-3 animated rotateIn"></mdb-icon>
+          <p class="font-weight-bold" ><strong>Shop Name</strong></p>
+
+        <hr>
+    </div>
+        <p class="font-weight-bold">Bussiness Model</p>
+        <p class="text-muted ">Bussiness Model</p>
+        ??????????
+        ??????????
+        ??????????
+        
+
+      </div>
+
+      <!--Footer-->
+      <div class="modal-footer justify-content-center">
+        <a id="btn1" type="button" mdbBtn color="primary" class="waves-light" mdbWavesEffect>Send
+          <mdb-icon fas icon="paper-plane" class="ml-1"></mdb-icon>
+        </a>
+        <a id="btn2" type="button" mdbBtn color="primary" outline="true" class="waves-effect" data-dismiss="modal"
+          mdbWavesEffect (click)="frame.hide()">Cancel</a>
+      </div>
+    </div>
+  </div>
+</div>
