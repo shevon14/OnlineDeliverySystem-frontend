@@ -1,0 +1,38 @@
+
+<div class="container">
+  <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Customer table</h3>
+  <div class="row">
+    <div class="col-md-12 mx-auto">
+      <div class="md-form">
+        <input
+          type="text"
+          [(ngModel)]="searchText"
+          class="form-control"
+          id="search"
+          mdbInput
+        />
+        <label for="search">Search</label>
+      </div>
+    </div>
+  </div>
+  <table mdbTable class="z-depth-1">
+    <thead>
+      <tr>
+        <th
+          *ngFor="let head of headElements; let i = index"
+          scope="col"
+        >
+          {{head}}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let el of elements; let i = index">
+        <th scope="row">{{el.id}}</th>
+        <td class="red-text">{{el.name}}</td>
+        <td>{{el.owner}}</td>
+        <td>{{el.address}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
