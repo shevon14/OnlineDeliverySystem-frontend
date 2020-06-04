@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/mainHeader/header.component';
 import { HomeComponent } from './home/home.component';
 import { SellerRegistrationComponent } from './seller-registration/seller-registration.component';
+import { BannerSliderComponent } from './home/banner-slider/banner-slider.component';
+import { ItemCardSliderComponent } from './home/item-card-slider/item-card-slider.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    SellerRegistrationComponent
+    SellerRegistrationComponent,
+    BannerSliderComponent,
+    ItemCardSliderComponent
   ],
   imports: [
     BrowserModule,
