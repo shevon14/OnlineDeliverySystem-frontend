@@ -1,16 +1,20 @@
+import { AdminComponent } from './admin/admin.component';
+import { MyStoreComponent } from './my-store/my-store.component';
 import { HomeComponent } from './home/home.component';
 import { SellerRegistrationComponent } from './seller-registration/seller-registration.component';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { UserChartComponent } from './admin/user-chart/user-chart.component';
 import { RequestShopComponent } from './admin/request-shop/request-shop.component';
 
-
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'sellerRegistration',component:SellerRegistrationComponent},
-  {path:'userChart',component:UserChartComponent},
-  {path:'requestShop',component:RequestShopComponent}
+  {path: 'myStore', component: MyStoreComponent},
+  {path: 'admin', component: AdminComponent, children:[
+    {path:'users',component:UserChartComponent},
+    {path:'shopRequests',component:RequestShopComponent},
+  ]}
 ];
 
 @NgModule({
@@ -18,6 +22,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { 
-
   
 }
