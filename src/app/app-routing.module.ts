@@ -1,3 +1,6 @@
+import { DisplayProductsComponent } from './seller/display-products/display-products.component';
+import { AddProductsComponent } from './seller/add-products/add-products.component';
+import { SellerComponent } from './seller/seller.component';
 import { AdminComponent } from './admin/admin.component';
 import { MyStoreComponent } from './my-store/my-store.component';
 import { HomeComponent } from './home/home.component';
@@ -11,6 +14,10 @@ const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'sellerRegistration',component:SellerRegistrationComponent},
   {path: 'myStore', component: MyStoreComponent},
+  {path: 'seller', component: SellerComponent, children:[
+    {path: '', component: DisplayProductsComponent},
+    {path: 'addProducts', component: AddProductsComponent}
+  ]},
   {path: 'admin', component: AdminComponent, children:[
     {path:'users',component:UserChartComponent},
     {path:'shopRequests',component:RequestShopComponent},

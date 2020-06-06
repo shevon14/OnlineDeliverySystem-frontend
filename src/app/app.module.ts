@@ -14,6 +14,9 @@ import { UserChartComponent } from './admin/user-chart/user-chart.component';
 import { RequestShopComponent } from './admin/request-shop/request-shop.component';
 import { MyStoreComponent } from './my-store/my-store.component';
 import { AdminComponent } from './admin/admin.component';
+import { SellerComponent } from './seller/seller.component';
+import { AddProductsComponent } from './seller/add-products/add-products.component';
+import { DisplayProductsComponent } from './seller/display-products/display-products.component';
 
 
 @NgModule({
@@ -29,6 +32,9 @@ import { AdminComponent } from './admin/admin.component';
     RequestShopComponent,
     MyStoreComponent,
     AdminComponent,
+    SellerComponent,
+    AddProductsComponent,
+    DisplayProductsComponent,
     
   ],
   imports: [
