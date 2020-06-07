@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, HostListener} from '@angular/core';
 import { MdbTableDirective } from 'angular-bootstrap-md';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-user-chart',
@@ -14,7 +15,9 @@ export class UserChartComponent implements OnInit {
   headElements = ['ID', 'Name', 'Owner', 'Adress'];
   searchText: string = '';
   previous: string;
-  constructor() { }
+
+  public user_type_name;
+  constructor(private router:ActivatedRoute) { }
   @HostListener('input')
   oninput() {
     this.searchItems();
@@ -36,16 +39,12 @@ export class UserChartComponent implements OnInit {
         "owner":"owbb",
         "address":"2424,wff,dgf"
       }
-    ]
-  
+    ];
 
-    //  for (let i = 1; i <= 10; i++) {
-    //   this.elements.push({
-    //     id:
-    //       i.toString(), first: 'Wpis ' + i, last: 'Last ' + i, handle: 'Handle ' +
-    //         i
-    //   });
-    // }
+    let type=this.router.snapshot.paramMap.get('type_name');
+    this.user_type_name=type;
+    // console.log(this.user_type_name);
+
     this.mdbTable.setDataSource(this.elements); this.previous =
       this.mdbTable.getDataSource();
   } searchItems() {

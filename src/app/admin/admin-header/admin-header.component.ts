@@ -6,21 +6,27 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './admin-header.component.html',
   styleUrls: ['./admin-header.component.scss']
 })
+
 export class AdminHeaderComponent implements OnInit {
   
-
+  
+user_types=[
+{"id":1,"type_name":"Customers"},
+{"id":2,"type_name":"Sealles"},
+{"id":3,"type_name":"Admin"},
+{"id":4,"type_name":"Delivers"},
+]
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  UsersClicked(){
-    this.router.navigate(['admin','users']);
+  UsersClicked(user_types){
+    this.router.navigate(['admin','users',user_types.type_name]);
   }
 
   shopRequestsClicks(){
     this.router.navigate(['admin','shopRequests']);
   }
-
 
 }

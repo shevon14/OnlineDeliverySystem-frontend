@@ -19,7 +19,7 @@ const routes: Routes = [
     {path: 'addProducts', component: AddProductsComponent}
   ]},
   {path: 'admin', component: AdminComponent, children:[
-    {path:'users',component:UserChartComponent},
+    {path:'users/:type_name',component:UserChartComponent},
     {path:'shopRequests',component:RequestShopComponent},
   ]}
 ];
