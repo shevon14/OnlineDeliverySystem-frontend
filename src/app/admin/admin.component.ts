@@ -1,5 +1,6 @@
 import { NavBarService } from './../services/nav-bar.service';
 import { Component, OnInit } from '@angular/core';
+import{AuthenticationService, TokenPayload} from'../authentication.service'
 
 
 @Component({
@@ -9,12 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  constructor(private navbarService:NavBarService) {
+  constructor(private auth:AuthenticationService, private navbarService:NavBarService) {
     this.navbarService.hide();
    }
 
   ngOnInit(): void {
-    
+   
   }
 
   ngOnDestroy(){

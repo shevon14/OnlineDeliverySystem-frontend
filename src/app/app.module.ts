@@ -17,6 +17,10 @@ import { AdminComponent } from './admin/admin.component';
 import { SellerComponent } from './seller/seller.component';
 import { AddProductsComponent } from './seller/add-products/add-products.component';
 import { DisplayProductsComponent } from './seller/display-products/display-products.component';
+import { LoginComponent } from './login/login.component';
+import { AuthenticationService } from './authentication.service';
+import { AuthGuardService } from './auth-guard.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -35,15 +39,17 @@ import { DisplayProductsComponent } from './seller/display-products/display-prod
     SellerComponent,
     AddProductsComponent,
     DisplayProductsComponent,
+    LoginComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     MDBBootstrapModule.forRoot()
   ],
-  providers: [],
+  providers: [AuthenticationService,AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

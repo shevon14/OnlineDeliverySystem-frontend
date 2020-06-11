@@ -9,9 +9,12 @@ import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { UserChartComponent } from './admin/user-chart/user-chart.component';
 import { RequestShopComponent } from './admin/request-shop/request-shop.component';
+import { LoginComponent } from './login/login.component';
+
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
+  {path: 'login', component: LoginComponent},
   {path:'sellerRegistration',component:SellerRegistrationComponent},
   {path: 'myStore', component: MyStoreComponent},
   {path: 'seller', component: SellerComponent, children:[
