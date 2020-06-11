@@ -11,9 +11,11 @@ export class AdminHeaderComponent implements OnInit {
   
   
 user_types=[
+
 {"id":1,"type_name":"Sellers"},
 {"id":2,"type_name":"Customers"},
 {"id":3,"type_name":"Delivers"},
+
 ]
   constructor(private router: Router) { }
 

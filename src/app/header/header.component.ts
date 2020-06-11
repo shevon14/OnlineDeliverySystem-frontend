@@ -21,4 +21,8 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['myStore']);
   }
 
+  LoginClicked(){
+    this.router.navigate(['login']);
+  }
+
 }

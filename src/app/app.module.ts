@@ -19,6 +19,10 @@ import { AddProductsComponent } from './seller/add-products/add-products.compone
 import { DisplayProductsComponent } from './seller/display-products/display-products.component';
 import { CategoriesTabComponent } from './home/categories-tab/categories-tab.component';
 import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './login/login.component';
+import { AuthenticationService } from './authentication.service';
+import { AuthGuardService } from './auth-guard.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -39,15 +43,17 @@ import { FooterComponent } from './footer/footer.component';
     DisplayProductsComponent,
     CategoriesTabComponent,
     FooterComponent,
+    LoginComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     MDBBootstrapModule.forRoot()
   ],
-  providers: [],
+  providers: [AuthenticationService,AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
