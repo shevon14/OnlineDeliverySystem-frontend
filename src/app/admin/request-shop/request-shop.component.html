@@ -1,29 +1,29 @@
 <div class="container">
   <!-- Editable table -->
   <div class="card">
-    <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Shop request table</h3>
+    <h3 class="card-header text-center info-color font-weight-bold text-uppercase py-4">Shop request table</h3>
     <div class="card-body">
-      <div id="table" class="table-editable">
+      <div id="table" class="table-editable text-center">
         <table class="table table-bordered table-responsive-md table-striped text-center">
-          <tr>
-            <th class="text-center">Shop Id</th>
-            <th class="text-center">Name</th>
-            <th class="text-center">Owner Name</th>
-            <th class="text-center">Statue</th>
-          </tr>
-
+          <thead  class="black white-text">
+            <tr>
+              <th class="text-center">Shop Id</th>
+              <th class="text-center">Shop Name</th>
+              <th class="text-center">Status</th>
+              <th class="text-center">Remove</th>
+            </tr>
+          </thead>
+         
           <tbody>
             <tr scope="row" *ngFor="let user of users">
               <td>{{user.id}}</td>
-              <td>{{user.name}}</td>
               <td>{{user.name}}</td>
               <td>
                 <div class="custom-control custom-switch">
                   <input type="checkbox" class="custom-control-input" id="shopStatus+{{user.id}}">
                   <label class="custom-control-label" for="shopStatus+{{user.id}}">ON</label>
                 </div>
-                <a class="waves-light" data-toggle="modal" data-target="#basicExample" (click)="frame.show()">see
-                  more...</a>
+                <a class="waves-light text-info" data-toggle="modal" data-target="#basicExample" (click)="frame.show()"><u>More Details</u></a>
               </td>
               <td>
                 <span class="table-remove">
@@ -56,7 +56,7 @@
         <!--Body-->
         <div class="modal-body">
           <div class="text-center">
-            <mdb-icon far icon="file-alt" size="4x" class="mb-3 animated rotateIn"></mdb-icon>
+            <mdb-icon fas icon="store-alt" size="3x" class="mb-3 animated rotateIn"></mdb-icon>
             <p class="font-weight-bold"><strong>Shop Name</strong></p>
 
             <hr>
@@ -70,10 +70,10 @@
 
         <!--Footer-->
         <div class="modal-footer justify-content-center">
-          <a id="btn1" type="button" mdbBtn color="primary" class="waves-light" mdbWavesEffect>Send
-            <mdb-icon fas icon="paper-plane" class="ml-1"></mdb-icon>
+          <a id="btn1" type="button" mdbBtn color="info" class="waves-light" mdbWavesEffect>
+            <mdb-icon fas icon="check-circle" class="ml-1"></mdb-icon> Accept
           </a>
-          <a id="btn2" type="button" mdbBtn color="primary" outline="true" class="waves-effect" data-dismiss="modal"
+          <a id="btn2" type="button" mdbBtn color="info" outline="true" class="waves-effect" data-dismiss="modal"
             mdbWavesEffect (click)="frame.hide()">Cancel</a>
         </div>
       </div>

@@ -12,14 +12,14 @@ export class RequestShopComponent implements OnInit {
   constructor() {
     this.users=[
       {
-        "id":1,
-        "name":"aa"
+        "id": "#0001",
+        "name":"AA Stores"
       },{
-        "id":2,
-        "name":"aabb"
+        "id":"#0002",
+        "name":"ABC Pvt.ltd"
       },{
-        "id":3,
-        "name":"aacc"
+        "id":"#0003",
+        "name":"DC Stores"
       }
     ]
   }

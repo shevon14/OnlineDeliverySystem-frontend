@@ -12,7 +12,7 @@ export class UserChartComponent implements OnInit {
   @ViewChild(MdbTableDirective,
     { static: true }) mdbTable: MdbTableDirective;
   elements: any = [];
-  headElements = ['ID', 'Name', 'Owner', 'Adress'];
+  headElements = ['ID', 'Owner Name', 'Shop Name', 'Address', 'Conatact'];
   searchText: string = '';
   previous: string;
 
@@ -24,21 +24,12 @@ export class UserChartComponent implements OnInit {
   } ngOnInit() {
     this.elements=[
       {
-        "id":1,
-        "name":"aa",
-        "owner":"owbb",
-        "address":"2424,wff,dgf"
-      },{
-        "id":2,
-        "name":"aabb",
-        "owner":"owbb",
-        "address":"2424,wff,dgf"
-      },{
-        "id":3,
-        "name":"aacc",
-        "owner":"owbb",
-        "address":"2424,wff,dgf"
-      }
+        "id":"#0101",
+        "OwnerName":"AAAA",
+        "ShopName":"ABC Pvt,Ltd.",
+        "address":"N0.26/a, Galle Road, Colombo 04.",
+        "contact" : "011-3547891"
+      },
     ];
 
     let type=this.router.snapshot.paramMap.get('type_name');
