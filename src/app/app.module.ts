@@ -17,6 +17,8 @@ import { AdminComponent } from './admin/admin.component';
 import { SellerComponent } from './seller/seller.component';
 import { AddProductsComponent } from './seller/add-products/add-products.component';
 import { DisplayProductsComponent } from './seller/display-products/display-products.component';
+import { CategoriesTabComponent } from './home/categories-tab/categories-tab.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -35,6 +37,8 @@ import { DisplayProductsComponent } from './seller/display-products/display-prod
     SellerComponent,
     AddProductsComponent,
     DisplayProductsComponent,
+    CategoriesTabComponent,
+    FooterComponent,
     
   ],
   imports: [

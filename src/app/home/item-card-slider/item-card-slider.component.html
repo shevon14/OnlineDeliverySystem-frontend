@@ -1,241 +1,54 @@
 <section class="text-center">
-    <!--Section heading-->
-    <h2 class="h1 font-weight-bold h1 py-3">Featured Products</h2>
-    <!--Section description-->
-    <p class="grey-text pb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam
-        iure provident voluptate esse quasi,
-        veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.</p>
+  <!--Section heading-->
+  <h2 class="h2 font-weight-bold h2 py-3">Now Let's Get shopping</h2>
+  <!--Section description-->
+  <p class="grey-text pb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam
+    iure provident voluptate esse quasi,
+    veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.</p>
 
 </section>
 
-<div class="card-deck">
+<mdb-card>
+  <mdb-card-body>
 
-    <!--Card-->
-    <mdb-card >
-
-        <!--Card image-->
-        <div class="view overlay waves-light" mdbWavesEffect>
-            <mdb-card-img src="https://moderndiplomacy.eu/wp-content/uploads/2019/01/rolex-oyster.jpg">
-            </mdb-card-img>
-            <a>
+    <div class="row" style="margin-left: 10px;">
+      <h4 class="font-weight-bold">New Products</h4>
+      <a class="black-text" style="margin-left: 20px;">
+        <h4 class="text-info">see all<mdb-icon fas icon="arrow-right" size="m-5" style="margin-left: 10px;"></mdb-icon></h4>
+      </a>
+    </div>
+    
+    <mdb-carousel [isControls]="false" class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'"
+      [animation]="'slide'">
+      <mdb-carousel-item *ngFor="let item of slides; let i = index">
+        <div class="col-md-2 pb-2" *ngFor="let card of item; let cardIndex = index">
+          <mdb-card class="my-1 h-100">
+            <div class="view overlay waves-light" mdbWavesEffect>
+              <mdb-card-img [src]="card.img" alt="Card image cap">
+              </mdb-card-img>
+              <a>
                 <div class="mask rgba-white-slight"></div>
-            </a>
-        </div>
-        <!--/.Card image-->
-
-        <!--Card content-->
-        <mdb-card-body>
-            <div class="row">
-                <!--Title-->
-                <mdb-card-title class="px-3 ml-auto mr-2">
-                    <h4>Card title</h4>
-                </mdb-card-title>
-
-                <a class="activator px-3 ml-auto mr-2">
-                    <mdb-icon fas icon="chevron-circle-right" size="2x"></mdb-icon>
-                </a>
-
+              </a>
             </div>
-
-            <hr>
-
-            <!--Text-->
-            <mdb-card-text>
-                Some quick example text.
-            </mdb-card-text>
-        </mdb-card-body>
-        <!--/.Card content-->
-
-        <!--Card footer-->
-        <mdb-card-footer>
-            <span class="float-left font-weight-bold">
-              <strong>49$</strong>
-            </span>
-            <span class="float-right">
-              <a data-toggle="tooltip" data-placement="top" title="Add to Cart">
-                <mdb-icon fas icon="shopping-cart" class="grey-text ml-3"></mdb-icon>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Share">
-                <mdb-icon fas icon="share-alt" class="grey-text ml-3"></mdb-icon>
-              </a>
-              <a class="active" data-toggle="tooltip" data-placement="top" title="Added to Wishlist">
-                <mdb-icon fas icon="heart" class="ml-3"></mdb-icon>
-              </a>
-            </span>
-          </mdb-card-footer>
-          <!--Card footer-->
-    </mdb-card>
-    <!--/.Card-->
-
-    <!--Card-->
-    <mdb-card >
-
-        <!--Card image-->
-        <div class="view overlay waves-light" mdbWavesEffect>
-            <mdb-card-img src="https://moderndiplomacy.eu/wp-content/uploads/2019/01/rolex-oyster.jpg">
-            </mdb-card-img>
-            <a>
-                <div class="mask rgba-white-slight"></div>
-            </a>
-        </div>
-        <!--/.Card image-->
-
-        <!--Card content-->
-        <mdb-card-body>
-            <div class="row">
-                <!--Title-->
-                <mdb-card-title class="px-3 ml-auto mr-2">
-                    <h4>Card title</h4>
-                </mdb-card-title>
-
-                <a class="activator px-3 ml-auto mr-2">
-                    <mdb-icon fas icon="chevron-circle-right" size="2x"></mdb-icon>
+            <!-- <mdb-card-body> -->
+              <mdb-card-text class="text-center" style="margin-top: 5px;">
+                <h6 class="font-weight-bold">{{card.title}}</h6>
+                <h5>Rs.500/=</h5>
+              </mdb-card-text>
+            <!-- </mdb-card-body> -->
+            <mdb-card-footer>
+              <span class="float-right">
+                <a data-toggle="tooltip" data-placement="top" title="Add to Cart">
+                  <mdb-icon fas icon="shopping-cart" class="grey-text ml-3"></mdb-icon>
                 </a>
-
-            </div>
-
-            <hr>
-
-            <!--Text-->
-            <mdb-card-text>
-                Some quick example text.
-            </mdb-card-text>
-        </mdb-card-body>
-        <!--/.Card content-->
-
-        <!--Card footer-->
-        <mdb-card-footer>
-            <span class="float-left font-weight-bold">
-              <strong>49$</strong>
-            </span>
-            <span class="float-right">
-              <a data-toggle="tooltip" data-placement="top" title="Add to Cart">
-                <mdb-icon fas icon="shopping-cart" class="grey-text ml-3"></mdb-icon>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Share">
-                <mdb-icon fas icon="share-alt" class="grey-text ml-3"></mdb-icon>
-              </a>
-              <a class="active" data-toggle="tooltip" data-placement="top" title="Added to Wishlist">
-                <mdb-icon fas icon="heart" class="ml-3"></mdb-icon>
-              </a>
-            </span>
-          </mdb-card-footer>
-          <!--Card footer-->
-    </mdb-card>
-    <!--/.Card-->
-
-
-    <!--Card-->
-    <mdb-card >
-
-        <!--Card image-->
-        <div class="view overlay waves-light" mdbWavesEffect>
-            <mdb-card-img src="https://moderndiplomacy.eu/wp-content/uploads/2019/01/rolex-oyster.jpg">
-            </mdb-card-img>
-            <a>
-                <div class="mask rgba-white-slight"></div>
-            </a>
-        </div>
-        <!--/.Card image-->
-
-        <!--Card content-->
-        <mdb-card-body>
-            <div class="row">
-                <!--Title-->
-                <mdb-card-title class="px-3 ml-auto mr-2">
-                    <h4>Card title</h4>
-                </mdb-card-title>
-
-                <a class="activator px-3 ml-auto mr-2">
-                    <mdb-icon fas icon="chevron-circle-right" size="2x"></mdb-icon>
+                <a class="active" data-toggle="tooltip" data-placement="top" title="Added to Wishlist">
+                  <mdb-icon fas icon="heart" class="ml-3"></mdb-icon>
                 </a>
-
-            </div>
-
-            <hr>
-
-            <!--Text-->
-            <mdb-card-text>
-                Some quick example text.
-            </mdb-card-text>
-        </mdb-card-body>
-        <!--/.Card content-->
-
-        <!--Card footer-->
-        <mdb-card-footer>
-            <span class="float-left font-weight-bold">
-              <strong>49$</strong>
-            </span>
-            <span class="float-right">
-              <a data-toggle="tooltip" data-placement="top" title="Add to Cart">
-                <mdb-icon fas icon="shopping-cart" class="grey-text ml-3"></mdb-icon>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Share">
-                <mdb-icon fas icon="share-alt" class="grey-text ml-3"></mdb-icon>
-              </a>
-              <a class="active" data-toggle="tooltip" data-placement="top" title="Added to Wishlist">
-                <mdb-icon fas icon="heart" class="ml-3"></mdb-icon>
-              </a>
-            </span>
-          </mdb-card-footer>
-          <!--Card footer-->
-    </mdb-card>
-    <!--/.Card-->
-
-    <!--Card-->
-    <mdb-card >
-
-        <!--Card image-->
-        <div class="view overlay waves-light" mdbWavesEffect>
-            <mdb-card-img src="https://moderndiplomacy.eu/wp-content/uploads/2019/01/rolex-oyster.jpg">
-            </mdb-card-img>
-            <a>
-                <div class="mask rgba-white-slight"></div>
-            </a>
+              </span>
+            </mdb-card-footer>
+          </mdb-card>
         </div>
-        <!--/.Card image-->
-
-        <!--Card content-->
-        <mdb-card-body>
-            <div class="row">
-                <!--Title-->
-                <mdb-card-title class="px-3 ml-auto mr-2">
-                    <h4>Card title</h4>
-                </mdb-card-title>
-
-                <a class="activator px-3 ml-auto mr-2">
-                    <mdb-icon fas icon="chevron-circle-right" size="2x"></mdb-icon>
-                </a>
-
-            </div>
-
-            <hr>
-
-            <!--Text-->
-            <mdb-card-text>
-                Some quick example text.
-            </mdb-card-text>
-        </mdb-card-body>
-        <!--/.Card content-->
-
-        <!--Card footer-->
-        <mdb-card-footer>
-            <span class="float-left font-weight-bold">
-              <strong>49$</strong>
-            </span>
-            <span class="float-right">
-              <a data-toggle="tooltip" data-placement="top" title="Add to Cart">
-                <mdb-icon fas icon="shopping-cart" class="grey-text ml-3"></mdb-icon>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Share">
-                <mdb-icon fas icon="share-alt" class="grey-text ml-3"></mdb-icon>
-              </a>
-              <a class="active" data-toggle="tooltip" data-placement="top" title="Added to Wishlist">
-                <mdb-icon fas icon="heart" class="ml-3"></mdb-icon>
-              </a>
-            </span>
-          </mdb-card-footer>
-          <!--Card footer-->
-    </mdb-card>
-    <!--/.Card-->
-</div>
+      </mdb-carousel-item>
+    </mdb-carousel>
+  </mdb-card-body>
+</mdb-card>
