@@ -1,3 +1,4 @@
+import { UserSellerComponent } from './admin/user-chart/user-seller/user-seller.component';
 import { DisplayProductsComponent } from './seller/display-products/display-products.component';
 import { AddProductsComponent } from './seller/add-products/add-products.component';
 import { SellerComponent } from './seller/seller.component';
@@ -8,7 +9,6 @@ import { SellerRegistrationComponent } from './seller-registration/seller-regist
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { UserChartComponent } from './admin/user-chart/user-chart.component';
-import { RequestShopComponent } from './admin/request-shop/request-shop.component';
 import { LoginComponent } from './login/login.component';
 
 
@@ -22,11 +22,16 @@ const routes: Routes = [
     {path: 'addProducts', component: AddProductsComponent}
   ]},
   {path: 'admin', component: AdminComponent, children:[
-    {path:'users/:type_name',component:UserChartComponent},
-    // {path:'users/Sellers',component:UserChartComponent},
-    // {path:'users/Customers',component:UserChartComponent},
-    // {path:'users/Delivers',component:UserChartComponent},
-    {path:'shopRequests',component:RequestShopComponent},
+// <<<<<<< HEAD
+//     {path:'users/:type_name',component:UserChartComponent},
+//     // {path:'users/Sellers',component:UserChartComponent},
+//     // {path:'users/Customers',component:UserChartComponent},
+//     // {path:'users/Delivers',component:UserChartComponent},
+    // {path:'shopRequests',component:RequestShopComponent},
+// =======
+    {path:'users',component:UserChartComponent},
+    {path:'userSellers',component:UserSellerComponent},
+// >>>>>>> 6be9ae62c130a4dcdec8314171795b30e226e4bb
   ]}
 ];
 

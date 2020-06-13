@@ -50,7 +50,11 @@ elements: UserDetails
           this.mdbTable.getDataSource();
       } if (this.searchText) {
         this.elements =
-          this.mdbTable.searchLocalDataBy(this.searchText);
+// <<<<<<< HEAD
+//           this.mdbTable.searchLocalDataBy(this.searchText);
+// =======
+        this.mdbTable.searchLocalDataBy(this.searchText);
+// >>>>>>> 6be9ae62c130a4dcdec8314171795b30e226e4bb
         this.mdbTable.setDataSource(prev);
       }
   }

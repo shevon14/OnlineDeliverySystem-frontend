@@ -17,10 +17,14 @@ import { AdminComponent } from './admin/admin.component';
 import { SellerComponent } from './seller/seller.component';
 import { AddProductsComponent } from './seller/add-products/add-products.component';
 import { DisplayProductsComponent } from './seller/display-products/display-products.component';
+import { CategoriesTabComponent } from './home/categories-tab/categories-tab.component';
+import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { AuthenticationService } from './authentication.service';
 import { AuthGuardService } from './auth-guard.service';
 import { HttpClientModule } from '@angular/common/http';
+import { UserSellerComponent } from './admin/user-chart/user-seller/user-seller.component';
+import { SellerPopUpModalComponent } from './admin/user-chart/user-seller/seller-pop-up-modal/seller-pop-up-modal.component';
 
 
 @NgModule({
@@ -39,7 +43,11 @@ import { HttpClientModule } from '@angular/common/http';
     SellerComponent,
     AddProductsComponent,
     DisplayProductsComponent,
+    CategoriesTabComponent,
+    FooterComponent,
     LoginComponent,
+    UserSellerComponent,
+    SellerPopUpModalComponent,
     
   ],
   imports: [
