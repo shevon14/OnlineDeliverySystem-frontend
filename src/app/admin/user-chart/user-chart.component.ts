@@ -44,7 +44,7 @@ export class UserChartComponent implements OnInit {
         this.mdbTable.setDataSource(this.previous); this.elements =
           this.mdbTable.getDataSource();
       } if (this.searchText) {
-      this.elements =
+        this.elements =
         this.mdbTable.searchLocalDataBy(this.searchText);
         this.mdbTable.setDataSource(prev);
       }

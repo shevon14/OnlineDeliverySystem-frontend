@@ -11,24 +11,26 @@
                     </a>
                 </li> -->
 
-                <div class="nav-item dropdown waves-light" dropdown>
+                <!-- <div class="nav-item dropdown waves-light" dropdown>
                     <li mdbWavesEffect>
                         <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light"
                             mdbWavesEffect>
                             Users<span class="caret"></span></a>
                     </li>
-
                     <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
                         <a class="dropdown-item waves-light" mdbWavesEffect (click)="UsersClicked(user_type)"
                             *ngFor="let user_type of user_types">{{user_type.type_name}}</a>
-
                     </div>
 
-                </div>
-
-
+                </div> -->
                 <li class="nav-item waves-light" mdbWavesEffect>
-                    <a class="nav-link" (click)="shopRequestsClicks()">Shop Requests</a>
+                    <a class="nav-link" (click)="sellerClicks()">Sellers</a>
+                </li>
+                <li class="nav-item waves-light" mdbWavesEffect>
+                    <a class="nav-link" >Customers</a>
+                </li>
+                <li class="nav-item waves-light" mdbWavesEffect>
+                    <a class="nav-link">Delivers</a>
                 </li>
                 <!-- <li class="nav-item waves-light" mdbWavesEffect>
                     <a class="nav-link">Contact</a>

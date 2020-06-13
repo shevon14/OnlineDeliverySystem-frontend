@@ -1,0 +1,86 @@
+<div class="container">
+    <!-- Editable table -->
+    <div class="card">
+      <h3 class="card-header text-center info-color font-weight-bold text-uppercase py-4">Sellers</h3>
+      <div class="card-body">
+        <div id="table" class="table-editable text-center">
+          <table class="table table-bordered table-responsive-md table-striped text-center">
+            <thead  class="black white-text">
+              <tr>
+                <th class="text-center">Shop Id</th>
+                <th class="text-center">Shop Name</th>
+                <th class="text-center">Status</th>
+                <th class="text-center">Remove</th>
+              </tr>
+            </thead>
+           
+            <tbody>
+              <tr scope="row" *ngFor="let seller of sellerArray">
+                <td>{{seller._id}}</td>
+                <td>{{seller.shopName}}</td>
+                <td>
+                    <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input">
+                    <label class="custom-control-label">ON</label>
+                  </div>
+                  <!-- <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="shopStatus+{{user.id}}">
+                    <label class="custom-control-label" for="shopStatus+{{user.id}}">ON</label>
+                  </div> -->
+                  <a class="waves-light text-info" data-toggle="modal" (click) = "openModal(seller.shopName, seller.name, seller.businessModel, seller.businessID, seller.address, seller.personalPhone, seller.officePhone, seller.email)"><u>More Details</u></a>
+                </td>
+                <td>
+                  <span class="table-remove">
+                    <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0">X</button>
+                  </span>
+                </td>
+  
+              </tr>
+            </tbody>
+  
+  
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- <div mdbModal #frame="mdbModal" class="modal fade right" id="frameModalTop" tabindex="-1" role="dialog"
+      aria-labelledby="myModalLabel" aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
+      <div class="modal-dialog modal-dialog-centered modal-notify modal-info" role="document">
+        <div class="modal-content">
+         
+          <div class="modal-header">
+            <p class="heading lead">Seller Details
+            </p>
+  
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+              <span aria-hidden="true" class="white-text">×</span>
+            </button>
+          </div>
+  
+          
+          <div class="modal-body">
+            <div class="text-center">
+              <mdb-icon fas icon="store-alt" size="3x" class="mb-3 animated rotateIn"></mdb-icon>
+              <p class="font-weight-bold"><strong>Shop Name</strong></p>
+  
+              <hr>
+            </div>
+            <p class="text-muted">Bussiness Model :</p>
+            <p class="text-muted ">Full Name :</p>
+            <p class="text-muted ">Shop Name :</p>
+            <p class="text-muted ">Bussiness Registration ID :</p>
+            <p class="text-muted ">Email :</p>
+          </div>
+  
+          <div class="modal-footer justify-content-center">
+            <a id="btn1" type="button" mdbBtn color="info" class="waves-light" mdbWavesEffect>
+              <mdb-icon fas icon="check-circle" class="ml-1"></mdb-icon> Accept
+            </a>
+            <a id="btn2" type="button" mdbBtn color="info" outline="true" class="waves-effect" data-dismiss="modal"
+              mdbWavesEffect (click)="frame.hide()">Cancel</a>
+          </div> 
+        </div>
+      </div>
+    </div> -->
+  
+  </div>

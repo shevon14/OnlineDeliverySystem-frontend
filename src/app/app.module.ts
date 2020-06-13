@@ -23,6 +23,8 @@ import { LoginComponent } from './login/login.component';
 import { AuthenticationService } from './authentication.service';
 import { AuthGuardService } from './auth-guard.service';
 import { HttpClientModule } from '@angular/common/http';
+import { UserSellerComponent } from './admin/user-chart/user-seller/user-seller.component';
+import { SellerPopUpModalComponent } from './admin/user-chart/user-seller/seller-pop-up-modal/seller-pop-up-modal.component';
 
 
 @NgModule({
@@ -44,6 +46,8 @@ import { HttpClientModule } from '@angular/common/http';
     CategoriesTabComponent,
     FooterComponent,
     LoginComponent,
+    UserSellerComponent,
+    SellerPopUpModalComponent,
     
   ],
   imports: [
