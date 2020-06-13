@@ -14,16 +14,16 @@
             </tr>
           </thead>
          
-          <tbody>
-            <tr scope="row" *ngFor="let user of users">
-              <td>{{user.id}}</td>
-              <td>{{user.name}}</td>
+          <tbody >
+            <tr  *ngFor="let user of request_details; let i = index" >
+              <td scope="row">{{user._id}}</td>
+              <td>{{user.first_name}}</td>
               <td>
                 <div class="custom-control custom-switch">
-                  <input type="checkbox" class="custom-control-input" id="shopStatus+{{user.id}}">
-                  <label class="custom-control-label" for="shopStatus+{{user.id}}">ON</label>
+                  <input type="checkbox" class="custom-control-input" id="shopStatus+{{user._id}}" >
+                  <label class="custom-control-label" for="shopStatus+{{user._id}}">ON</label>
                 </div>
-                <a class="waves-light text-info" data-toggle="modal" data-target="#basicExample" (click)="frame.show()"><u>More Details</u></a>
+                <a class="waves-light text-info" data-toggle="modal" data-target="#basicExample" (click)="openpopup(frame,user)"><u>More Details</u></a>
               </td>
               <td>
                 <span class="table-remove">
@@ -48,20 +48,20 @@
           <p class="heading lead">Shop Request
           </p>
 
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close(frame)">
             <span aria-hidden="true" class="white-text">×</span>
           </button>
         </div>
 
         <!--Body-->
-        <div class="modal-body">
+        <div class="modal-body" *ngIf="display_popup" >
           <div class="text-center">
             <mdb-icon fas icon="store-alt" size="3x" class="mb-3 animated rotateIn"></mdb-icon>
             <p class="font-weight-bold"><strong>Shop Name</strong></p>
 
             <hr>
           </div>
-          <p class="text-muted">Bussiness Model :</p>
+          <p class="text-muted">Bussiness Model :{{popup_details.first_name}}</p>
           <p class="text-muted ">Full Name :</p>
           <p class="text-muted ">Shop Name :</p>
           <p class="text-muted ">Bussiness Registration ID :</p>
@@ -74,7 +74,7 @@
             <mdb-icon fas icon="check-circle" class="ml-1"></mdb-icon> Accept
           </a>
           <a id="btn2" type="button" mdbBtn color="info" outline="true" class="waves-effect" data-dismiss="modal"
-            mdbWavesEffect (click)="frame.hide()">Cancel</a>
+            mdbWavesEffect (click)="close(frame)">Cancel</a>
         </div>
       </div>
     </div>

@@ -23,7 +23,8 @@ user_types=[
   }
 
   UsersClicked(user_types){
-    this.router.navigate(['admin','users',user_types.type_name]);
+    this.router.navigateByUrl('/admin/users/'+user_types.type_name);
+    // this.router.navigate(['admin','users',user_types.type_name]);
   }
 
   shopRequestsClicks(){

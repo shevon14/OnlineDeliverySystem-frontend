@@ -16,22 +16,35 @@ export class LoginComponent implements OnInit {
     last_name:'',
     email:'',
     password:'',
-    user_type:''
+    // user_type:''
   }
 
-  constructor(private auth:AuthenticationService,private router:Router) { 
+  constructor(public auth:AuthenticationService,private router:Router) { 
 
   }
 
   ngOnInit(): void {
   }
 
+  S_register(){
+    this.auth.seller_register(this.credentials).subscribe(
+      ()=>{
+       this.router.navigateByUrl('/')
+      },
+ 
+      err=>{
+        console.error(err)
+      }
+     )
+  }
+
   login(){
   
     this.auth.login(this.credentials).subscribe(
      ()=>{
-      this.router.navigateByUrl('/admin')
+      this.router.navigateByUrl('/'+this.auth.getUserDetails().user_type)
      },
+
      err=>{
        console.error(err)
      }

@@ -23,6 +23,9 @@ const routes: Routes = [
   ]},
   {path: 'admin', component: AdminComponent, children:[
     {path:'users/:type_name',component:UserChartComponent},
+    // {path:'users/Sellers',component:UserChartComponent},
+    // {path:'users/Customers',component:UserChartComponent},
+    // {path:'users/Delivers',component:UserChartComponent},
     {path:'shopRequests',component:RequestShopComponent},
   ]}
 ];
