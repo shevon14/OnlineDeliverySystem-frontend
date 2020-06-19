@@ -25,6 +25,9 @@ import { AuthGuardService } from './auth-guard.service';
 import { HttpClientModule } from '@angular/common/http';
 import { UserSellerComponent } from './admin/user-chart/user-seller/user-seller.component';
 import { SellerPopUpModalComponent } from './admin/user-chart/user-seller/seller-pop-up-modal/seller-pop-up-modal.component';
+import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './signup/signup.component';
+import { CustomerDetailsService } from './services/customer-reg.service';
 
 
 @NgModule({
@@ -48,6 +51,8 @@ import { SellerPopUpModalComponent } from './admin/user-chart/user-seller/seller
     LoginComponent,
     UserSellerComponent,
     SellerPopUpModalComponent,
+    SigninComponent,
+    SignupComponent,
     
   ],
   imports: [

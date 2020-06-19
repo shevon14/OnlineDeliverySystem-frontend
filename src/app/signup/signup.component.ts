@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import{CustomerDetailsService, TokenPayload} from'../services/customer-reg.service';
-
 import{Router} from'@angular/router'
 import { last } from 'rxjs/operators';
 
-
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class SignupComponent implements OnInit {
+
   credentials:TokenPayload={
     _id:'',
     first_name:'',
@@ -18,19 +17,16 @@ export class LoginComponent implements OnInit {
     email:'',
     address:'',
     password:'',
-    user_type:'cc'
+    user_type:'customer'
   }
 
-  constructor(public auth:CustomerDetailsService,private router:Router) { 
 
-  }
+  constructor(public auth:CustomerDetailsService,private router:Router) { }
 
   ngOnInit(): void {
-
-
   }
 
-  S_register(){
+  c_register(){
     this.auth.register(this.credentials).subscribe(
       ()=>{
        this.router.navigateByUrl('/')
@@ -42,17 +38,6 @@ export class LoginComponent implements OnInit {
      )
   }
 
-  login(){
-  
-    this.auth.login(this.credentials).subscribe(
-     ()=>{
-      this.router.navigateByUrl('/'+this.auth.getUserDetails().user_type)
-     },
 
-     err=>{
-       console.error(err)
-     }
-    )
-  }
 
 }

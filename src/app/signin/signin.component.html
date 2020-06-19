@@ -1,0 +1,49 @@
+<!-- background-image: url('https://images.wallpaperscraft.com/image/city_road_traffic_143832_2560x1600.jpg '); background-repeat: no-repeat; background-size: cover; background-position: center center;
+ -->
+
+ <div class="view"
+    style="background-color:#b2dfdb; background-repeat: no-repeat; background-size: cover; background-position: center center; height:590px ">
+    
+        <div class="container"> </div>
+    
+    <div class="col-xl-4 offset-xl-4">
+        <div class="text-center">
+            <h3><strong>Sign in here to experience the best service!</strong></h3>
+        </div>
+        <div class="example z-depth-2">
+        <mdb-card class="wow fadeInRight form-deco" data-wow-delay="0.3s" >
+            <mdb-card-body class="form-body">
+                <!--Header-->
+                <div>
+                    <div>
+                        <h3 class="card-header info-color white-text text-center py-4">
+                        <mdb-icon fas icon="user" class="text-black"></mdb-icon> Sign in:
+                        </h3>
+                    <hr class="hr-light">
+                </div>
+                    <!--Body-->
+                    <div class="md-form">
+                        <input type="email" name="your_email" class="text-black form-control" mdbInput>
+                        <label for="your_email" class="text-black"> <mdb-icon fas icon="user" class="text-black"></mdb-icon>Your email</label>
+                    </div>
+                    <div class="md-form">
+                        <input type="password" name="your_password" class="text-black form-control" mdbInput>
+                        <label for="your_password" class="text-black"> <mdb-icon fas icon="lock" class="text-black"></mdb-icon>Your password</label>
+                    </div>
+                    <div class="text-center">
+                        <mdb-checkbox [default]="true">Remember me</mdb-checkbox>
+                      </div>
+                    <div class="text-center mt-4">
+                        <button mdbBtn color="blue" (click)="Login()" mdbWavesEffect>Log In</button>
+                        <hr class="hr-light mb-3 mt-4">
+                        <h4>Not a member?
+                            <a (click)="SignupClicked()">Sign Up</a>
+                        </h4>
+                    </div>
+                        
+                    </div>
+            </mdb-card-body>
+        </mdb-card>
+        </div>
+    </div>
+</div>

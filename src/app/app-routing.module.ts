@@ -10,6 +10,8 @@ import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { UserChartComponent } from './admin/user-chart/user-chart.component';
 import { LoginComponent } from './login/login.component';
+import { SigninComponent} from './signin/signin.component';
+import { SignupComponent} from './signup/signup.component';
 
 
 const routes: Routes = [
@@ -30,7 +32,9 @@ const routes: Routes = [
       { path: 'users', component: UserChartComponent },
       { path: 'userSellers', component: UserSellerComponent },
     ]
-  }
+  },
+  { path: 'signin', component: SigninComponent},
+  { path: 'signup', component: SignupComponent}
 ];
 
 @NgModule({

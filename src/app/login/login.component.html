@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 mt-5 mx-auto">
-            <form (submit)="login()">
+            <!-- <form (submit)="login()">
                 <h1 class="h3 mb-3 font-weight-normal">Please sing in</h1>
                 <div class="form-group">
                     <label for="email">Email</label>
@@ -14,7 +14,7 @@
                      placeholder="Enter Password" [(ngModel)]="credentials.password">
                 </div>
                 <button class="btn btn-lg btn-primary btn-block">Sign in</button>
-            </form>
+            </form> -->
 
             
             <!-- <form (submit)="S_register()">
@@ -35,12 +35,78 @@
                      placeholder="Enter Email" [(ngModel)]="credentials.email">
                 </div>
                 <div class="form-group">
+                    <label for="address">Password</label>
+                    <input type="password" class="form-control" name="password"
+                     placeholder="Enter address" [(ngModel)]="credentials.address">
+                </div>
+                <div class="form-group">
                     <label for="password">Password</label>
                     <input type="password" class="form-control" name="password"
                      placeholder="Enter Password" [(ngModel)]="credentials.password">
                 </div>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-            </form> -->
+            </form>
         </div>
     </div>
-</div>
+</div> -->
+
+<!-- <div class="col-md-4 col-xl-4 offset-xl-1"> -->
+    <!--Form-->
+    
+    <!-- <mdb-card class="wow fadeInRight form-deco " data-wow-delay="0.3s">
+        <mdb-card-body class="form-body"> -->
+            <!--Header-->
+            <div>
+                <div>
+                    <h3 class="card-header info-color white-text text-center py-4">
+                        <mdb-icon fas icon="register" class="text-black"></mdb-icon> Register
+                    </h3>
+                    <hr class="hr-light">
+                </div>
+
+                <!--Body-->
+                <form (submit)="S_register()">
+                <div class="md-form">
+                    <input type="text" name="materialContactForFirstName" class="form-control" [(ngModel)]="credentials.first_name" >
+                    <label for="materialContactForFirstName" >First Name</label>
+                  </div>
+
+                <div class="md-form">
+                    <input type="text" name="materialContactForLastName" class="form-control" [(ngModel)]="credentials.last_name" >
+                    <label for="materialContactForLastName" >Last name</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="materialContactForEmail" class="form-control" [(ngModel)]="credentials.email" >
+                    <label for="materialContactForEmail" >Your email</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="materialContactForAddress" class="form-control" [(ngModel)]="credentials.address">
+                    <label for="materialContactForAddress"  >Your Address</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="materialContactForPassword" class="form-control" [(ngModel)]="credentials.password" >
+                    <label for="materialContactForPassword" >Your Password</label>
+                </div>
+                <!-- <div class="md-form">
+                    <input type="text" id="materialContactForRPassword" class="text-white form-control" mdbInput>
+                    <label for="materialContactForRPassword" >Confirm Password</label>
+                </div> -->
+                <!-- <div class="form-group mt-4">
+                    <div class="text-center">
+                        <input class="form-check-input" type="checkbox" id="checkbox624">
+                        <label for="checkbox624" class="blue-text form-check-label">Accept the<a href="#"
+                                class="blue-text font-weight-bold">
+                                Terms and Conditions</a></label>
+                    </div>
+                </div> -->
+
+                <div class="text-center mt-4">
+                    <button class="btn btn-cyan mt-1" type="submit" >Signup<i class="fas fa-sign-in ml-1"></i></button>
+                </div>
+            </form>
+               
+            </div>
+        <!-- </mdb-card-body>
+    </mdb-card> -->
+
+<!-- </div> -->
