@@ -26,6 +26,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserSellerComponent } from './admin/user-chart/user-seller/user-seller.component';
 import { SellerPopUpModalComponent } from './admin/user-chart/user-seller/seller-pop-up-modal/seller-pop-up-modal.component';
 import { AllProductsComponent } from './all-products/all-products.component';
+import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './signup/signup.component';
+import { CustomerDetailsService } from './services/customer-reg.service';
 
 
 @NgModule({
@@ -49,7 +52,12 @@ import { AllProductsComponent } from './all-products/all-products.component';
     LoginComponent,
     UserSellerComponent,
     SellerPopUpModalComponent,
+<<<<<<< HEAD
     AllProductsComponent,
+=======
+    SigninComponent,
+    SignupComponent,
+>>>>>>> b26b0e76cf989645aadce4484a735f4d139fb558
     
   ],
   imports: [

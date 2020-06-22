@@ -15,7 +15,7 @@
       </div>
     </div>
   </div>
-  <table mdbTable class="table table-bordered table-responsive-md table-striped text-center">
+  <table mdbTable class="table table-bordered table-responsive-md table-striped text-center ">
     <thead  class="black white-text">
       <tr>
         <th *ngFor="let head of headElements; let i = index" scope="col">
@@ -25,13 +25,12 @@
     </thead>
     <tbody>
       <tr *ngFor="let el of elements; let i = index">
-        <th scope="row">{{el.id}}</th>
-        <td>{{el.OwnerName}}</td>
-        <td>{{el.ShopName}}</td>
-        <td>{{el.address}}</td>
-        <td>{{el.contact}}</td>
+        <th scope="row">{{i+1}}</th>
+        <td>{{el.first_name}}</td>
+        <td>{{el.last_name}}</td>
+        <td>{{el.email}}</td>
+        <td>{{el.user_type}}</td>
       </tr>
     </tbody>
   </table>
 </div>
-<!-- <h1>{{user_type}}</h1> -->

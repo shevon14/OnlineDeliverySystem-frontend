@@ -24,16 +24,24 @@ export interface TokenPayload {
     first_name: string,
     last_name: string,
     email: string,
+    address:string,
     password: string,
-    // user_type: string
+    user_type: string
 
 }
 
-@Injectable()
-export class AuthenticationService {
+
+
+@Injectable({
+    providedIn: 'root'
+  })
+
+export class CustomerDetailsService {
     private token: string
 
     constructor(private http: HttpClient, private router: Router) { }
+
+    private traget = "http://localhost:3000/";
 
     private saveToken(token: string): void {
         localStorage.setItem('usertoken', token)
@@ -46,7 +54,6 @@ export class AuthenticationService {
         }
         return this.token
     }
-    
     public getUserDetails(): UserDetails {
         const token = this.getToken()
         let payload
@@ -70,7 +77,8 @@ export class AuthenticationService {
     }
 
     public register(user: TokenPayload): Observable<any> {
-        const base = this.http.post('/users/register', user)
+        console.log(user)
+        const base = this.http.post(this.traget+'customers/register', user)
 
         const request = base.pipe(
             map((data: TokenResponse) => {
@@ -84,7 +92,7 @@ export class AuthenticationService {
     }
 
     public login(user: TokenPayload): Observable<any> {
-        const base = this.http.post('/users/login', user)
+        const base = this.http.post(this.traget+'customers/login', user)
 
         const request = base.pipe(
             map((data: TokenResponse) => {
@@ -99,7 +107,7 @@ export class AuthenticationService {
 
 
     public profile(): Observable<any> {
-        return this.http.get('/users/profile', {
+        return this.http.get(this.traget+'customers/profile', {
             headers: { Authorization: '${this.getToken()}' }
         })
     }
@@ -111,31 +119,12 @@ export class AuthenticationService {
     }
 
     //details new
-    public detailes():Observable<any> {
-        return this.http.get('/users/details',{
-            headers: { Authorization: '${this.getToken()}' }
-        })
+    // public detailes():Observable<any> {
+    //     return this.http.get('/users/details',{
+    //         headers: { Authorization: '${this.getToken()}' }
+    //     })
 
-    }
+    // }
 
 
-
-    //must be change
-    public seller_register(seller: TokenPayload): Observable<any> {
-
-        const base = this.http.post('/sellers/register', seller)
-
-        console.log(seller)
-        const request = base.pipe(
-            map((data: TokenResponse) => {
-                console.log("go")
-                if (data.token) {
-                    console.log("get")
-                    this.saveToken(data.token)
-                }
-                return data
-            })
-        )
-        return request
-    }
 }

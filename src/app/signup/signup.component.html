@@ -1,0 +1,91 @@
+<!-- https://images.wallpaperscraft.com/image/city_road_traffic_143832_2560x1600.jpg-->
+
+<div class="view"
+    style="background-image: url('https://soft-garage.com/assets/images/bannar/g5.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center; height:640px">
+    <!-- Mask & flexbox options-->
+    <div class="mask pattern-6 rgba-.rgba-.rgba-stylish-slight align-items-center">
+        <!-- Content -->
+        <div class="container">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-4 text-center text-md-center mb-6">
+            <div class="row flex-center pt-5 mt-3 w-100">
+
+                <div class="white-text">
+                    <h1 class="h1 h1-responsive font-bold wow fadeInLeft" data-wow-delay="0.3s">Sign up right
+                        now! </h1>
+                    <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
+                    <h4 class="wow fadeInLeft" data-wow-delay="0.3s">Sign up for our page and experience the fastest and
+                        the most reliable online delivery system. All you need is here and delivery on time is highly
+                        assured!
+                    </h4>
+                    <br>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-xl-4 offset-xl-1">
+            <!--Form-->
+            
+            <mdb-card class="wow fadeInRight form-deco " data-wow-delay="0.3s">
+                <mdb-card-body class="form-body">
+                    <!--Header-->
+                    <div>
+                        <div>
+                            <h3 class="card-header info-color white-text text-center py-4">
+                                <mdb-icon fas icon="register" class="text-black"></mdb-icon> Register
+                            </h3>
+                            <hr class="hr-light">
+                        </div>
+
+                        <!--Body-->
+                        <form (submit)="c_register()">
+                        <div class="md-form">
+                            <input type="text" name="materialContactForFirstName" class="form-control" [(ngModel)]="credentials.first_name" mdbInput>
+                            <label for="materialContactForFirstName" >First Name</label>
+                          </div>
+
+                        <div class="md-form">
+                            <input type="text" name="materialContactForLastName" class="form-control" [(ngModel)]="credentials.last_name" mdbInput>
+                            <label for="materialContactForLastName" >Last name</label>
+                        </div>
+                        <div class="md-form">
+                            <input type="text" name="materialContactForEmail" class="form-control" [(ngModel)]="credentials.email" mdbInput>
+                            <label for="materialContactForEmail" >Your email</label>
+                        </div>
+                        <div class="md-form">
+                            <input type="text" name="materialContactForAddress" class="form-control" [(ngModel)]="credentials.address" mdbInput>
+                            <label for="materialContactForAddress"  >Your Address</label>
+                        </div>
+                        <div class="md-form">
+                            <input type="text" name="materialContactForPassword" class="form-control" [(ngModel)]="credentials.password" mdbInput>
+                            <label for="materialContactForPassword" >Your Password</label>
+                        </div>
+                        <!-- <div class="md-form">
+                            <input type="text" name="materialContactForRPassword" class="text-white form-control" mdbInput>
+                            <label for="materialContactForRPassword" >Confirm Password</label>
+                        </div> -->
+                        <div class="form-group mt-4">
+                            <div class="text-center">
+                                <input class="form-check-input" type="checkbox" name="checkbox624">
+                                <label for="checkbox624" class="blue-text form-check-label">Accept the<a href="#"
+                                        class="blue-text font-weight-bold">
+                                        Terms and Conditions</a></label>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <button class="btn btn-cyan mt-1" #btn1 type="submit">Signup<i class="fas fa-sign-in ml-1"></i></button>
+                        </div>
+                    </form>
+                       
+                    </div>
+                </mdb-card-body>
+            </mdb-card>
+        
+        </div>
+    </div>

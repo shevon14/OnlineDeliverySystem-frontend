@@ -21,9 +21,10 @@ export class AdminHeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // UsersClicked(user_types){
-  //   this.router.navigate(['admin','users',user_types.type_name]);
-  // }
+  UsersClicked(user_types){
+    // this.router.navigateByUrl('/admin/users/'+user_types.type_name);
+    this.router.navigate(['admin','users',user_types.type_name]);
+  }
 
   sellerClicks(){
     this.router.navigate(['admin','userSellers']);
