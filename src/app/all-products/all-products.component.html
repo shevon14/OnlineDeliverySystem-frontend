@@ -1,0 +1,106 @@
+<app-categories-tab></app-categories-tab>
+
+<section class="text-center">
+    <!--Section heading-->
+    <h2 class="h2 font-weight-bold h2 py-3">Now Let's Get shopping</h2>
+    <!--Section description-->
+    <p class="grey-text pb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam
+        iure provident voluptate esse quasi,
+        veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.</p>
+</section>
+
+<mdb-card class="card pb-3 rounded w-100">
+    <mdb-card-body>
+
+        <div class="container-fluid">
+            <div class="row">
+                <h4 class="font-weight-bold">Electronic Devices</h4>
+            </div>
+            <hr class="bg-info">
+        </div>
+
+        <div class="row">
+            <div class="col-md-2 pb-3" *ngFor="let card of cards">
+
+                <mdb-card class="card text-center pb-0 rounded hoverable ">
+                    <div class="view overlay">
+                        <img class="card-img-top img-responsive" style="height: 150px;" [src]="card.img">
+                        <a>
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+
+                    <mdb-card-body>
+                        <mdb-card-text class="text-center" style="margin-top: 5px;">
+                            <h6 class="font-weight-bold">{{card.title}}</h6>
+                            <h5>Rs.500/=</h5>
+                        </mdb-card-text>
+                    </mdb-card-body>
+
+                    <mdb-card-footer>
+                        <span class="float-right">
+                            <a data-toggle="tooltip" data-placement="top" title="Add to Cart">
+                                <mdb-icon fas icon="shopping-cart" class="grey-text ml-3"></mdb-icon>
+                            </a>
+                            <a class="active" data-toggle="tooltip" data-placement="top" title="Added to Wishlist">
+                                <mdb-icon fas icon="heart" class="ml-3"></mdb-icon>
+                            </a>
+                        </span>
+                    </mdb-card-footer>
+
+                </mdb-card>
+
+
+            </div>
+        </div>
+
+    </mdb-card-body>
+</mdb-card>
+
+<mdb-card class="card pb-3 rounded w-100" style="margin-top: 10px;">
+    <mdb-card-body>
+
+        <div class="container-fluid">
+            <div class="row">
+                <h4 class="font-weight-bold">Electronic Accessories</h4>
+            </div>
+            <hr class="bg-info">
+        </div>
+
+        <div class="row">
+            <div class="col-md-2 pb-3" *ngFor="let card of cards">
+
+                <mdb-card class="card text-center pb-0 rounded hoverable ">
+                    <div class="view overlay">
+                        <img class="card-img-top img-responsive" style="height: 150px;" [src]="card.img">
+                        <a>
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+
+                    <mdb-card-body>
+                        <mdb-card-text class="text-center" style="margin-top: 5px;">
+                            <h6 class="font-weight-bold">{{card.title}}</h6>
+                            <h5>Rs.500/=</h5>
+                        </mdb-card-text>
+                    </mdb-card-body>
+
+                    <mdb-card-footer>
+                        <span class="float-right">
+                            <a data-toggle="tooltip" data-placement="top" title="Add to Cart">
+                                <mdb-icon fas icon="shopping-cart" class="grey-text ml-3"></mdb-icon>
+                            </a>
+                            <a class="active" data-toggle="tooltip" data-placement="top" title="Added to Wishlist">
+                                <mdb-icon fas icon="heart" class="ml-3"></mdb-icon>
+                            </a>
+                        </span>
+                    </mdb-card-footer>
+
+                </mdb-card>
+
+
+            </div>
+        </div>
+
+    </mdb-card-body>
+</mdb-card>

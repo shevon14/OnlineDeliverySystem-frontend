@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemCardSliderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   cards = [
     {
@@ -67,8 +68,13 @@ export class ItemCardSliderComponent implements OnInit {
     }
     return R;
   }
+
   ngOnInit() {
     this.slides = this.chunk(this.cards, 6);
+  }
+
+  seeAllProducts(){
+    this.router.navigate(['products']);
   }
 }
   

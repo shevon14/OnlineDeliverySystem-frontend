@@ -25,6 +25,7 @@ import { AuthGuardService } from './auth-guard.service';
 import { HttpClientModule } from '@angular/common/http';
 import { UserSellerComponent } from './admin/user-chart/user-seller/user-seller.component';
 import { SellerPopUpModalComponent } from './admin/user-chart/user-seller/seller-pop-up-modal/seller-pop-up-modal.component';
+import { AllProductsComponent } from './all-products/all-products.component';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { SellerPopUpModalComponent } from './admin/user-chart/user-seller/seller
     LoginComponent,
     UserSellerComponent,
     SellerPopUpModalComponent,
+    AllProductsComponent,
     
   ],
   imports: [
