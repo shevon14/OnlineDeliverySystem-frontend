@@ -42,6 +42,7 @@ addNewSeller(businessModel:string, name:string, shopName:string, businessID:stri
     return this.http.post(this.CREATE_Seller,sellerObj);
 
   }
+
 //update seller
 updateSeller(sellerID:string, businessModel:string, name:string, shopName:string, businessID:string, addres:string, 
   personalPhone:string,officePhone:string, email:string, password:string, repassword:string){

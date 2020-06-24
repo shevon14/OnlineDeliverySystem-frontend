@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import{FormsModule}from '@angular/forms';
+import{FormsModule, ReactiveFormsModule}from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -30,6 +30,7 @@ import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { CustomerDetailsService } from './services/customer-reg.service';
 import { EditProductsComponent } from './seller/edit-products/edit-products.component';
+import { HomeBottomComponent } from './home/home-bottom/home-bottom.component';
 
 
 @NgModule({
@@ -57,12 +58,14 @@ import { EditProductsComponent } from './seller/edit-products/edit-products.comp
     SigninComponent,
     SignupComponent,
     EditProductsComponent,
+    HomeBottomComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     MDBBootstrapModule.forRoot()
   ],

@@ -1,99 +1,156 @@
 <!-- Material form subscription -->
 <mdb-card>
 
-    <mdb-card-header class="info-color white-text text-center py-4">
-      <h5>
-        <strong>Seller Registration</strong>
-      </h5>
-    </mdb-card-header>
-  
-    <!--Card content-->
-    <mdb-card-body class="px-lg-5">
-  
-      <!-- Form -->
-      <form style="color: #757575;">
-  
-        <p class="text-center">Connect With Us, Grow your Business Effortlessly !</p>
-  
-        <p class="text-center">
-          <a href="" target="_blank">Click to see Terms & Conditions</a>
-        </p>
+  <mdb-card-header class="info-color white-text text-center py-4">
+    <h5>
+      <strong>Seller Registration</strong>
+    </h5>
+  </mdb-card-header>
 
-        <div>
-            <p>Business Model: </p>
-                <!-- Default inline 1-->
-            <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" id="defaultInline1" name="inlineDefaultRadiosExample" mdbInput>
-                <label class="custom-control-label" for="defaultInline1">Personal</label>
-            </div>
-            
-            <!-- Default inline 2-->
-            <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" id="defaultInline2" name="inlineDefaultRadiosExample" mdbInput>
-                <label class="custom-control-label" for="defaultInline2">Shared</label>
-            </div>
+  <!--Card content-->
+  <mdb-card-body class="px-lg-5">
+
+    <!-- Form -->
+    <form (ngSubmit)="registerSeller()" [formGroup]="sellerForm" style="color: #757575;">
+
+      <p class="text-center">Connect With Us, Grow your Business Effortlessly !</p>
+
+      <p class="text-center">
+        <a href="" target="_blank">Click to see Terms & Conditions</a>
+      </p>
+
+      <div>
+        <p>Business Model: </p>
+        <!-- Default inline 1-->
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" class="custom-control-input" value ='Personal' id="defaultInline1" name="inlineDefaultRadios" [formControl]="signupFormModalBusinessModel"
+          mdbInput mdbValidate>
+          <label class="custom-control-label" for="defaultInline1">Personal</label>
         </div>
 
-        <!-- Name -->
-        <div class="md-form mt-4">
-          <input type="text" id="materialSubscriptionFormName" class="form-control" mdbInput>
-          <label for="materialSubscriptionFormName">Full Name</label>
+        <!-- Default inline 2-->
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" class="custom-control-input" value ="Shared" id="defaultInline2" name="inlineDefaultRadios" [formControl]="signupFormModalBusinessModel"
+          mdbInput mdbValidate>
+          <label class="custom-control-label" for="defaultInline2">Shared</label>
         </div>
+      </div>
 
-        <!-- Company Name -->
-        <div class="md-form mt-3">
-            <input type="text" id="materialSubscriptionFormComapnyName" class="form-control" mdbInput>
-            <label for="materialSubscriptionFormComapnyName">Shop Name</label>
-          </div>
+      <!-- Name -->
+      <div class="md-form mt-4">
+        <input type="text" id="materialSubscriptionFormName" class="form-control" [formControl]="signupFormModalName"
+          mdbInput mdbValidate>
+        <label for="materialSubscriptionFormName">Full Name</label>
+        <mdb-error *ngIf="signupFormModalName.invalid && (signupFormModalName.dirty || signupFormModalName.touched)">
+          Input invalid
+        </mdb-error>
+        <!-- <mdb-success *ngIf="signupFormModalName.valid && (signupFormModalName.dirty || signupFormModalName.touched)">
+          Input valid
+        </mdb-success> -->
+      </div>
 
-        <!-- Company ID -->
-        <div class="md-form mt-3">
-            <input type="text" id="materialSubscriptionFormComapnyID" class="form-control" mdbInput>
-            <label for="materialSubscriptionFormComapnyID">Business Registration ID</label>
-        </div>  
+      <!-- Company Name -->
+      <div class="md-form mt-3">
+        <input type="text" id="materialSubscriptionFormComapnyName" class="form-control" [formControl]="signupFormModalShopName" mdbInput mdbValidate>
+        <label for="materialSubscriptionFormComapnyName">Shop Name</label>
+        <mdb-error *ngIf="signupFormModalShopName.invalid && (signupFormModalShopName.dirty || signupFormModalShopName.touched)">
+          Input invalid
+        </mdb-error>
+        <mdb-success *ngIf="signupFormModalShopName.valid && (signupFormModalShopName.dirty || signupFormModalShopName.touched)">
+          Input valid
+        </mdb-success>
+      </div>
 
-          <!-- Company Address -->
-        <div class="md-form mt-3">
-            <input type="text" id="materialSubscriptionFormComapnyAddress" class="form-control" mdbInput>
-            <label for="materialSubscriptionFormComapnyAddress">Business Adress</label>
-        </div>
+      <!-- Company ID -->
+      <div class="md-form mt-3">
+        <input type="text" id="materialSubscriptionFormComapnyID" class="form-control" [formControl]="signupFormModalBusinessID" mdbInput mdbValidate>
+        <label for="materialSubscriptionFormComapnyID">Business Registration ID</label>
+        <mdb-error *ngIf="signupFormModalBusinessID.invalid && (signupFormModalBusinessID.dirty || signupFormModalBusinessID.touched)">
+          Input invalid
+        </mdb-error>
+        <mdb-success *ngIf="signupFormModalBusinessID.valid && (signupFormModalBusinessID.dirty || signupFormModalBusinessID.touched)">
+          Input valid
+        </mdb-success>
+      </div>
 
-         <!-- Company Contact -->
-         <div class="md-form mt-0">
-            <input type="text" id="materialSubscriptionFormPersonalConatcts" class="form-control" mdbInput>
-            <label for="materialSubscriptionFormPersonalConatcts">Personal Contact</label>
-        </div>
-        <div class="md-form mt-3">
-            <input type="text" id="materialSubscriptionFormOfficeConatcts" class="form-control" mdbInput>
-            <label for="materialSubscriptionFormOfficeConatcts">Ofiice Contact</label>
-        </div>
+      <!-- Company Address -->
+      <div class="md-form mt-3">
+        <input type="text" id="materialSubscriptionFormComapnyAddress" class="form-control" [formControl]="signupFormModalAddress" mdbInput mdbValidate>
+        <label for="materialSubscriptionFormComapnyAddress">Business Adress</label>
+        <mdb-error *ngIf="signupFormModalAddress.invalid && (signupFormModalAddress.dirty || signupFormModalAddress.touched)">
+          Input invalid
+        </mdb-error>
+        <mdb-success *ngIf="signupFormModalAddress.valid && (signupFormModalAddress.dirty || signupFormModalAddress.touched)">
+          Input valid
+        </mdb-success>
+      </div>
 
-        <!-- E-mai -->
-        <div class="md-form">
-          <input type="email" id="materialSubscriptionFormEmail" class="form-control" mdbInput>
-          <label for="materialSubscriptionFormEmail">E-mail</label>
-        </div>
+      <!-- Company Contact -->
+      <div class="md-form mt-0">
+        <input type="text" id="materialSubscriptionFormPersonalConatcts" class="form-control" [formControl]="signupFormModalPersonalPhone" mdbInput mdbValidate>
+        <label for="materialSubscriptionFormPersonalConatcts">Personal Contact</label>
+        <mdb-error *ngIf="signupFormModalPersonalPhone.invalid && (signupFormModalPersonalPhone.dirty || signupFormModalPersonalPhone.touched)">
+          Input invalid
+        </mdb-error>
+        <mdb-success *ngIf="signupFormModalPersonalPhone.valid && (signupFormModalPersonalPhone.dirty || signupFormModalPersonalPhone.touched)">
+          Input valid
+        </mdb-success>
+      </div>
+      <div class="md-form mt-3">
+        <input type="text" id="materialSubscriptionFormOfficeConatcts" class="form-control" [formControl]="signupFormModalOfficePhone" mdbInput mdbValidate>
+        <label for="materialSubscriptionFormOfficeConatcts">Ofiice Contact</label>
+        <mdb-error *ngIf="signupFormModalOfficePhone.invalid && (signupFormModalOfficePhone.dirty || signupFormModalOfficePhone.touched)">
+          Input invalid
+        </mdb-error>
+        <mdb-success *ngIf="signupFormModalOfficePhone.valid && (signupFormModalOfficePhone.dirty || signupFormModalOfficePhone.touched)">
+          Input valid
+        </mdb-success>
+      </div>
 
-        <!-- Password -->
-        <div class="md-form">
-            <input type="password" id="materialSubscriptionFormPasswords" class="form-control" mdbInput>
-            <label for="materialSubscriptionFormPasswords">Create a Password</label>
-          </div>
+      <!-- E-mai -->
+      <div class="md-form">
+        <input type="email" id="materialSubscriptionFormEmail" class="form-control" [formControl]="signupFormModalEmail" mdbInput mdbValidate>
+        <label for="materialSubscriptionFormEmail">E-mail</label>
+        <mdb-error *ngIf="signupFormModalEmail.invalid && (signupFormModalEmail.dirty || signupFormModalEmail.touched)">
+          Input invalid
+        </mdb-error>
+        <mdb-success *ngIf="signupFormModalEmail.valid && (signupFormModalEmail.dirty || signupFormModalEmail.touched)">
+          Input valid
+        </mdb-success>
+      </div>
 
-          <!-- Re-Password -->
-        <div class="md-form">
-            <input type="password" id="materialSubscriptionFormRePasswords" class="form-control" mdbInput>
-            <label for="materialSubscriptionFormRePasswords">Re Enter Password</label>
-          </div>
-  
-        <!-- Sign in button -->
-        <button mdbBtn color="info" outline="true" rounded="true" block="true" class="z-depth-0 my-4 waves-effect" mdbWavesEffect
-          type="submit">Register</button>
-  
-      </form>
-      <!-- Form -->
-  
-    </mdb-card-body>
-  
-  </mdb-card>
-  <!-- Material form subscription -->
+      <!-- Password -->
+      <div class="md-form">
+        <input type="password" id="materialSubscriptionFormPasswords" class="form-control" [formControl]="signupFormModalPassword" mdbInput mdbValidate>
+        <label for="materialSubscriptionFormPasswords">Create a Password</label>
+        <mdb-error *ngIf="signupFormModalPassword.invalid && (signupFormModalPassword.dirty || signupFormModalPassword.touched)">
+          Input invalid
+        </mdb-error>
+        <mdb-success *ngIf="signupFormModalPassword.valid && (signupFormModalPassword.dirty || signupFormModalPassword.touched)">
+          Input valid
+        </mdb-success>
+      </div>
+
+      <!-- Re-Password -->
+      <div class="md-form">
+        <input type="password" id="materialSubscriptionFormRePasswords" class="form-control" [formControl]="signupFormModalRePassword" mdbInput mdbValidate>
+        <label for="materialSubscriptionFormRePasswords">Re Enter Password</label>
+        <mdb-error *ngIf="signupFormModalRePassword.invalid && (signupFormModalRePassword.dirty || signupFormModalRePassword.touched)">
+          Input invalid
+        </mdb-error>
+        <mdb-success *ngIf="signupFormModalRePassword.valid && (signupFormModalRePassword.dirty || signupFormModalRePassword.touched)">
+          Input valid
+        </mdb-success>
+      </div>
+
+      <!-- Sign Up in button -->
+      <button mdbBtn color="info" [disabled]="!sellerForm.valid" outline="true" rounded="true" block="true" class="z-depth-0 my-4 waves-effect"
+        mdbWavesEffect type="submit" >Register</button>
+
+    </form>
+    <!-- Form -->
+
+  </mdb-card-body>
+
+</mdb-card>
+<!-- Material form subscription -->
