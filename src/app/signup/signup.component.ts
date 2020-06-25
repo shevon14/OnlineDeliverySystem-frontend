@@ -29,11 +29,11 @@ export class SignupComponent implements OnInit {
   c_register(){
     this.auth.register(this.credentials).subscribe(
       ()=>{
-       this.router.navigateByUrl('/')
+       this.router.navigateByUrl('signin')
       },
  
       err=>{
-        console.error(err)
+        console.log(err, 'error')
       }
      )
   }

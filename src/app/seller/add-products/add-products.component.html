@@ -11,20 +11,20 @@
     <mdb-card-body class="px-lg-5">
 
         <!-- Form -->
-        <form style="color: #757575;">
+        <form style="color: #757575;"  (submit)="addtoDB()">
 
             <p class="text-center">Add Your Products, Grow your Business Effortlessly !</p>
 
 
             <!-- Name -->
             <div class="md-form mt-4">
-                <input type="text" id="materialSubscriptionFormPasswords" class="form-control" mdbInput>
+                <input type="text" name="materialSubscriptionFormPasswords" class="form-control"  [(ngModel)]="credentials.productName" mdbInput>
                 <label for="materialSubscriptionFormPasswords">Product Name</label>
             </div>
 
             <!-- Category -->
             <div class="md-form mt-3">
-                <select class="browser-default custom-select">
+                <select class="browser-default custom-select" name="materialSubscriptionFormPasswords" [(ngModel)]="credentials.category" >
                     <option selected>Select Product Category</option>
                     <option value="1">Electronics</option>
                     <option value="2">Health and Beauty</option>
@@ -35,23 +35,23 @@
 
             <!-- Unit Price -->
             <div class="md-form mt-3">
-                <input type="text" id="materialSubscriptionFormComapnyName" class="form-control" mdbInput>
+                <input type="text" name="materialSubscriptionFormComapnyName" class="form-control" [(ngModel)]="credentials.uniPrice" mdbInput>
                 <label for="materialSubscriptionFormComapnyName">Uni Price</label>
             </div>
 
             <!-- Available Quantity -->
             <div class="md-form mt-3">
-                <input type="text" id="materialSubscriptionFormComapnyID" class="form-control" mdbInput>
+                <input type="text" name="materialSubscriptionFormComapnyID" class="form-control" [(ngModel)]="credentials.availableQuantity" mdbInput>
                 <label for="materialSubscriptionFormComapnyID">Available Quantity</label>
             </div>
 
             <!-- Upload Image -->
-            <div class="mt-3">
+            <!-- <div class="mt-3">
                 <label>Upload an Image</label>
                 <div>
                     <input mdbInput type='file' (change)="onImgUploadClick($event)" id="imgUpload">
                 </div>
-            </div>
+            </div> -->
 
             <!-- Sign in button -->
             <button mdbBtn color="info" outline="true" rounded="true" block="true" class="z-depth-0 my-4 waves-effect"

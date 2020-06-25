@@ -31,7 +31,8 @@ export class SigninComponent implements OnInit {
   Login(){
     this.auth.login(this.credentials).subscribe(
       ()=>{
-       this.router.navigate(['/'])
+      //  this.router.navigate(['/'])
+       console.log(this.credentials)
       },
  
       err=>{

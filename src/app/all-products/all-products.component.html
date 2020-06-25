@@ -20,7 +20,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-2 pb-3" *ngFor="let card of cards">
+            <div class="col-md-2 pb-3" *ngFor="let card of productrArray">
 
                 <mdb-card class="card text-center pb-0 rounded hoverable ">
                     <div class="view overlay">
@@ -32,8 +32,8 @@
 
                     <mdb-card-body>
                         <mdb-card-text class="text-center" style="margin-top: 5px;">
-                            <h6 class="font-weight-bold">{{card.title}}</h6>
-                            <h5>Rs.500/=</h5>
+                            <h6 class="font-weight-bold">{{card.productName}}</h6>
+                            <h5>{{card.uniPrice}}</h5>
                         </mdb-card-text>
                     </mdb-card-body>
 

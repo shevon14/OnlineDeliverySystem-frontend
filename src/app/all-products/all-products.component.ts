@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { productDetailsService} from '../services/product.service';
+import { ProductDetails } from '../models/productDetails';
 
 @Component({
   selector: 'app-all-products',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllProductsComponent implements OnInit {
 
-  constructor() { }
+  productrArray: ProductDetails;
+
+  constructor(private auth:productDetailsService,
+    // private router:Router
+    ) { }
 
   cards = [
     {
@@ -45,6 +51,11 @@ export class AllProductsComponent implements OnInit {
   ];
 
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.auth.productDetails().subscribe((list)=>{
+      this.productrArray = list
+      console.log(this.productrArray);
+    });
+  }
 
 }

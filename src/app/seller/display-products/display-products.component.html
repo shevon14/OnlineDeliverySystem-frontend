@@ -22,9 +22,10 @@
 
     </section>
 
-    <mdb-card class="card pb-3 rounded w-100">
-        <mdb-card-body>
     
+    <mdb-card class="card pb-3 rounded w-100" >
+        <mdb-card-body >
+            <div *ngIf="display_feild1">
             <div class="container-fluid">
                 <div class="row">
                     <h4 class="font-weight-bold">Electronic Devices</h4>
@@ -33,7 +34,7 @@
             </div>
     
             <div class="row">
-                <div class="col-md-3 pb-3" *ngFor="let card of cards">
+                <div class="col-md-3 pb-3" *ngFor="let card of productrArray_field1" (click)="addnum()">
     
                     <mdb-card class="card text-center pb-0 rounded hoverable ">
                         <div class="view overlay">
@@ -45,8 +46,8 @@
     
                         <mdb-card-body>
                             <mdb-card-text class="text-center" style="margin-top: 5px;">
-                                <h6 class="font-weight-bold">{{card.title}}</h6>
-                                <h5>Rs.500/=</h5>
+                                <h6 class="font-weight-bold">{{card.productName}}</h6>
+                                <h5>{{card.uniPrice}}</h5>
                             </mdb-card-text>
                         </mdb-card-body>
     
@@ -56,7 +57,63 @@
                                     <mdb-icon fas icon="pen" class="grey-text ml-3"></mdb-icon>
                                 </a>
                                 <a data-toggle="tooltip" data-placement="top" title="Delete" data-target="#basicExample"
-                                (click)="frame.show()">
+                                (click)="deleteCardButn(frame,card)">
+                                    <mdb-icon fas icon="trash" class="grey-text ml-3"></mdb-icon>
+                                </a>
+                            </span>
+                        </mdb-card-footer>
+    
+                    </mdb-card>
+    
+    
+                </div>
+            </div>
+    
+        </div>
+        </mdb-card-body>
+
+
+        <!-- second field -->
+    <!-- </mdb-card>
+
+
+
+    <mdb-card class="card pb-3 rounded w-100" *ngIf="display_feild2"> -->
+    <!-- <div *ngIf="display_feild2"> -->
+        <mdb-card-body >
+    
+            <div class="container-fluid">
+                <div class="row">
+                    <h4 class="font-weight-bold">Electronic Devices 2</h4>
+                </div>
+                <hr class="bg-info">
+            </div>
+    
+            <div class="row">
+                <div class="col-md-3 pb-3" *ngFor="let card of productrArray_field2" >
+    
+                    <mdb-card class="card text-center pb-0 rounded hoverable ">
+                        <div class="view overlay">
+                            <img class="card-img-top img-responsive" style="height: 150px;" [src]="card.img">
+                            <a>
+                                <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+    
+                        <mdb-card-body>
+                            <mdb-card-text class="text-center" style="margin-top: 5px;">
+                                <h6 class="font-weight-bold">{{card.productName}}</h6>
+                                <h5>{{card.uniPrice}}</h5>
+                            </mdb-card-text>
+                        </mdb-card-body>
+    
+                        <mdb-card-footer>
+                            <span class="float-right">
+                                <a data-toggle="tooltip" data-placement="top" title="Edit" (click)="editProductsClicked()">
+                                    <mdb-icon fas icon="pen" class="grey-text ml-3"></mdb-icon>
+                                </a>
+                                <a data-toggle="tooltip" data-placement="top" title="Delete" data-target="#basicExample"
+                                (click)="deleteCardButn(frame,card)">
                                     <mdb-icon fas icon="trash" class="grey-text ml-3"></mdb-icon>
                                 </a>
                             </span>
@@ -70,6 +127,7 @@
     
         </mdb-card-body>
     </mdb-card>
+<!-- </div> -->
 </div>
 
 
@@ -98,7 +156,7 @@
 
       <!--Footer-->
       <div class="modal-footer justify-content-center">
-        <a type="button" mdbBtn color="danger" class="waves-effect" mdbWavesEffect (click)="deleteProduct()">Yes, Delete</a>
+        <a type="button" mdbBtn color="danger" class="waves-effect" mdbWavesEffect (click)="deleteProduct(popup_details._id)">Yes, Delete</a>
         <a type="button" mdbBtn color="danger" outline="true" class="waves-effect" mdbWavesEffect (click)="frame.hide()">Cancel</a>
       </div>
     </div>

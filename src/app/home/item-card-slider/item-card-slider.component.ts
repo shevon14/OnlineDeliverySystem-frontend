@@ -1,5 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { productDetailsService } from 'src/app/services/product.service';
+import { ProductDetails } from 'src/app/models/productDetails';
 
 @Component({
   selector: 'app-item-card-slider',
@@ -8,7 +10,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemCardSliderComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private auth:productDetailsService,private router:Router) { }
+
+  productrArray: ProductDetails;
 
   cards = [
     {
@@ -71,6 +75,11 @@ export class ItemCardSliderComponent implements OnInit {
 
   ngOnInit() {
     this.slides = this.chunk(this.cards, 6);
+
+    this.auth.productDetails().subscribe((list)=>{
+      this.productrArray = list
+      console.log(this.productrArray);
+    });
   }
 
   seeAllProducts(){

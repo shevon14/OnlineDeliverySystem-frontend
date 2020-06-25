@@ -1,5 +1,9 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { productDetailsService ,removeproduct} from 'src/app/services/product.service';
+import { ProductDetails } from 'src/app/models/productDetails';
+import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
+// import{productDetailsService, addproduct} from'../../services/product.service';
 
 @Component({
   selector: 'app-display-products',
@@ -8,7 +12,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisplayProductsComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  productrArray: ProductDetails;
+  productrArray_field1: ProductDetails;
+  productrArray_field2: ProductDetails;
+  popup_details:ProductDetails;
+
+  display_feild1=false
+  display_feild2=false
+
+  ss:String;
+
+
+  constructor(private auth:productDetailsService, private router:Router) { }
 
   cards = [
     {
@@ -35,7 +50,37 @@ export class DisplayProductsComponent implements OnInit {
   ];
 
   ngOnInit(): void {
+
+    this.auth.productDetails().subscribe((list)=>{
+      this.productrArray = list
+      console.log(this.productrArray.category);
+    });
+
+   
+    if(this.productrArray.category=="2"){
+      this.ss ="2";
+      this.display_feild2=true;
+      this.auth.productDetailsField(this.ss).subscribe((list2)=>{
+        this.productrArray_field2 = list2
+        console.log(this.productrArray_field2);
+      });
+
+    }
   }
+
+  addnum(){
+    
+
+  if(this.productrArray.category=="1"){   
+    // this.ss ="1";
+    // this.display_feild1=true;
+    // this.auth.productDetailsField(this.ss).subscribe((list1)=>{
+    //   this.productrArray_field1 = list1
+      console.log("mm");
+    // });
+
+  }
+}
 
   addProductsClicked(){
     this.router.navigate(['seller','addProducts']);
@@ -45,12 +90,30 @@ export class DisplayProductsComponent implements OnInit {
     this.router.navigate(['seller','editProducts']);
   }
 
-  deleteProduct(){
-    //delete product need to connect id too
+
+  deleteCardButn(frame,index){
+    frame.show()
+    this.popup_details=index
+  // alert('Task:' +index.first_name)
+  console.log(index._id)
+  }
+
+  deleteProduct(code){
+    this.auth.deleteProduct(code).subscribe(
+      ()=>{
+       this.router.navigate(['/'])
+      }, 
+      err=>{
+        console.error(err)
+      }
+     )
+     console.log(code);
   }
 
   onClose(event: any) {
     console.log(event);
   }
+
+  
 
 }
