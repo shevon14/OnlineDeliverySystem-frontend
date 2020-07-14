@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { productDetailsService} from '../services/product.service';
 import { ProductDetails } from '../models/productDetails';
@@ -9,10 +10,10 @@ import { ProductDetails } from '../models/productDetails';
 })
 export class AllProductsComponent implements OnInit {
 
-  productrArray: ProductDetails;
+  productArray: ProductDetails;
 
   constructor(private auth:productDetailsService,
-    // private router:Router
+     private router:Router
     ) { }
 
   cards = [
@@ -53,9 +54,13 @@ export class AllProductsComponent implements OnInit {
 
   ngOnInit(): void {
     this.auth.productDetails().subscribe((list)=>{
-      this.productrArray = list
-      console.log(this.productrArray);
+      this.productArray = list
+      console.log(this.productArray);
     });
+  }
+
+  itemDetailsClicked(){
+    this.router.navigate(['itemDetail']);
   }
 
 }

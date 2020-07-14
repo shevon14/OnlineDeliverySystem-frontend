@@ -1,0 +1,42 @@
+<!-- Material form subscription -->
+<mdb-card>
+
+    <mdb-card-header class="info-color white-text text-center py-4">
+      <h5>
+        <strong>My Cart</strong>
+      </h5>
+    </mdb-card-header>
+  
+    <!--Card content-->
+    <mdb-card-body class="px-lg-5">
+        <table mdbTable class="text-center" striped="true">
+            <thead class="black white-text">
+              <tr>
+                <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+              </tr>
+            </thead>
+            <tbody >
+              <tr mdbTableCol *ngFor="let el of elements" (click)="itemrawclicked()">
+                <th scope="row">{{el.id}}</th>
+                <td>{{el.name}}</td>
+                <td>{{el.quantity}}</td>
+                <td>{{el.price}}</td>
+                <td></td>
+                <td><button type="button" mdbBtn color="danger" size="sm" mdbWavesEffect>x</button></td>
+              </tr>
+            </tbody>
+          </table>
+    </mdb-card-body>
+
+    <mdb-card-footer class="px-lg-5">
+        <table mdbTable class="text-center">
+            <thead class="black white-text">
+              <tr>
+                <th scope="col"><h4>Total : Rs.5520 /=</h4></th>
+                <th scope="col"><button type="button" mdbBtn color="info" mdbWavesEffect>Check Out</button></th>
+              </tr>
+            </thead>
+          </table>
+    </mdb-card-footer>
+  </mdb-card>
+  <!-- Material form subscription -->

@@ -21,6 +21,10 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['myStore']);
   }
 
+  MyCartClicked(){
+    this.router.navigate(['cart']);
+  }
+
   SinginClicked(){
     this.router.navigate(['signin']);
   }

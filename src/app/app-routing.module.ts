@@ -1,3 +1,5 @@
+import { ItemDetailsForCartComponent } from './item-details-for-cart/item-details-for-cart.component';
+import { CartComponent } from './cart/cart.component';
 import { EditProductsComponent } from './seller/edit-products/edit-products.component';
 import { AllProductsComponent } from './all-products/all-products.component';
 import { UserSellerComponent } from './admin/user-chart/user-seller/user-seller.component';
@@ -20,6 +22,8 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'sellerRegistration', component: SellerRegistrationComponent },
+  {path: 'cart', component: CartComponent},
+  {path: 'itemDetail', component: ItemDetailsForCartComponent},
   {path : 'products', component: AllProductsComponent},
   { path: 'myStore', component: MyStoreComponent },
   {

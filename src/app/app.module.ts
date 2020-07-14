@@ -31,6 +31,8 @@ import { SignupComponent } from './signup/signup.component';
 import { CustomerDetailsService } from './services/customer-reg.service';
 import { EditProductsComponent } from './seller/edit-products/edit-products.component';
 import { HomeBottomComponent } from './home/home-bottom/home-bottom.component';
+import { CartComponent } from './cart/cart.component';
+import { ItemDetailsForCartComponent } from './item-details-for-cart/item-details-for-cart.component';
 
 
 @NgModule({
@@ -59,6 +61,8 @@ import { HomeBottomComponent } from './home/home-bottom/home-bottom.component';
     SignupComponent,
     EditProductsComponent,
     HomeBottomComponent,
+    CartComponent,
+    ItemDetailsForCartComponent,
     
   ],
   imports: [
