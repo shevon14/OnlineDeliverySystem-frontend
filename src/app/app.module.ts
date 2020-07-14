@@ -33,6 +33,8 @@ import { EditProductsComponent } from './seller/edit-products/edit-products.comp
 import { HomeBottomComponent } from './home/home-bottom/home-bottom.component';
 import { CartComponent } from './cart/cart.component';
 import { ItemDetailsForCartComponent } from './item-details-for-cart/item-details-for-cart.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
+import { OrderHistoryComponent } from './order-history/order-history.component';
 
 
 @NgModule({
@@ -63,6 +65,8 @@ import { ItemDetailsForCartComponent } from './item-details-for-cart/item-detail
     HomeBottomComponent,
     CartComponent,
     ItemDetailsForCartComponent,
+    MyProfileComponent,
+    OrderHistoryComponent,
     
   ],
   imports: [

@@ -1,3 +1,4 @@
+import { OrderHistoryComponent } from './order-history/order-history.component';
 import { ItemDetailsForCartComponent } from './item-details-for-cart/item-details-for-cart.component';
 import { CartComponent } from './cart/cart.component';
 import { EditProductsComponent } from './seller/edit-products/edit-products.component';
@@ -16,6 +17,7 @@ import { UserChartComponent } from './admin/user-chart/user-chart.component';
 import { LoginComponent } from './login/login.component';
 import { SigninComponent} from './signin/signin.component';
 import { SignupComponent} from './signup/signup.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
 
 
 const routes: Routes = [
@@ -23,6 +25,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'sellerRegistration', component: SellerRegistrationComponent },
   {path: 'cart', component: CartComponent},
+  {path: 'orderHistory', component: OrderHistoryComponent},
+  {path: 'myProfile', component: MyProfileComponent},
   {path: 'itemDetail', component: ItemDetailsForCartComponent},
   {path : 'products', component: AllProductsComponent},
   { path: 'myStore', component: MyStoreComponent },

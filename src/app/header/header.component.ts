@@ -25,6 +25,14 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['cart']);
   }
 
+  MyProfileClicked(){
+    this.router.navigate(['myProfile']);
+  }
+
+  MyOrderHistoryClicked(){
+    this.router.navigate(['orderHistory']);
+  }
+
   SinginClicked(){
     this.router.navigate(['signin']);
   }
