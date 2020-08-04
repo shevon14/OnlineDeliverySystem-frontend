@@ -23,7 +23,7 @@ export class UserCustomerComponent implements OnInit {
     }
 
 
-  openModal(shopName, name, businessModel, businessID, address, personalPhone, officePhone, email) {
+  openModal(first_name: String,last_name:String,address: String,email: String) {
       this.modalRef = this.modalService.show(CustomerPopUpModalComponent, { 
               backdrop: true,
               keyboard: true,
@@ -35,8 +35,8 @@ export class UserCustomerComponent implements OnInit {
               role:'document',
               animated: true,
               data: {
-                  heading: 'Seller Details',
-                  content: { heading: 'Content heading', description: 'Content description', shopName:shopName, name:name, businessModel:businessModel, businessID:businessID, address:address, personalPhone:personalPhone, officePhone:officePhone, email:email}
+                  heading: 'Customer Details',
+                  content: { heading: 'Content heading', description: 'Content description', first_name:first_name, last_name:last_name,address:address, email:email}
               } });
             
                   this.modalRef.content.action.subscribe( (result: any) => { console.log(result) });
