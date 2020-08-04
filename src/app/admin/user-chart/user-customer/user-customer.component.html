@@ -1,23 +1,25 @@
 <div class="container">
     <!-- Editable table -->
     <div class="card">
-      <h3 class="card-header text-center info-color font-weight-bold text-uppercase py-4">Sellers</h3>
+      <h3 class="card-header text-center info-color font-weight-bold text-uppercase py-4">Customers</h3>
       <div class="card-body">
         <div id="table" class="table-editable text-center">
           <table class="table table-bordered table-responsive-md table-striped text-center">
             <thead  class="black white-text">
               <tr>
-                <th class="text-center">Shop Id</th>
-                <th class="text-center">Shop Name</th>
-                <th class="text-center">Status</th>
-                <th class="text-center">Remove</th>
+                <th class="text-center">Customer Name</th>
+                <th class="text-center">Email</th>
+                <th class="text-center">Address</th>
+                <th class="text-center">More Details</th>
               </tr>
             </thead>
            
             <tbody>
-              <tr scope="row" *ngFor="let seller of sellerArray">
-                <td>{{seller._id}}</td>
-                <td>{{seller.shopName}}</td>
+              <tr scope="row" *ngFor="let seller of customerArray">
+                <td>{{seller.first_name}}</td>
+                <td>{{seller.email}}</td>
+                <td>{{seller.address}}</td>
+              
                 <td>
                     <div class="custom-control custom-switch">
                     <input type="checkbox" class="custom-control-input">
@@ -29,11 +31,11 @@
                   </div> -->
                   <a class="waves-light text-info" data-toggle="modal" (click) = "openModal(seller.shopName, seller.name, seller.businessModel, seller.businessID, seller.address, seller.personalPhone, seller.officePhone, seller.email)"><u>More Details</u></a>
                 </td>
-                <td>
+                <!-- <td>
                   <span class="table-remove">
                     <button type="button" mdbBtn color="danger" (click)="deleteseller(seller._id)" rounded="true" size="sm" class="my-0">X</button>
                   </span>
-                </td>
+                </td> -->
   
               </tr>
             </tbody>

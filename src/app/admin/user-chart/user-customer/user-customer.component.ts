@@ -1,27 +1,30 @@
-import { SellerPopUpModalComponent } from './seller-pop-up-modal/seller-pop-up-modal.component';
-import { SellerDetails } from './../../../models/sellerDetails.models';
-import { SellerDetailsService } from './../../../services/seller-details.service';
-import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+
+import { CustomerPopUpModalComponent } from './customer-pop-up-modal/customer-pop-up-modal.component';
+import { CustomerDetails } from './../../../models/customerDetails';
+import { CustomerDetailsService } from './../../../services/customer-reg.service';
+import { Router } from '@angular/router';
 import { MDBModalService, MDBModalRef } from 'angular-bootstrap-md';
 
 @Component({
-  selector: 'app-user-seller',
-  templateUrl: './user-seller.component.html',
-  styleUrls: ['./user-seller.component.scss']
+  selector: 'app-user-customer',
+  templateUrl: './user-customer.component.html',
+  styleUrls: ['./user-customer.component.scss']
 })
-export class UserSellerComponent implements OnInit {
+export class UserCustomerComponent implements OnInit {
 
-  sellerArray: SellerDetails;
+  
+  customerArray: CustomerDetails;
   modalRef: MDBModalRef;
 
   constructor(private router: Router,
-              private modalService: MDBModalService,
-              private sellersService: SellerDetailsService) { 
-              }
+    private modalService: MDBModalService,
+    private customerService: CustomerDetailsService) { 
+    }
+
 
   openModal(shopName, name, businessModel, businessID, address, personalPhone, officePhone, email) {
-      this.modalRef = this.modalService.show(SellerPopUpModalComponent, { 
+      this.modalRef = this.modalService.show(CustomerPopUpModalComponent, { 
               backdrop: true,
               keyboard: true,
               focus: true,
@@ -42,23 +45,23 @@ export class UserSellerComponent implements OnInit {
           
 
   ngOnInit(){
-    this.sellersService.fetchSellerDetails().subscribe((seller)=>{
-      this.sellerArray = seller
-      console.log(this.sellerArray);
+    this.customerService.fetchCustomerDetails().subscribe((customer)=>{
+      this.customerArray = customer
+      console.log(this.customerArray);
     });
   }
 
-deleteseller(id2){
-  this.sellersService.deleteSeller(id2).subscribe(
-    ()=>{
-      this.router.navigate(['admin','userSellers']);
-      console.log(id2);
-    },
+// deleteseller(id2){
+//   this.sellersService.deleteSeller(id2).subscribe(
+//     ()=>{
+//       this.router.navigate(['admin','userSellers']);
+//       console.log(id2);
+//     },
 
-    err=>{
-      console.error(err)
-    }
-  )
-  }
+  //   err=>{
+  //     console.error(err)
+  //   }
+  // )
+  // }
 
 }

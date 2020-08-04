@@ -30,5 +30,9 @@ export class AdminHeaderComponent implements OnInit {
     this.router.navigate(['admin','userSellers']);
   }
 
+  customerClicks(){
+    this.router.navigate(['admin','userCustomers']);
+  }
+
 }
 

@@ -4,6 +4,8 @@ import { Observable, of } from "rxjs"
 import { map } from 'rxjs/operators'
 import { Router } from '@angular/router'
 
+import { CustomerDetails } from './../models/customerDetails';
+
 export interface UserDetails {
     _id: string,
     first_name: string,
@@ -40,6 +42,8 @@ export class CustomerDetailsService {
     private token: string
 
     constructor(private http: HttpClient, private router: Router) { }
+
+    private customerDetails: CustomerDetails[] = [];
 
     private traget = "http://localhost:3000/";
 
@@ -121,10 +125,13 @@ export class CustomerDetailsService {
     //details new
     // public detailes():Observable<any> {
     //     return this.http.get('/users/details',{
-    //         headers: { Authorization: '${this.getToken()}' }
+    //         headers: { Authorization: '${this.getToken()}' }   this.traget+'customersDetails'
     //     })
 
     // }
 
+    public fetchCustomerDetails(){
+        return this.http.get<CustomerDetails>( this.traget+'customers/alldata');
+      }
 
 }

@@ -18,6 +18,9 @@ import { LoginComponent } from './login/login.component';
 import { SigninComponent} from './signin/signin.component';
 import { SignupComponent} from './signup/signup.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
+import { UserCustomerComponent } from './admin/user-chart/user-customer/user-customer.component';
+
+// import { CustomerPopUpModalComponent } from './admin/user-chart/user-customer/customer-pop-up-modal/customer-pop-up-modal.component';
 
 
 const routes: Routes = [
@@ -43,6 +46,7 @@ const routes: Routes = [
     children: [
       { path: 'users', component: UserChartComponent },
       { path: 'userSellers', component: UserSellerComponent },
+      { path: 'userCustomers', component: UserCustomerComponent },
     ]
   },
   { path: 'signin', component: SigninComponent},
