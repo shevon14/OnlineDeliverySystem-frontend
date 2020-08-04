@@ -1,12 +1,11 @@
 <div class="container">
     <section class="text-center">
         <!--Section heading-->
-        <h2 class="h1 font-weight-bold h1 py-3">Shop Name</h2>
+        <h2 class="h1 font-weight-bold h1 py-3">{{shopName}}</h2>
         <!--Section description-->
         <p class="grey-text pb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam
             iure provident voluptate esse quasi,
             veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.</p>
-
     </section>
 
     <hr/>
@@ -22,58 +21,56 @@
 
     </section>
 
-    
     <mdb-card class="card pb-3 rounded w-100" >
         <mdb-card-body >
             <div>
-            <div class="container-fluid">
+                <!-- <div class="container-fluid">
+                    <div class="row">
+                        <h4 class="font-weight-bold">Electronic Devices</h4>
+                    </div>
+                    <hr class="bg-info">
+                </div> -->
+        
                 <div class="row">
-                    <h4 class="font-weight-bold">Electronic Devices</h4>
-                </div>
-                <hr class="bg-info">
-            </div>
-    
-            <div class="row">
-                <div class="col-md-3 pb-3" *ngFor="let card of cards">
-    
-                    <mdb-card class="card text-center pb-0 rounded hoverable ">
-                        <div class="view overlay">
-                            <img class="card-img-top img-responsive" style="height: 150px;" [src]="card.img">
-                            <a>
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
-                        </div>
-    
-                        <mdb-card-body>
-                            <mdb-card-text class="text-center" style="margin-top: 5px;">
-                                <!-- <h6 class="font-weight-bold">{{card.productName}}</h6>
-                                <h5>{{card.uniPrice}}</h5> -->
-                            </mdb-card-text>
-                        </mdb-card-body>
-    
-                        <mdb-card-footer>
-                            <span class="float-right">
-                                <a data-toggle="tooltip" data-placement="top" title="Edit" (click)="editProductsClicked()">
-                                    <mdb-icon fas icon="pen" class="grey-text ml-3"></mdb-icon>
+                    <div class="col-md-3 pb-3" *ngFor="let card of productArray">
+        
+                        <mdb-card class="card text-center pb-0 rounded hoverable ">
+                            <div class="view overlay">
+                                <img class="card-img-top img-responsive" style="height: 150px;" [src]=imgLink>
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
                                 </a>
-                                <a data-toggle="tooltip" data-placement="top" title="Delete" data-target="#basicExample"
-                                (click)="deleteCardButn(frame,card)"> 
-                                    <mdb-icon fas icon="trash" class="grey-text ml-3"></mdb-icon>
-                                </a>
-                            </span>
-                        </mdb-card-footer>
-    
-                    </mdb-card>
-    
-    
+                            </div>
+        
+                            <mdb-card-body>
+                                <mdb-card-text class="text-center" style="margin-top: 5px;">
+                                    <h6 class="font-weight-bold">{{card.productName}}</h6>
+                                    <h5>Rs.{{card.uniPrice}}/=</h5>
+                                </mdb-card-text>
+                            </mdb-card-body>
+        
+                            <mdb-card-footer>
+                                <span class="float-right">
+                                    <a data-toggle="tooltip" data-placement="top" title="Edit" (click)="editProductsClicked()">
+                                        <mdb-icon fas icon="pen" class="grey-text ml-3"></mdb-icon>
+                                    </a>
+                                    <a data-toggle="tooltip" data-placement="top" title="Delete" data-target="#basicExample"
+                                    (click)="deleteCardButn(frame,card)"> 
+                                        <mdb-icon fas icon="trash" class="grey-text ml-3"></mdb-icon>
+                                    </a>
+                                </span>
+                            </mdb-card-footer>
+                        </mdb-card>
+                    </div>
                 </div>
-            </div>
     
-            </div>
+             </div>
         </mdb-card-body>
-
     </mdb-card>
-<!-- </div> -->
+
+
+
+
 </div>
 
 

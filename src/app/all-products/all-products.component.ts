@@ -10,57 +10,41 @@ import { ProductDetails } from '../models/productDetails';
 })
 export class AllProductsComponent implements OnInit {
 
-  productArray: ProductDetails;
+  productArray: any;
+  // ProductDetails;
 
   constructor(private auth:productDetailsService,
      private router:Router
     ) { }
 
-  cards = [
-    {
-      title: 'Item number 1',
-      img: 'https://moderndiplomacy.eu/wp-content/uploads/2019/01/rolex-oyster.jpg'
-    },
-    {
-      title: 'Item number 2',
-      img: 'https://moderndiplomacy.eu/wp-content/uploads/2019/01/rolex-oyster.jpg'
-    },
-    {
-      title: 'Item number 3',
-      img: 'https://moderndiplomacy.eu/wp-content/uploads/2019/01/rolex-oyster.jpg'
-    },
-    {
-      title: 'Item number 4',
-      img: 'https://moderndiplomacy.eu/wp-content/uploads/2019/01/rolex-oyster.jpg'
-    },
-    {
-      title: 'Item number 5',
-      img: 'https://moderndiplomacy.eu/wp-content/uploads/2019/01/rolex-oyster.jpg'
-    },
-    {
-      title: 'Item number 6',
-      img: 'https://moderndiplomacy.eu/wp-content/uploads/2019/01/rolex-oyster.jpg'
-    },
-    {
-      title: 'Item number 7',
-      img: 'https://moderndiplomacy.eu/wp-content/uploads/2019/01/rolex-oyster.jpg'
-    },
-    {
-      title: 'Item number 8',
-      img: 'https://moderndiplomacy.eu/wp-content/uploads/2019/01/rolex-oyster.jpg'
-    },
-  ];
+    imgLink : string = "https://moderndiplomacy.eu/wp-content/uploads/2019/01/rolex-oyster.jpg";
+
+    electronicDeviceArray : any; electrocAccessoriesArray: any; womansFashionArray :any; mensFashionarray: any;
+    watchesArray :any; healthArray:any; homeKitchenArray:any; sportsarray: any;
 
 
   ngOnInit(): void {
     this.auth.productDetails().subscribe((list)=>{
       this.productArray = list
       console.log(this.productArray);
+      this.productsfilter();
     });
   }
+
+  productsfilter(){
+     this.electronicDeviceArray = this.productArray.filter(xx => xx.category === '1');
+     this.electrocAccessoriesArray = this.productArray.filter(xx => xx.category === '2');
+     this.womansFashionArray = this.productArray.filter(xx => xx.category === '3');
+     this.mensFashionarray = this.productArray.filter(xx => xx.category === '4');
+     this.watchesArray = this.productArray.filter(xx => xx.category === '5');
+     this.healthArray = this.productArray.filter(xx => xx.category === '6');
+     this.homeKitchenArray = this.productArray.filter(xx => xx.category === '7');
+     this.sportsarray = this.productArray.filter(xx => xx.category === '8');
+   }
 
   itemDetailsClicked(){
     this.router.navigate(['itemDetail']);
   }
+
 
 }
