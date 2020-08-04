@@ -39,4 +39,10 @@ export class HeaderComponent implements OnInit {
   SingupClicked(){
     this.router.navigate(['signup']);
   }
+
+  seeAllProducts(){
+    this.router.navigate(['products']);
+  }
+
+
 }

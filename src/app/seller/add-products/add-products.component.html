@@ -45,13 +45,13 @@
                 <label for="materialSubscriptionFormComapnyID">Available Quantity</label>
             </div>
 
-            <!-- Upload Image -->
-            <!-- <div class="mt-3">
+             <!-- Upload Image -->
+             <div class="mt-3">
                 <label>Upload an Image</label>
                 <div>
-                    <input mdbInput type='file' (change)="onImgUploadClick($event)" id="imgUpload">
+                    <input mdbInput type='file' id="imgUpload" (change)="onFileSelected($event)" name="image" autocomplete="off">
                 </div>
-            </div> -->
+            </div>
 
             <!-- Sign in button -->
             <button mdbBtn color="info" outline="true" rounded="true" block="true" class="z-depth-0 my-4 waves-effect"

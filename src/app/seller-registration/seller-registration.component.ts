@@ -90,6 +90,7 @@ export class SellerRegistrationComponent implements OnInit {
           data => {console.log(data)},
         err => console.log(err
       ));
+      this.router.navigate(['myStore']);
     }else{
       console.log("Password does not match....")
     }

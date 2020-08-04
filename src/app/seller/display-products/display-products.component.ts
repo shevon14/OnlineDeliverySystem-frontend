@@ -17,8 +17,8 @@ export class DisplayProductsComponent implements OnInit {
   productrArray_field2: ProductDetails;
   popup_details:ProductDetails;
 
-  display_feild1=false
-  display_feild2=false
+  display_feild1=false;
+  display_feild2=false;
 
   ss:String;
 
@@ -53,34 +53,34 @@ export class DisplayProductsComponent implements OnInit {
 
     this.auth.productDetails().subscribe((list)=>{
       this.productrArray = list
-      console.log(this.productrArray.category);
+      console.log(this.productrArray);
     });
 
    
-    if(this.productrArray.category=="2"){
-      this.ss ="2";
-      this.display_feild2=true;
-      this.auth.productDetailsField(this.ss).subscribe((list2)=>{
-        this.productrArray_field2 = list2
-        console.log(this.productrArray_field2);
-      });
+    // if(this.productrArray.category=="2"){
+    //   this.ss ="2";
+    //   this.display_feild2=true;
+    //   this.auth.productDetailsField(this.ss).subscribe((list2)=>{
+    //     this.productrArray_field2 = list2
+    //     console.log(this.productrArray_field2);
+    //   });
 
-    }
+    // }
   }
 
   addnum(){
     
+  // if(this.productrArray.category=="1"){   
+  //   // this.ss ="1";
+  //   // this.display_feild1=true;
+  //   // this.auth.productDetailsField(this.ss).subscribe((list1)=>{
+  //   //   this.productrArray_field1 = list1
+  //     console.log("mm");
+  //   // });
 
-  if(this.productrArray.category=="1"){   
-    // this.ss ="1";
-    // this.display_feild1=true;
-    // this.auth.productDetailsField(this.ss).subscribe((list1)=>{
-    //   this.productrArray_field1 = list1
-      console.log("mm");
-    // });
+  // }
 
   }
-}
 
   addProductsClicked(){
     this.router.navigate(['seller','addProducts']);

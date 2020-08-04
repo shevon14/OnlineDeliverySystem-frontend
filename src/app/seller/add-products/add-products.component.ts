@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import{productDetailsService, addproduct} from'../../services/product.service';
 import{Router} from'@angular/router';
 import { last } from 'rxjs/operators';
+import { Observable } from "rxjs";
+import { map, finalize } from "rxjs/operators";
 
 @Component({
   selector: 'app-add-products',
@@ -9,6 +11,7 @@ import { last } from 'rxjs/operators';
   styleUrls: ['./add-products.component.scss']
 })
 export class AddProductsComponent implements OnInit {
+
   // export interface addproduct {
   //   _id: string,
   //   productName: string,
@@ -18,6 +21,10 @@ export class AddProductsComponent implements OnInit {
     
   //   }
 
+  selectedFile: File = null;
+  downloadURL: Observable<string>;
+
+  //saving data to db
   credentials:addproduct={
    _id: '',
     productName: '',
@@ -32,13 +39,13 @@ export class AddProductsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onImgUploadClick(event) { 
- 
+  //upload image
+  onFileSelected(event) {
+    
   }
 
   
   addtoDB(){
-
    this.auth.add(this.credentials).subscribe(
       ()=>{
         this.router.navigate(['seller'])

@@ -36,9 +36,9 @@ export interface removeproduct {
 
     private traget = "http://localhost:3000/";
 
-public add(product: addproduct): Observable<any> {
-console.log(product)
-const base = this.http.post(this.traget+'products/register', product)
+    public add(product: addproduct): Observable<any> {
+    console.log(product)
+    const base = this.http.post(this.traget+'products/register', product)
 
 // const request = base.pipe(
 //     // map((data: TokenResponse) => {
