@@ -12,18 +12,14 @@ import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
 })
 export class DisplayProductsComponent implements OnInit {
 
-  productrArray: ProductDetails;
-  productrArray_field1: ProductDetails;
-  productrArray_field2: ProductDetails;
+  productArray: ProductDetails;
   popup_details:ProductDetails;
 
-  display_feild1=false;
-  display_feild2=false;
-
-  ss:String;
-
+  shopName : string = "ABC Stores";
 
   constructor(private auth:productDetailsService, private router:Router) { }
+
+  imgLink : string = 'https://moderndiplomacy.eu/wp-content/uploads/2019/01/rolex-oyster.jpg';
 
   cards = [
     {
@@ -52,11 +48,11 @@ export class DisplayProductsComponent implements OnInit {
   ngOnInit(): void {
 
     this.auth.productDetails().subscribe((list)=>{
-      this.productrArray = list
-      console.log(this.productrArray);
+      this.productArray = list;
+      console.log(this.productArray);
     });
 
-   
+
     // if(this.productrArray.category=="2"){
     //   this.ss ="2";
     //   this.display_feild2=true;
@@ -69,7 +65,7 @@ export class DisplayProductsComponent implements OnInit {
   }
 
   addnum(){
-    
+
   // if(this.productrArray.category=="1"){   
   //   // this.ss ="1";
   //   // this.display_feild1=true;
@@ -115,5 +111,4 @@ export class DisplayProductsComponent implements OnInit {
   }
 
   
-
 }

@@ -21,10 +21,10 @@
     <mdb-carousel [isControls]="false" class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'"
       [animation]="'slide'">
       <mdb-carousel-item *ngFor="let item of slides; let i = index">
-        <div class="col-md-2 pb-2" *ngFor="let card of productrArray; let cardIndex = index">
+        <div class="col-md-2 pb-2" *ngFor="let card of productrArray">
           <mdb-card class="my-1 h-100">
             <div class="view overlay waves-light" mdbWavesEffect>
-              <mdb-card-img [src]="card.img" alt="Card image cap">
+              <mdb-card-img [src]="imgLink" alt="Card image cap">
               </mdb-card-img>
               <a>
                 <div class="mask rgba-white-slight"></div>
@@ -32,8 +32,8 @@
             </div>
             <!-- <mdb-card-body> -->
               <mdb-card-text class="text-center" style="margin-top: 5px;">
-                <h6 class="font-weight-bold">{{card.title}}</h6>
-                <h5>Rs.500/=</h5>
+                <h6 class="font-weight-bold">{{card.productName}}</h6>
+                <h5>Rs.{{card.uniPrice}}/=</h5>
               </mdb-card-text>
             <!-- </mdb-card-body> -->
             <mdb-card-footer>
