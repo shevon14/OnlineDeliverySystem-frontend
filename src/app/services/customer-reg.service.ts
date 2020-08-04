@@ -8,8 +8,8 @@ import { CustomerDetails } from './../models/customerDetails';
 
 export interface UserDetails {
     _id: string,
-    first_name: string,
-    last_name: string,
+    full_name: string,
+   // last_name: string,
     email: string,
     password: string,
     user_type: string,
@@ -23,8 +23,8 @@ interface TokenResponse {
 
 export interface TokenPayload {
     _id: string,
-    first_name: string,
-    last_name: string,
+    full_name: string,
+  //  last_name: string,
     email: string,
     address:string,
     password: string,

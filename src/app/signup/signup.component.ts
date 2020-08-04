@@ -12,8 +12,9 @@ export class SignupComponent implements OnInit {
 
   credentials:TokenPayload={
     _id:'',
-    first_name:'',
-    last_name:'',
+    full_name:'',
+    //contact:'',
+   // postalcode: '',
     email:'',
     address:'',
     password:'',

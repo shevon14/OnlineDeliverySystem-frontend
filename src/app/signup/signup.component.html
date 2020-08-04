@@ -28,38 +28,43 @@
             </div>
         </div>
 
-        <div class="col-md-4 col-xl-4 offset-xl-1">
+        <div class="col-md-4 col-xl-4 offset-xl-1 pt-3">
             <!--Form-->
             
-            <mdb-card class="wow fadeInRight form-deco " data-wow-delay="0.3s">
+            <mdb-card class="wow fadeInRight form-deco" data-wow-delay="0.3s">
                 <mdb-card-body class="form-body">
                     <!--Header-->
                     <div>
-                        <div>
+                        <!-- <div>
                             <h3 class="card-header info-color white-text text-center py-4">
                                 <mdb-icon fas icon="register" class="text-black"></mdb-icon> Register
                             </h3>
                             <hr class="hr-light">
-                        </div>
+                        </div> -->
 
                         <!--Body-->
                         <form (submit)="c_register()">
                         <div class="md-form">
-                            <input type="text" name="materialContactForFirstName" class="form-control" [(ngModel)]="credentials.first_name" mdbInput>
-                            <label for="materialContactForFirstName" >First Name</label>
+                            <input type="text" name="materialContactForFirstName" class="form-control" [(ngModel)]="credentials.full_name" mdbInput>
+                            <label for="materialContactForFirstName" >Full Name</label>
                           </div>
 
                         <div class="md-form">
-                            <input type="text" name="materialContactForLastName" class="form-control" [(ngModel)]="credentials.last_name" mdbInput>
-                            <label for="materialContactForLastName" >Last name</label>
-                        </div>
-                        <div class="md-form">
-                            <input type="text" name="materialContactForEmail" class="form-control" [(ngModel)]="credentials.email" mdbInput>
-                            <label for="materialContactForEmail" >Your email</label>
+                            <input type="text" name="materialContactForContact" class="form-control" [(ngModel)]="credentials.conatct" mdbInput>
+                            <label for="materialContactForContact" >Contact</label>
                         </div>
                         <div class="md-form">
                             <input type="text" name="materialContactForAddress" class="form-control" [(ngModel)]="credentials.address" mdbInput>
                             <label for="materialContactForAddress"  >Your Address</label>
+                        </div>
+                        
+                        <div class="md-form">
+                            <input type="text" name="materialContactForPostalCode" class="form-control"  [(ngModel)]="credentials.postalcode" mdbInput>
+                            <label for="materialContactForPostalCode"  >Postal Code</label>
+                        </div>
+                        <div class="md-form">
+                            <input type="text" name="materialContactForEmail" class="form-control" [(ngModel)]="credentials.email" mdbInput>
+                            <label for="materialContactForEmail" >Your email</label>
                         </div>
                         <div class="md-form">
                             <input type="text" name="materialContactForPassword" class="form-control" [(ngModel)]="credentials.password" mdbInput>

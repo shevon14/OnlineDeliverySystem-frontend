@@ -13,8 +13,8 @@ import { last } from 'rxjs/operators';
 export class LoginComponent implements OnInit {
   credentials:TokenPayload={
     _id:'',
-    first_name:'',
-    last_name:'',
+    full_name:'',
+   // last_name:'',
     email:'',
     address:'',
     password:'',

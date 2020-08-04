@@ -44,5 +44,10 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['products']);
   }
 
+  ////seller sign out ekata
+  SignOutClicked(){
+    
+  }
+
 
 }
