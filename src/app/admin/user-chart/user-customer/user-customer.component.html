@@ -16,9 +16,11 @@
            
             <tbody>
               <tr scope="row" *ngFor="let customer of customerArray">
-                <td>{{customer.first_name}}</td>
+                <td>{{customer.full_name}}</td>
                 <td>{{customer.email}}</td>
                 <td>{{customer.address}}</td>
+
+                <!-- full_name: full_name,conatct:conatct, email: email,address:address,password: password,user_type: user_typ -->
               
                 <td>
                     <div class="custom-control custom-switch">
@@ -29,7 +31,8 @@
                     <input type="checkbox" class="custom-control-input" id="shopStatus+{{user.id}}">
                     <label class="custom-control-label" for="shopStatus+{{user.id}}">ON</label>
                   </div> -->
-                  <a class="waves-light text-info" data-toggle="modal" (click) = "openModal(customer.first_name,customer.last_name,customer.address,customer.email)"><u>More Details</u></a>
+                  <a class="waves-light text-info" data-toggle="modal" (click) = "openModal(customer.full_name,customer.conatct, customer.email,customer.address,customer.password,customer.user_type,
+                  customer.date)"><u>More Details</u></a>
                 </td>
                 <!-- <td>
                   <span class="table-remove">

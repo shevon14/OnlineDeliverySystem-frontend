@@ -9,8 +9,11 @@ import { CustomerDetails } from './../models/customerDetails';
 export interface UserDetails {
     _id: string,
     full_name: string,
+    conatct:string,
    // last_name: string,
     email: string,
+    address:string,
+    postalcode:string,
     password: string,
     user_type: string,
     exp: number,
@@ -24,9 +27,11 @@ interface TokenResponse {
 export interface TokenPayload {
     _id: string,
     full_name: string,
+    conatct:string,
   //  last_name: string,
     email: string,
     address:string,
+    postalcode:string,
     password: string,
     user_type: string
 

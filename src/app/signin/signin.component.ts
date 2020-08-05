@@ -10,13 +10,15 @@ import{CustomerDetailsService, TokenPayload} from'../services/customer-reg.servi
 export class SigninComponent implements OnInit {
 
   credentials:TokenPayload={
-    _id:'',
-    full_name:'',
-   // last_name:'',
-    email:'',
+    _id: '',
+    full_name: '',
+    conatct:'',
+  //  last_name: '',
+    email: '',
     address:'',
-    password:'',
-    user_type:''
+    postalcode:'',
+    password: '',
+    user_type: ''
   }
 
   constructor(public auth:CustomerDetailsService,private router:Router) { }

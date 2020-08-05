@@ -13,10 +13,11 @@ export class SignupComponent implements OnInit {
   credentials:TokenPayload={
     _id:'',
     full_name:'',
-    //contact:'',
+    conatct:'',
    // postalcode: '',
     email:'',
     address:'',
+    postalcode:'',
     password:'',
     user_type:'customer'
   }
@@ -31,6 +32,7 @@ export class SignupComponent implements OnInit {
     this.auth.register(this.credentials).subscribe(
       ()=>{
        this.router.navigateByUrl('signin')
+       console.log(this.credentials)
       },
  
       err=>{

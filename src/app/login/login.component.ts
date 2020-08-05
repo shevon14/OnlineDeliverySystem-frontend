@@ -11,15 +11,15 @@ import { last } from 'rxjs/operators';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  credentials:TokenPayload={
-    _id:'',
-    full_name:'',
-   // last_name:'',
-    email:'',
-    address:'',
-    password:'',
-    user_type:'cc'
-  }
+  // credentials:TokenPayload={
+  //   _id:'',
+  //   full_name:'',
+  //  // last_name:'',
+  //   email:'',
+  //   address:'',
+  //   password:'',
+  //   user_type:'cc'
+  // }
 
   constructor(public auth:CustomerDetailsService,private router:Router) { 
 
@@ -31,28 +31,28 @@ export class LoginComponent implements OnInit {
   }
 
   S_register(){
-    this.auth.register(this.credentials).subscribe(
-      ()=>{
-       this.router.navigateByUrl('/')
-      },
+  //   this.auth.register(this.credentials).subscribe(
+  //     ()=>{
+  //      this.router.navigateByUrl('/')
+  //     },
  
-      err=>{
-        console.error(err)
-      }
-     )
+  //     err=>{
+  //       console.error(err)
+  //     }
+  //    )
   }
 
   login(){
   
-    this.auth.login(this.credentials).subscribe(
-     ()=>{
-      this.router.navigateByUrl('/'+this.auth.getUserDetails().user_type)
-     },
+  //   this.auth.login(this.credentials).subscribe(
+  //    ()=>{
+  //     this.router.navigateByUrl('/'+this.auth.getUserDetails().user_type)
+  //    },
 
-     err=>{
-       console.error(err)
-     }
-    )
+  //    err=>{
+  //      console.error(err)
+  //    }
+  //   )
   }
 
 }
