@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { productDetailsService ,removeproduct} from 'src/app/services/product.service';
 import { ProductDetails } from 'src/app/models/productDetails';
 import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
+import { SellerDetailsService} from './../../services/seller-details.service';
 // import{productDetailsService, addproduct} from'../../services/product.service';
 
 @Component({
@@ -17,7 +18,8 @@ export class DisplayProductsComponent implements OnInit {
 
   shopName : string = "ABC Stores";
 
-  constructor(private auth:productDetailsService, private router:Router) { }
+  constructor(private auth:productDetailsService,
+    private authSeller:SellerDetailsService, private router:Router) { }
 
   imgLink : string = 'https://moderndiplomacy.eu/wp-content/uploads/2019/01/rolex-oyster.jpg';
 
@@ -47,10 +49,15 @@ export class DisplayProductsComponent implements OnInit {
 
   ngOnInit(): void {
 
+    // console.log("aaa"+this.authSeller.getUserDetails().shopName);
+
     this.auth.productDetails().subscribe((list)=>{
       this.productArray = list;
       console.log(this.productArray);
     });
+
+    // aaaa:this.authSeller.getUserDetails().shopName;
+    
 
 
     // if(this.productrArray.category=="2"){

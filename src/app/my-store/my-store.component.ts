@@ -1,5 +1,6 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { SellerDetailsService,TokenPayload } from './../services/seller-details.service';
 
 @Component({
   selector: 'app-my-store',
@@ -8,13 +9,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyStoreComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  credentials:TokenPayload={
+    businessModel:'',
+    name:'',
+    shopName:'',
+    businessID:'', 
+    address:'', 
+    personalPhone: '',
+    officePhone:  '', 
+    email: '', 
+    password: ''
+  }
+
+
+  constructor(private router: Router,
+    private sellerDetailsService: SellerDetailsService) { }
 
   ngOnInit(): void {
   }
 
   LogInClicked(){
-    this.router.navigate(['seller']);
+
+    this.sellerDetailsService.login(this.credentials).subscribe(
+      (res)=>{
+        this.router.navigate(['seller']);
+       console.log(this.credentials)
+       console.log(res)
+      },
+ 
+      err=>{
+        console.error(err)
+      }
+     )
+    
   }
 
 }

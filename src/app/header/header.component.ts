@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import{CustomerDetailsService, TokenPayload} from'../services/customer-reg.service';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router,public auth:CustomerDetailsService,) {}
 
   ngOnInit(): void {
   }
@@ -46,7 +47,9 @@ export class HeaderComponent implements OnInit {
 
   ////seller sign out ekata
   SignOutClicked(){
-    
+    this.auth.logout();
+    this.router.navigate(['']);
+  
   }
 
 

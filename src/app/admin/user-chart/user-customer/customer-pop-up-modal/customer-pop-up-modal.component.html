@@ -4,16 +4,18 @@
         <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
             <span aria-hidden="true">×</span>
         </button>
-        <h3 class="modal-title w-100 font-weight-bold" id="myModalLabel">{{content.first_name}}</h3>
+        <h3 class="modal-title w-100 font-weight-bold" id="myModalLabel">Customer Details</h3>
     </div>
 
     <div class="modal-body">
         <div class="col-md-12  list-group-item clearfix">
             <div class="float-left">
-                <h5>First Name : {{content.first_name}}</h5>
-                <h5>Last Name : {{content.last_name}}</h5>
-                <h5>Email: {{content.email}}</h5>
+                <h5>Full Name : {{content.full_name}}</h5>
                 <h5>Address : {{content.address}}</h5>
+                <h5>Contact No : {{content.contact}}</h5>
+                <h5>Email : {{content.email}}</h5>
+                <h5>Registered date : {{content.date}}</h5>
+                
               
                 <!-- <h5>Personal Contact : {{content.personalPhone}}</h5>
                 <h5>Office contact : {{content.officePhone}}</h5>

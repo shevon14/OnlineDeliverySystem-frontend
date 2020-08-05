@@ -13,7 +13,6 @@ export class SigninComponent implements OnInit {
     _id: '',
     full_name: '',
     conatct:'',
-  //  last_name: '',
     email: '',
     address:'',
     postalcode:'',
@@ -32,9 +31,11 @@ export class SigninComponent implements OnInit {
 
   Login(){
     this.auth.login(this.credentials).subscribe(
-      ()=>{
-      //  this.router.navigate(['/'])
+      (res)=>{
+        this.router.navigateByUrl('/'+this.auth.getUserDetails().user_type)
+      //  this.router.navigate(['admin'])
        console.log(this.credentials)
+       console.log(res)
       },
  
       err=>{
@@ -43,5 +44,12 @@ export class SigninComponent implements OnInit {
      )
   }
 
+  
+    //   data => {console.log(data)},
+    //   err => console.log(err
+    // ));
+    // this.router.navigate(['admin']);
+     
+  // }
 
 }

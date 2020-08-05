@@ -17,13 +17,13 @@
   
         <!-- E-mail -->
         <div class="md-form">
-          <input type="email" id="materialSubscriptionFormEmail" class="form-control" mdbInput>
+          <input type="email" id="materialSubscriptionFormEmail" name="materialSubscriptionFormEmail" [(ngModel)]="credentials.email" class="form-control" mdbInput>
           <label for="materialSubscriptionFormEmail">E-mail</label>
         </div>
 
         <!-- Password -->
         <div class="md-form">
-            <input type="email" id="materialSubscriptionFormEmail" class="form-control" mdbInput>
+            <input type="password" id="materialSubscriptionFormPassword" name="materialSubscriptionFormPassword"[(ngModel)]="credentials.password" class="form-control" mdbInput>
             <label for="materialSubscriptionFormEmail">Password</label>
           </div>
   

@@ -111,6 +111,7 @@ export class CustomerDetailsService {
                 return data
             })
         )
+        console.log("customer login");
         return request
     }
 
