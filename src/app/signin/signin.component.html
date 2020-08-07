@@ -2,21 +2,21 @@
  -->
 
  <div class="view"
-    style="background-color:#b2dfdb; background-repeat: no-repeat; background-size: cover; background-position: center center; height:590px ">
+    style="background-image: url('https://soft-garage.com/assets/images/bannar/g5.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center; height:540px ">
     
         <div class="container"> </div>
     
-    <div class="col-xl-4 offset-xl-4">
-        <div class="text-center">
+    <div class="col-xl-4 offset-xl-4 pt-5">
+        <!-- <div class="text-center">
             <h3><strong>Sign in here to experience the best service!</strong></h3>
-        </div>
+        </div> -->
         <div class="example z-depth-2">
         <mdb-card class="wow fadeInRight form-deco" data-wow-delay="0.3s" >
             <mdb-card-body class="form-body">
                 <!--Header-->
                 <div>
                     <div>
-                        <h3 class="card-header info-color white-text text-center py-4">
+                        <h3 class="card-header info-color white-text text-center py-1">
                         <mdb-icon fas icon="user" class="text-black"></mdb-icon> Sign in:
                         </h3>
                     <hr class="hr-light">
@@ -24,21 +24,21 @@
                     <!--Body-->
                     <div class="md-form">
                         <input type="email" id="your_email" name="your_email" class="text-black form-control" [(ngModel)]="credentials.email" mdbInput>
-                        <label for="your_email" class="text-black"> <mdb-icon fas icon="user" class="text-black"></mdb-icon>Your email</label>
+                        <label for="your_email" class="text-black"> <mdb-icon fas icon="user" class="text-black"></mdb-icon> Your email</label>
                     </div>
                     <div class="md-form">
                         <input type="password" id="your_password" name="your_password" class="text-black form-control" [(ngModel)]="credentials.password" mdbInput>
-                        <label for="your_password" class="text-black"> <mdb-icon fas icon="lock" class="text-black"></mdb-icon>Your password</label>
+                        <label for="your_password" class="text-black"> <mdb-icon fas icon="lock" class="text-black"></mdb-icon> Your password</label>
                     </div>
                     <div class="text-center">
                         <mdb-checkbox [default]="true">Remember me</mdb-checkbox>
                       </div>
-                    <div class="text-center mt-4">
-                        <button mdbBtn color="blue" (click)="Login()" mdbWavesEffect>Log In</button>
+                    <div class="text-center mt-2">
+                        <button mdbBtn color="info" (click)="Login()" mdbWavesEffect>Log In</button>
                         <hr class="hr-light mb-3 mt-4">
-                        <h4>Not a member?
+                        <h5>Don't have an account?
                             <a (click)="SignupClicked()">Sign Up</a>
-                        </h4>
+                        </h5>
                     </div>
                         
                     </div>

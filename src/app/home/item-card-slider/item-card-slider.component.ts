@@ -34,7 +34,7 @@ export class ItemCardSliderComponent implements OnInit {
       this.slides = this.chunk(this.productrArray, 6);
     });
     
-   // this.slides = this.chunk(this.productrArray, 6);
+    this.slides = this.chunk(this.productrArray, 6);
   }
 
   seeAllProducts(){

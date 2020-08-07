@@ -51,7 +51,7 @@ export class UserSellerComponent implements OnInit {
 deleteseller(id2){
   this.sellersService.deleteSeller(id2).subscribe(
     ()=>{
-      this.router.navigate(['admin','userSellers'])
+      window.location.reload();
       console.log(id2);
     },
 

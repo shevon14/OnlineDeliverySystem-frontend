@@ -104,7 +104,8 @@ export class DisplayProductsComponent implements OnInit {
   deleteProduct(code){
     this.auth.deleteProduct(code).subscribe(
       ()=>{
-       this.router.navigate(['/'])
+       //this.router.navigate(['seller','/'])
+       window.location.reload();
       }, 
       err=>{
         console.error(err)

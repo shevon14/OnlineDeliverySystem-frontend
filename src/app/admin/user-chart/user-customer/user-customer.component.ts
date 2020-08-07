@@ -23,7 +23,7 @@ export class UserCustomerComponent implements OnInit {
     }
 
 
-  openModal(full_name: String,conatct:String, email: string,address:string,password: String,user_type: String,
+  openModal(full_name: String, contact:String, email: string,address:string,password: String,user_type: String,
     date: String) {
       this.modalRef = this.modalService.show(CustomerPopUpModalComponent, { 
               backdrop: true,
@@ -37,7 +37,7 @@ export class UserCustomerComponent implements OnInit {
               animated: true,
               data: {
                   heading: 'Customer Details',
-                  content: { heading: 'Content heading', description: 'Content description', full_name: full_name,conatct:conatct, email: email,address:address,password: password,user_type: user_type,
+                  content: { heading: 'Content heading', description: 'Content description', full_name: full_name,contact:contact, email: email,address:address,password: password,user_type: user_type,
                   date: date}
               } });
             
