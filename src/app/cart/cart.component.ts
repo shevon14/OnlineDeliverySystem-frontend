@@ -22,7 +22,7 @@ export class CartComponent implements OnInit {
   }
 
   itemrawclicked(){
-    this.router.navigate(['itemDetail']);
+   // this.router.navigate(['itemDetail']);
   }
 
 }
