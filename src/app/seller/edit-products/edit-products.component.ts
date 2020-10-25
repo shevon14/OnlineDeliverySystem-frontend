@@ -15,4 +15,16 @@ export class EditProductsComponent implements OnInit {
  
   }
 
+  addtoDB(){
+    // this.auth.add(this.credentials).subscribe(
+    //    ()=>{
+    //      this.router.navigate(['seller'])
+    //    },
+  
+    //    err=>{
+    //      console.error(err)
+    //    }
+    //   )
+    }
+
 }
