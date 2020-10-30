@@ -1,3 +1,4 @@
+import { AdminDashBoardComponent } from './admin/admin-dash-board/admin-dash-board.component';
 import { OrderHistoryComponent } from './order-history/order-history.component';
 import { ItemDetailsForCartComponent } from './item-details-for-cart/item-details-for-cart.component';
 import { CartComponent } from './cart/cart.component';
@@ -47,6 +48,7 @@ const routes: Routes = [
       { path: 'users', component: UserChartComponent },
       { path: 'userSellers', component: UserSellerComponent },
       { path: 'userCustomers', component: UserCustomerComponent },
+      { path: 'dashboard', component: AdminDashBoardComponent },
     ]
   },
   { path: 'signin', component: SigninComponent},

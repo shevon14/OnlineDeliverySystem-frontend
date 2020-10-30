@@ -14,7 +14,7 @@ export class ItemCardSliderComponent implements OnInit {
 
   productrArray: ProductDetails;
 
-  imgLink : string = 'https://moderndiplomacy.eu/wp-content/uploads/2019/01/rolex-oyster.jpg';
+  //imgLink : string = 'https://moderndiplomacy.eu/wp-content/uploads/2019/01/rolex-oyster.jpg';
 
   
   slides: any = [[]];

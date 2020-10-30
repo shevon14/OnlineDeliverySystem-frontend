@@ -53,9 +53,9 @@ return base
 }
 
 
-public productDetails(){
+public productDetails(){ 
     return this.http.get<ProductDetails>(this.traget+'products/list');
-  }
+  } 
 
 public deleteProduct(code){
     return this.http.delete<ProductDetails>(this.traget+'products/'+code);
