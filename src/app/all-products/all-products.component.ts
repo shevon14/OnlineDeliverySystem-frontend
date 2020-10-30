@@ -17,8 +17,6 @@ export class AllProductsComponent implements OnInit {
      private router:Router
     ) { }
 
-    imgLink : string = "https://moderndiplomacy.eu/wp-content/uploads/2019/01/rolex-oyster.jpg";
-
     electronicDeviceArray : any; electrocAccessoriesArray: any; womansFashionArray :any; mensFashionarray: any;
     watchesArray :any; healthArray:any; homeKitchenArray:any; sportsarray: any;
 

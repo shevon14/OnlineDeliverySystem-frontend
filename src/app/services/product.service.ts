@@ -13,6 +13,7 @@ productName: string,
 uniPrice: string,
 availableQuantity: string,
 category: string,
+imgName : String
 // shopename:string
 
 }
