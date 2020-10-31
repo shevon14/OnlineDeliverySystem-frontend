@@ -8,9 +8,9 @@
         iure provident voluptate esse quasi,
         veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.</p>
 </section>
-
+<div *ngIf="!states" >
 <!-- Electronic Devices -->
-<mdb-card class="card pb-3 rounded w-100">
+<mdb-card  class="card pb-3 rounded w-100">
     <mdb-card-body>
 
         <div class="container-fluid">
@@ -24,7 +24,7 @@
             <div class="col-md-2 pb-3" *ngFor="let card of electronicDeviceArray">
 
                 <mdb-card class="card text-center pb-0 rounded hoverable ">
-                    <div class="view overlay"  (click)="itemDetailsClicked()">
+                    <div class="view overlay"  (click)="itemDetailsClicked(card)">
                         <img class="card-img-top img-responsive" style="height: 150px;" [src]= "card.imgName" >
                         <a>
                             <div class="mask rgba-white-slight"></div>
@@ -67,7 +67,7 @@
             <div class="col-md-2 pb-3" *ngFor="let card of electrocAccessoriesArray">
 
                 <mdb-card class="card text-center pb-0 rounded hoverable ">
-                    <div class="view overlay"  (click)="itemDetailsClicked()">
+                    <div class="view overlay"  (click)="itemDetailsClicked(card)">
                         <img class="card-img-top img-responsive" style="height: 150px;" [src]="card.imgName">
                         <a>
                             <div class="mask rgba-white-slight"></div>
@@ -110,7 +110,7 @@
             <div class="col-md-2 pb-3" *ngFor="let card of womansFashionArray">
 
                 <mdb-card class="card text-center pb-0 rounded hoverable ">
-                    <div class="view overlay"  (click)="itemDetailsClicked()">
+                    <div class="view overlay"  (click)="itemDetailsClicked(card)">
                         <img class="card-img-top img-responsive" style="height: 150px;" [src]="card.imgName">
                         <a>
                             <div class="mask rgba-white-slight"></div>
@@ -153,7 +153,7 @@
             <div class="col-md-2 pb-3" *ngFor="let card of mensFashionarray">
 
                 <mdb-card class="card text-center pb-0 rounded hoverable ">
-                    <div class="view overlay"  (click)="itemDetailsClicked()">
+                    <div class="view overlay"  (click)="itemDetailsClicked(card)">
                         <img class="card-img-top img-responsive" style="height: 150px;" [src]="card.imgName">
                         <a>
                             <div class="mask rgba-white-slight"></div>
@@ -196,7 +196,7 @@
             <div class="col-md-2 pb-3" *ngFor="let card of watchesArray">
 
                 <mdb-card class="card text-center pb-0 rounded hoverable ">
-                    <div class="view overlay"  (click)="itemDetailsClicked()">
+                    <div class="view overlay"  (click)="itemDetailsClicked(card)">
                         <img class="card-img-top img-responsive" style="height: 150px;" [src]="card.imgName">
                         <a>
                             <div class="mask rgba-white-slight"></div>
@@ -239,7 +239,7 @@
             <div class="col-md-2 pb-3" *ngFor="let card of healthArray">
 
                 <mdb-card class="card text-center pb-0 rounded hoverable ">
-                    <div class="view overlay"  (click)="itemDetailsClicked()">
+                    <div class="view overlay"  (click)="itemDetailsClicked(card)">
                         <img class="card-img-top img-responsive" style="height: 150px;" [src]="card.imgName">
                         <a>
                             <div class="mask rgba-white-slight"></div>
@@ -282,7 +282,7 @@
             <div class="col-md-2 pb-3" *ngFor="let card of homeKitchenArray">
 
                 <mdb-card class="card text-center pb-0 rounded hoverable ">
-                    <div class="view overlay"  (click)="itemDetailsClicked()">
+                    <div class="view overlay"  (click)="itemDetailsClicked(card)">
                         <img class="card-img-top img-responsive" style="height: 150px;" [src]="card.imgName">
                         <a>
                             <div class="mask rgba-white-slight"></div>
@@ -325,7 +325,7 @@
             <div class="col-md-2 pb-3" *ngFor="let card of sportsarray">
 
                 <mdb-card class="card text-center pb-0 rounded hoverable ">
-                    <div class="view overlay"  (click)="itemDetailsClicked()">
+                    <div class="view overlay"  (click)="itemDetailsClicked(card)">
                         <img class="card-img-top img-responsive" style="height: 150px;" [src]="card.imgName">
                         <a>
                             <div class="mask rgba-white-slight"></div>
@@ -352,4 +352,11 @@
 
     </mdb-card-body>
 </mdb-card>
+</div>
+
+<app-item-details-for-cart *ngIf="selectedProduct" [property]="selectedProduct">
+    
+</app-item-details-for-cart>
+
+
 

@@ -1,4 +1,4 @@
-<div class="container">
+<div *ngIf="_property" class="container">
     <div class="row">
         <div class="col-lg-8 md-8 my-5">
             <div class="row">
@@ -8,7 +8,7 @@
                         <!--Card image-->
                         <div class="view view-cascade overlay waves-light" mdbWavesEffect>
                             <mdb-card-img
-                                src="https://img.xshoppy.shop/uploader/6e64a423bcf3d6a28a37cfad9ff79d5f3b8e8ce0.jpg"
+                                src={{_property.imgName}}
                                 alt="">
                             </mdb-card-img>
                             <a>
@@ -23,7 +23,7 @@
                 <div class="col-md-4">
                         <!--Category & Title-->
                         <mdb-card-title>
-                            <h4 class="card-title"><strong>Product name</strong></h4>
+                            <h4 class="card-title"><strong>{{_property._id}}</strong></h4>
                         </mdb-card-title>
                         <!--Description-->
                         <mdb-card-text class="card-text">A small description about the product which provided by seller
@@ -82,3 +82,33 @@
     </div>
 
 </div>
+
+
+<!-- 
+<div mdb-card class="modal-content">
+
+    <div class="modal-header bg-info text-center" style="margin-top: 5px;">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">×</span>
+        </button>
+        <h3 class="modal-title w-100 font-weight-bold" id="myModalLabel">Customer Details</h3>
+    </div>
+
+    <div class="modal-body">
+        <div class="col-md-12  list-group-item clearfix">
+            <div class="float-left">
+                <h5>Full Name : {{content.full_name}}</h5>
+                <h5>Address : {{content.address}}</h5>
+                <h5>Contact No : {{content.contact}}</h5>
+                <h5>Email : {{content.email}}</h5>
+                <h5>Registered date : {{content.date}}</h5>
+                
+              
+                <h5>Personal Contact : {{content.personalPhone}}</h5>
+                <h5>Office contact : {{content.officePhone}}</h5>
+                <h5>Email: {{content.email}}</h5> -->
+           <!-- </div>
+        </div>
+    </div>
+
+</div> -->
