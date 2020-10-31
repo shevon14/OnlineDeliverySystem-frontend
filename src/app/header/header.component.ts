@@ -46,8 +46,9 @@ export class HeaderComponent implements OnInit {
   }
 
   ////seller sign out ekata
-  SignOutClicked(){
+  SignOutClicked(frame){
     this.auth.logout();
+    frame.show()
     this.router.navigate(['']);
   
   }
