@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { aProductDetails } from '../models/aProductData';
 
 @Component({
   selector: 'app-item-details-for-cart',
@@ -6,12 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./item-details-for-cart.component.scss']
 })
 export class ItemDetailsForCartComponent implements OnInit {
+  _property:aProductDetails
 
   constructor() { }
 
-  ngOnInit(): void {
+  @Input() set property (value:aProductDetails){
+    this._property = value;
+    console.log(this._property)
   }
 
+ 
+  ngOnInit(): void {
+    
+  }
+
+  
   CartClicked(){
     
   }
