@@ -107,6 +107,7 @@ export class CustomerDetailsService {
             map((data: TokenResponse) => {
                 if (data.token) {
                     this.saveToken(data.token)
+                    this.router.navigate([''])
                 }
                 return data
             })

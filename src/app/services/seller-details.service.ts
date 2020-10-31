@@ -161,11 +161,14 @@ export class SellerDetailsService {
         map((data: TokenResponse) => {
             if (data.token) {
                 this.saveToken(data.token)
+                
+    this.router.navigate(['seller']);
             }
             return data
         })
     )
     console.log("SELLER LOGIN");
+    
     return request
 }
 }

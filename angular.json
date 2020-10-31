@@ -134,6 +134,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "online-delivery-system-frotend"
+    }
+  },
+  "defaultProject": "online-delivery-system-frotend",
+  "cli": {
+    "analytics": false
+  }
 }

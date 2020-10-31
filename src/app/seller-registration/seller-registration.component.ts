@@ -201,25 +201,6 @@ export class SellerRegistrationComponent implements OnInit {
     let password = this.sellerForm.value.password;
     let repassword = this.sellerForm.value.repassword;
     if (password === repassword){
-  // this.sellerDetailsService.addNewSeller (
-  //   this.signupFormModalBusinessModel.value,
-  //   this.signupFormModalName.value,
-  //  this.signupFormModalShopName.value,
-  //   this.signupFormModalBusinessID.value, 
-  //   this.signupFormModalAddress.value, 
-  //    this.signupFormModalPersonalPhone.value,
-  //    this.signupFormModalOfficePhone.value, 
-  //    this.signupFormModalEmail.value, 
-  //    this.signupFormModalPassword.value,
-  //    this.signupFormModalPassword.value
-  // ).subscribe(
-  //         data => {console.log(data)},
-  //       err => console.log(err
-  //     ));
-  //     this.router.navigate(['myStore']);
-  //   }else{
-  //     console.log("Password does not match....")
-  //   }
 
   console.log(this.credentials)
   // }

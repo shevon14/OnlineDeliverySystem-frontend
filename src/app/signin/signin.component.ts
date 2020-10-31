@@ -33,7 +33,7 @@ export class SigninComponent implements OnInit {
     this.auth.login(this.credentials).subscribe(
       (res)=>{
        // this.router.navigateByUrl('/'+this.auth.getUserDetails().user_type)
-        this.router.navigate([''])
+       
        console.log(this.credentials)
        console.log(res)
       },

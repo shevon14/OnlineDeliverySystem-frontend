@@ -32,13 +32,13 @@ export class MyStoreComponent implements OnInit {
 
     this.sellerDetailsService.login(this.credentials).subscribe(
       (res)=>{
-        this.router.navigate(['seller']);
        console.log(this.credentials)
-       console.log(res)
+        console.log(res)
+       
       },
  
       err=>{
-        console.error(err)
+        this.router.navigate(['']);
       }
      )
     
