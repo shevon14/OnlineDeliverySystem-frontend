@@ -44,5 +44,9 @@ export class AllProductsComponent implements OnInit {
     this.router.navigate(['itemDetail']);
   }
 
+  shopViewClicked(){
+    this.router.navigate(['productsByShop']);
+  }
+
 
 }

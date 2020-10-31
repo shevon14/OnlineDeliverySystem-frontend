@@ -1,0 +1,55 @@
+<div class="container">
+    <section class="text-center">
+        <!--Section heading-->
+        <h2 class="h1 font-weight-bold h1 py-3">{{shopName}}</h2>
+        <!--Section description-->
+        <p class="grey-text pb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam
+            iure provident voluptate esse quasi,
+            veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.</p>
+    </section>
+    <hr/>
+
+    <section class="text-left">
+        <!--Section heading-->
+        <h4 class="h4 font-weight-bold h1 py-3">All Products</h4>
+    </section>
+
+    <mdb-card class="card pb-3 rounded w-100" >
+        <mdb-card-body >
+            <div>
+                <div class="row">
+                    <div class="col-md-3 pb-3" *ngFor="let card of productArray">
+        
+                        <mdb-card class="card text-center pb-0 rounded hoverable ">
+                            <div class="view overlay"  (click)="itemDetailsClicked()">
+                                <img class="card-img-top img-responsive" style="height: 150px;" [src]= "card.imgName" >
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+        
+                            <mdb-card-body>
+                                <mdb-card-text class="text-center" style="margin-top: 5px;">
+                                    <h6 class="font-weight-bold">{{card.productName}}</h6>
+                                    <h5>Rs.{{card.uniPrice}}/=</h5>
+                                </mdb-card-text>
+                            </mdb-card-body>
+        
+                            <mdb-card-footer>
+                                <span class="float-center">
+                                    <button type="button" mdbBtn color="info" mdbWavesEffect size="sm">Add<mdb-icon fas icon="shopping-cart" class="ml-1"></mdb-icon></button>
+                                </span>
+                            </mdb-card-footer>
+
+                        </mdb-card>
+                    </div>
+                </div>
+    
+             </div>
+        </mdb-card-body>
+    </mdb-card>
+</div>
+
+
+
+

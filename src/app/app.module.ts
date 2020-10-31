@@ -38,6 +38,7 @@ import { OrderHistoryComponent } from './order-history/order-history.component';
 import { UserCustomerComponent } from './admin/user-chart/user-customer/user-customer.component';
 import { CustomerPopUpModalComponent } from './admin/user-chart/user-customer/customer-pop-up-modal/customer-pop-up-modal.component';
 import { AdminDashBoardComponent } from './admin/admin-dash-board/admin-dash-board.component';
+import { ProductByShopComponent } from './product-by-shop/product-by-shop.component';
 
 
 @NgModule({
@@ -73,6 +74,7 @@ import { AdminDashBoardComponent } from './admin/admin-dash-board/admin-dash-boa
     UserCustomerComponent,
     CustomerPopUpModalComponent,
     AdminDashBoardComponent,
+    ProductByShopComponent,
     
   ],
   imports: [

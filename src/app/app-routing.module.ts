@@ -1,3 +1,4 @@
+import { ProductByShopComponent } from './product-by-shop/product-by-shop.component';
 import { AdminDashBoardComponent } from './admin/admin-dash-board/admin-dash-board.component';
 import { OrderHistoryComponent } from './order-history/order-history.component';
 import { ItemDetailsForCartComponent } from './item-details-for-cart/item-details-for-cart.component';
@@ -33,6 +34,7 @@ const routes: Routes = [
   {path: 'myProfile', component: MyProfileComponent},
   {path: 'itemDetail', component: ItemDetailsForCartComponent},
   {path : 'products', component: AllProductsComponent},
+  {path : 'productsByShop', component: ProductByShopComponent},
   { path: 'myStore', component: MyStoreComponent },
   {
     path: 'seller', component: SellerComponent,
