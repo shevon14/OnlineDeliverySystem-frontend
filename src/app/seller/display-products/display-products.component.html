@@ -3,10 +3,19 @@
         <!--Section heading-->
         <h2 class="h1 font-weight-bold h1 py-3">{{shopName}}</h2>
         <!--Section description-->
-        <p class="grey-text pb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam
-            iure provident voluptate esse quasi,
-            veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.</p>
     </section>
+
+    <div class= "row">
+        <div class="col-6 text-center">
+            <p class="grey-text pb-3">Business ID : {{bid}} </p>
+            <p class="grey-text pb-3">Address : {{address}}</p>
+        </div>
+        <div class="col-6 text-center">
+            <p class="grey-text pb-3">Office Contact : {{phone}}</p>
+            <p class="grey-text pb-3">Email Address : {{mail}}</p>
+        </div>
+    </div>
+    
 
     <hr/>
     <button type="button" class="btn btn-info" (click)="addProductsClicked()">Create a new Product</button>
@@ -32,7 +41,7 @@
                 </div> -->
         
                 <div class="row">
-                    <div class="col-md-3 pb-3" *ngFor="let card of productArray">
+                    <div class="col-md-3 pb-3" *ngFor="let card of productByshop">
         
                         <mdb-card class="card text-center pb-0 rounded hoverable ">
                             <div class="view overlay">

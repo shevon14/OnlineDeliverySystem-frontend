@@ -9,6 +9,7 @@ import { MDBModalService, MDBModalRef } from 'angular-bootstrap-md';
 import { CartDetails } from '../models/cartDetails';
 import { ItemDetailsForCartComponent } from '../item-details-for-cart/item-details-for-cart.component';
 import { $ } from '../../../node_modules/protractor';
+import { NumberFormatStyle } from '@angular/common';
 
 @Component({
   selector: 'app-all-products',
@@ -21,7 +22,9 @@ export class AllProductsComponent implements OnInit {
   showdetails:false;
   selectedProduct:aProductDetails;
   // item:CartDetails;
-  states=false;
+  states=true;
+  imgview = false;
+  shopview = false;
   // ProductDetails;
    details:UserDetails
    modalRef: MDBModalRef;
@@ -59,14 +62,20 @@ export class AllProductsComponent implements OnInit {
   itemDetailsClicked(property:aProductDetails){
     // this.router.navigate(['itemDetail']);
     this.selectedProduct=property;
-    this.states=true;
-
+    this.states = false;
+    this.shopview = false;
+    this.imgview = true;
+  
   }
 
-  shopViewClicked() {
-    this.router.navigate(['productsByShop']);
+  shopViewClicked(property1:aProductDetails){
+    this.selectedProduct=property1;
+    this.imgview = false;
+    this.states = false;
+    this.shopview = true;
   }
 
+ 
   addcartClicked(item:any) {
     console.log(item)
     this.details = this.auth2.getUserDetails();
@@ -92,9 +101,7 @@ export class AllProductsComponent implements OnInit {
       }
     )
 
-
     // this.router.navigate(['itemDetail']);
-
 
     // this.auth2.login(this.credentials).subscribe(
     //   (res)=>{
@@ -131,5 +138,61 @@ export class AllProductsComponent implements OnInit {
           
   //           }
 
+  cat1Click(){
+    let x = document.querySelector("#cat1");
+    if(x){
+      x.scrollIntoView();
+    }
+  }
+
+  cat2Click(){
+    let x = document.querySelector("#cat2");
+    if(x){
+      x.scrollIntoView();
+    }
+  }
+
+  cat3Click(){
+    let x = document.querySelector("#cat3");
+    if(x){
+      x.scrollIntoView();
+    }
+  }
+
+  cat4Click(){
+    let x = document.querySelector("#cat4");
+    if(x){
+      x.scrollIntoView();
+    }
+  }
+
+  cat5Click(){
+    let x = document.querySelector("#cat5");
+    if(x){
+      x.scrollIntoView();
+    }
+  }
+
+  cat6Click(){
+    let x = document.querySelector("#cat6");
+    if(x){
+      x.scrollIntoView();
+    }
+  }
+
+  cat7Click(){
+    let x = document.querySelector("#cat7");
+    if(x){
+      x.scrollIntoView();
+    }
+  }
+
+  cat8Click(){
+    let x = document.querySelector("#cat8");
+    if(x){
+      x.scrollIntoView();
+    }
+  }
+  
 
 }

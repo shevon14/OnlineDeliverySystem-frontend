@@ -8,6 +8,7 @@ import { map } from 'rxjs/operators';
 
 
 export interface UserDetails {
+  _id: string,
   businessModel: string,
   name: string,
   shopName: string,
@@ -24,6 +25,7 @@ export interface UserDetails {
 
 
 export interface TokenPayload {
+  _id: string,
   businessModel:string, 
   name:string, 
   shopName:string,
@@ -44,6 +46,7 @@ interface TokenResponse {
 @Injectable({
   providedIn: 'root'
 })
+
 
 
 
@@ -98,11 +101,6 @@ export class SellerDetailsService {
   deleteSeller(sellerID) {
     return this.http.delete(this.DELETE_Seller + sellerID);
   }
-
-
-
-
-
 
 
   private saveToken(token: string): void {

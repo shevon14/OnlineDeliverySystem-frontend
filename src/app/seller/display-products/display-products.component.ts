@@ -1,9 +1,9 @@
+import { ProductDetails } from './../../models/productDetails';
+import { SellerDetailsService } from 'src/app/services/seller-details.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { productDetailsService ,removeproduct} from 'src/app/services/product.service';
-import { ProductDetails } from 'src/app/models/productDetails';
 import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
-import { SellerDetailsService} from './../../services/seller-details.service';
 // import{productDetailsService, addproduct} from'../../services/product.service';
 
 @Component({
@@ -13,39 +13,23 @@ import { SellerDetailsService} from './../../services/seller-details.service';
 })
 export class DisplayProductsComponent implements OnInit {
 
-  productArray: ProductDetails;
+  productArray: any;
   popup_details:ProductDetails;
+  productByshop: any;
 
-  shopName : string = "ABC Stores";
-
+  
   constructor(private auth:productDetailsService,
     private authSeller:SellerDetailsService, private router:Router) { }
 
   imgLink : string = 'https://moderndiplomacy.eu/wp-content/uploads/2019/01/rolex-oyster.jpg';
 
-  cards = [
-    {
-      title: 'Item number 1',
-      img: 'https://moderndiplomacy.eu/wp-content/uploads/2019/01/rolex-oyster.jpg'
-    },
-    {
-      title: 'Item number 2',
-      img: 'https://moderndiplomacy.eu/wp-content/uploads/2019/01/rolex-oyster.jpg'
-    },
-    {
-      title: 'Item number 3',
-      img: 'https://moderndiplomacy.eu/wp-content/uploads/2019/01/rolex-oyster.jpg'
-    },
-    {
-      title: 'Item number 4',
-      img: 'https://moderndiplomacy.eu/wp-content/uploads/2019/01/rolex-oyster.jpg'
-    },
-    {
-      title: 'Item number 5',
-      img: 'https://moderndiplomacy.eu/wp-content/uploads/2019/01/rolex-oyster.jpg'
-    },
-    
-  ];
+
+  shopName = this.authSeller.getUserDetails().shopName;
+  bid = this.authSeller.getUserDetails().businessID;
+  mail = this.authSeller.getUserDetails().email;
+  phone = this.authSeller.getUserDetails().officePhone;
+  address = this.authSeller.getUserDetails().address;
+  shopid = this.authSeller.getUserDetails()._id;
 
   ngOnInit(): void {
 
@@ -54,21 +38,13 @@ export class DisplayProductsComponent implements OnInit {
     this.auth.productDetails().subscribe((list)=>{
       this.productArray = list;
       console.log(this.productArray);
+      this.productfilter();
     });
 
-    // aaaa:this.authSeller.getUserDetails().shopName;
-    
+  }
 
-
-    // if(this.productrArray.category=="2"){
-    //   this.ss ="2";
-    //   this.display_feild2=true;
-    //   this.auth.productDetailsField(this.ss).subscribe((list2)=>{
-    //     this.productrArray_field2 = list2
-    //     console.log(this.productrArray_field2);
-    //   });
-
-    // }
+  productfilter(){
+    this.productByshop = this.productArray.filter(xx => xx.shopID === this.shopid);
   }
 
   addnum(){
@@ -82,7 +58,6 @@ export class DisplayProductsComponent implements OnInit {
   //   // });
 
   // }
-
   }
 
   addProductsClicked(){

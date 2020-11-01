@@ -131,6 +131,7 @@ export class SellerRegistrationComponent implements OnInit {
 
    
   credentials:TokenPayload={
+    _id : '',
     businessModel:'',
     name:'',
     shopName:'',
@@ -141,8 +142,7 @@ export class SellerRegistrationComponent implements OnInit {
     email: '', 
     password: ''
   }
-
-
+ 
   constructor( private sellerDetailsService: SellerDetailsService,
                 private router : Router ) { }
                 
@@ -218,3 +218,5 @@ else{
 }
 
 }
+
+
