@@ -69,4 +69,8 @@ public productUpdate(code){
     return this.http.delete<ProductDetails>(this.traget+'products/'+code);
 }
 
+public findProduct(uid){
+    return this.http.get<ProductDetails>(this.traget+'products/'+uid);
+}
+
 }

@@ -20,6 +20,7 @@ export class AllProductsComponent implements OnInit {
   productArray: any;
   showdetails:false;
   selectedProduct:aProductDetails;
+  // item:CartDetails;
   states=false;
   // ProductDetails;
    details:UserDetails
@@ -66,14 +67,18 @@ export class AllProductsComponent implements OnInit {
     this.router.navigate(['productsByShop']);
   }
 
-  addcartClicked(aa) {
-    console.log(aa)
+  addcartClicked(item:any) {
+    console.log(item)
     this.details = this.auth2.getUserDetails();
     console.log(this.details._id)
 
     const addCart = <addcart>{
       u_id: this.details._id,
-      productId: aa,
+      productId: item._id,
+      productName:item.productName,
+      uniPrice: item.uniPrice,
+      quantity:"1",
+
     }
     this.auth3.add(addCart).subscribe(  
       (res) => {

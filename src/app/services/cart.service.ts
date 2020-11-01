@@ -8,9 +8,12 @@ import { CartDetails } from '../models/cartDetails'
 
 
 export interface addcart {
-// _id: string,
-u_id: string,
-productId: string,
+_id: string,
+u_id : string;
+productId:string;
+productName:string;
+uniPrice:string;
+quantity:string;
 }
 
 export interface removeproduct {
@@ -47,18 +50,22 @@ export interface removeproduct {
 return base
 }
 
+public cartDetails(u_id){
+    return this.http.get<addcart>(this.traget+'cart/'+u_id);
+}
 
+public deleteItem(_id){
+    return this.http.delete<addcart>(this.traget+'cart/'+_id);
+}
+
+public removeCart(u_id){
+    return this.http.delete<addcart>(this.traget+'cart/'+u_id);
+}
 // public productDetails(){
 //     return this.http.get<ProductDetails>(this.traget+'products/list');
 //   }
 
-// public deleteProduct(code){
-//     return this.http.delete<ProductDetails>(this.traget+'products/'+code);
-// }
 
-// public productDetailsField(code){
-//     return this.http.get<ProductDetails>(this.traget+'products/'+code);
-// }
 
 // public productUpdate(code){
 //     return this.http.delete<ProductDetails>(this.traget+'products/'+code);

@@ -1,9 +1,10 @@
 export class CartDetails{
-    _id:String;
+    // _id:String;
     u_id : string;
     productId:string;
-    // uniPrice:string;
-    // availableQuantity:string;
+    productName:string;
+    uniPrice:string;
+    quantity:string;
     // shopename:String;
     
     constructor(_id:String,u_id:string, productId:string, ){

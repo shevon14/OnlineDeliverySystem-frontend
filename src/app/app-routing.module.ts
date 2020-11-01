@@ -21,6 +21,8 @@ import { SigninComponent} from './signin/signin.component';
 import { SignupComponent} from './signup/signup.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { UserCustomerComponent } from './admin/user-chart/user-customer/user-customer.component';
+import { ContactComponent } from './contact/contact.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 // import { CustomerPopUpModalComponent } from './admin/user-chart/user-customer/customer-pop-up-modal/customer-pop-up-modal.component';
 
@@ -58,7 +60,10 @@ const routes: Routes = [
 
   {
     path: 'customer', component: AdminComponent,
-  }
+  },
+  
+  {path: 'contact' , component: ContactComponent},
+  {path: 'aboutus' , component: AboutusComponent}
 ];
 
 @NgModule({

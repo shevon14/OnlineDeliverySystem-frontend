@@ -39,6 +39,8 @@ import { UserCustomerComponent } from './admin/user-chart/user-customer/user-cus
 import { CustomerPopUpModalComponent } from './admin/user-chart/user-customer/customer-pop-up-modal/customer-pop-up-modal.component';
 import { AdminDashBoardComponent } from './admin/admin-dash-board/admin-dash-board.component';
 import { ProductByShopComponent } from './product-by-shop/product-by-shop.component';
+import { ContactComponent } from './contact/contact.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 
 @NgModule({
@@ -75,6 +77,8 @@ import { ProductByShopComponent } from './product-by-shop/product-by-shop.compon
     CustomerPopUpModalComponent,
     AdminDashBoardComponent,
     ProductByShopComponent,
+	ContactComponent,
+    AboutusComponent,
     
   ],
   imports: [

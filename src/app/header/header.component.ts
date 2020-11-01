@@ -53,5 +53,11 @@ export class HeaderComponent implements OnInit {
   
   }
 
+  Contact(){
+    this.router.navigate(['contact']);
+  }
 
+  About(){
+    this.router.navigate(['aboutus']);
+  }
 }
