@@ -1,3 +1,4 @@
+import { SellerDetailsService, UserDetails } from './../../services/seller-details.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import{productDetailsService, addproduct} from'../../services/product.service';
@@ -38,13 +39,16 @@ export class AddProductsComponent implements OnInit {
     uniPrice: '',
     availableQuantity: '',
     category: '',
-    imgName: ''
+    imgName: '',
+    shopID : '',
+    shopName : ''
   }
   
 
   constructor(public auth:productDetailsService,
               private router:Router,
               private http: HttpClient,
+              private authSeller : SellerDetailsService,
               private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
@@ -75,6 +79,8 @@ export class AddProductsComponent implements OnInit {
       .post<any>('http://localhost:3000/uploadfile', formData).subscribe(response => {
         console.log(response);
         this.credentials.imgName = 'http://localhost:3000/uploads/' + this.fileInputLabel;
+        this.credentials.shopName =  this.authSeller.getUserDetails().shopName;
+        this.credentials.shopID = this.authSeller.getUserDetails()._id;
 
         if (response.statusCode === 200) {
           this.auth.add(this.credentials).subscribe(

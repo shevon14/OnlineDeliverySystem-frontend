@@ -5,4 +5,6 @@ export class aProductDetails{
     uniPrice:string;
     availableQuantity:string;
     imgName:string;
+    shopName: string;
+    shopID: string;
 }

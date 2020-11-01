@@ -9,7 +9,8 @@ import{CustomerDetailsService, TokenPayload} from'../services/customer-reg.servi
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router: Router,public auth:CustomerDetailsService,) {}
+  constructor(private router: Router,
+              public auth:CustomerDetailsService,) {}
 
   ngOnInit(): void {
   }
@@ -50,7 +51,7 @@ export class HeaderComponent implements OnInit {
     this.auth.logout();
     frame.show()
     this.router.navigate(['']);
-  
+
   }
 
   Contact(){

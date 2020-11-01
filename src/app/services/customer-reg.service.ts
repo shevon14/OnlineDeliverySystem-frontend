@@ -127,8 +127,7 @@ export class CustomerDetailsService {
         this.token = ''
         window.localStorage.removeItem('usertoken')
         this.router.navigateByUrl('/')
-        console.log(this.token)
-        console.log(window.localStorage)
+        console.log("tocken set to - " + this.token)
     }
 
     //details new

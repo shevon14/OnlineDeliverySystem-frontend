@@ -15,6 +15,7 @@ export class ItemDetailsForCartComponent implements OnInit {
   totalPrice:number;
   // itemQuantity:String;
 
+  
   // validatingForm : FormGroup;
   validatingForm=({
     itemQuantity: String('1')});

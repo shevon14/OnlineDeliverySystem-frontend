@@ -10,6 +10,7 @@ import { SellerDetailsService,TokenPayload } from './../services/seller-details.
 export class MyStoreComponent implements OnInit {
 
   credentials:TokenPayload={
+    _id: '',
     businessModel:'',
     name:'',
     shopName:'',
@@ -28,17 +29,18 @@ export class MyStoreComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  LogInClicked(){
+  LogInClicked(){ 
 
     this.sellerDetailsService.login(this.credentials).subscribe(
       (res)=>{
        console.log(this.credentials)
         console.log(res)
-       
+       // this.router.navigate(['seller']);
       },
  
       err=>{
-        this.router.navigate(['']);
+        //this.router.navigate(['']);
+        console.log("error ekak")
       }
      )
     
