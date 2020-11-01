@@ -38,8 +38,8 @@
         <table mdbTable class="text-center">
             <thead class="black white-text">
               <tr>
-                <th scope="col"><h4>Total : Rs.5520 /=</h4></th>
-                <th scope="col"><button type="button" mdbBtn color="info" mdbWavesEffect>Check Out</button></th>
+                <th scope="col"><h4>Total : Rs.{{this.viewTotal}}/=</h4></th>
+                <th scope="col"><button type="button" mdbBtn color="info" (click)="checkout()" mdbWavesEffect>Check Out</button></th>
               </tr>
             </thead>
           </table>

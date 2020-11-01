@@ -5,6 +5,7 @@ import { Observable, of } from "rxjs"
 import { map } from 'rxjs/operators'
 import { Router } from '@angular/router'
 import { CartDetails } from '../models/cartDetails'
+import { checkout } from '../models/checkout'
 
 
 export interface addcart {
@@ -59,10 +60,10 @@ public deleteItem(_id){
 }
 
 public removeCart(u_id){
-    return this.http.delete<addcart>(this.traget+'cart/'+u_id);
+    return this.http.delete<addcart>(this.traget+'cart/deletecart/'+u_id);
 }
-// public productDetails(){
-//     return this.http.get<ProductDetails>(this.traget+'products/list');
+// public addcheckout(){
+//     return this.http.get<checkout>(this.traget+'/checkout/add');
 //   }
 
 

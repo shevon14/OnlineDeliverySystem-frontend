@@ -127,6 +127,8 @@ export class CustomerDetailsService {
         this.token = ''
         window.localStorage.removeItem('usertoken')
         this.router.navigateByUrl('/')
+        console.log(this.token)
+        console.log(window.localStorage)
     }
 
     //details new
