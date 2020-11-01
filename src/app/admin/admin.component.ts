@@ -23,7 +23,7 @@ export class AdminComponent implements OnInit {
   ngOnInit(): void {}
 
   ngOnDestroy(){
-    this.navbarService.show();
+    this.navbarService.hide();
   }
 
 }

@@ -55,24 +55,25 @@
                     <h4 class="mb-4 mt-1 h5 text-center font-weight-bold">Item Summary</h4>
                     <hr />
                     <dl class="row">
-                        <dd class="col-sm-8">Item Price</dd>
-                        <dd class="col-sm-4">Rs.{{viewPrice}} /=</dd>
+                        <dd class="col-md-4">Item Price</dd>
+                        <dd class="col-sm-8">Rs.{{viewPrice}} /=</dd>
                     </dl>
 
                     <dl class="row">
-                        <dd class="col-sm-8">Delivery fee</dd>
-                        <dd class="col-sm-4">Rs.150 /=</dd>
+                        <dd class="col-md-4">Delivery fee</dd>
+                        <dd class="col-sm-8">Rs.150 /=</dd>
                     </dl>
 
                     <hr />
 
                     <dl class="row">
-                        <dt class="col-sm-8">
+                        <dt class="col-lg-4">
                             <strong>Total</strong>
                         </dt>
-                        <dt class="col-sm-4">
+                        <dt class="col-sm-8">
                            Rs.{{totalPrice}}/=
                         </dt>
+                        
                     </dl>
                     <button type="button" mdbBtn color="info" block="true" mdbWavesEffect class="mb-lg-0 mb-5"
                         (click)="CartClicked()">Add to Cart</button>
