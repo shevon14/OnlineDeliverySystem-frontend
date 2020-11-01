@@ -25,18 +25,18 @@ export class OrderHistoryComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    this.user = this.auth2.getUserDetails()._id;
-    this.auth.findHistory(this.user)
-    .subscribe(  
-      (res) => {
-        // this.cartDetails= res
-        // console.log(this.cartDetails[1].uniPrice)
-      },
+    // this.user = this.auth2.getUserDetails()._id;
+    // this.auth.findHistory(this.user)
+    // .subscribe(  
+    //   (res) => {
+    //     // this.cartDetails= res
+    //     // console.log(this.cartDetails[1].uniPrice)
+    //   },
 
-      err => {
-        console.error(err)
-      }
-    )
+    //   err => {
+    //     console.error(err)
+    //   }
+    // )
 
   }
 
