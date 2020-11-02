@@ -12,7 +12,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ProductByShopComponent implements OnInit {
 
-  shopName : string = "ABC Stores";
+  shopName : any;
   _property: aProductDetails;
   shopid : any;
 
@@ -32,6 +32,7 @@ export class ProductByShopComponent implements OnInit {
   ngOnInit(): void {
 
     this.shopid = this._property.shopID;
+    this.shopName = this._property.shopName;
     console.log(this.shopid);
 
     this.auth.productDetails().subscribe((list)=>{

@@ -44,6 +44,6 @@ export class AdminDashBoardComponent implements OnInit {
   }
 
   ngOnDestroy(){
-    this.navbarService.show();
+   // this.navbarService.show();
   }
 }
