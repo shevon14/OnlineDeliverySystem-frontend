@@ -19,13 +19,6 @@ export interface addcart{
 
 }
 
-// asd : 
-// export interface 
-
-// export interface removeproduct {
-//     _id: string,
-
-//     }
 
 
 @Injectable({

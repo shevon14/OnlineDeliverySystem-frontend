@@ -25,10 +25,7 @@ export class CartComponent implements OnInit {
   user:String;
   // dataRead:CartDetails;
   dataTest2:addcart[]=new Array<addcart>();
-  // viewQuantity={
-  //   itemQuantity:String
-  // };
-
+  
 
   constructor(private router: Router,
               private cartAuth:cartDetailsService,

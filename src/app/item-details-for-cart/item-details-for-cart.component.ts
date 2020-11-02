@@ -40,10 +40,6 @@ export class ItemDetailsForCartComponent implements OnInit {
     
   }
 
-  
-  // CartClicked(){
-    
-  // }
 
   increase(){
     console.log(this.validatingForm.itemQuantity)
