@@ -42,7 +42,7 @@ export class CartComponent implements OnInit {
   //   {id: 3, name: 'mobile charger', quantity: '1', price: 'Rs.600'},
   // ];
 
-  headElements = ['ID', 'Name', 'Qtn.', 'Price', '' ,'Remove'];
+  headElements = ['ID', 'Name', 'Qtn.', 'Unit Price', '' ,'Remove'];
 
   ngOnInit(): void {
     this.viewTotal=0;
