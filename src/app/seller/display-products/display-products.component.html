@@ -1,4 +1,4 @@
-<div class="container">
+<div *ngIf="!displayProductShow" class="container">
     <section class="text-center">
         <!--Section heading-->
         <h2 class="h1 font-weight-bold h1 py-3">{{shopName}}</h2>
@@ -41,7 +41,7 @@
                 </div> -->
         
                 <div class="row">
-                    <div class="col-md-3 pb-3" *ngFor="let card of productByshop">
+                    <div class="col-md-3 pb-3" *ngFor="let card of productByshop ;  let i = index">
         
                         <mdb-card class="card text-center pb-0 rounded hoverable ">
                             <div class="view overlay">
@@ -60,7 +60,7 @@
         
                             <mdb-card-footer>
                                 <span class="float-right">
-                                    <a data-toggle="tooltip" data-placement="top" title="Edit" (click)="editProductsClicked()">
+                                    <a data-toggle="tooltip" data-placement="top" title="Edit" (click)="editProductsClicked(card)">
                                         <mdb-icon fas icon="pen" class="grey-text ml-3"></mdb-icon>
                                     </a>
                                     <a data-toggle="tooltip" data-placement="top" title="Delete" data-target="#basicExample"
@@ -76,12 +76,9 @@
              </div>
         </mdb-card-body>
     </mdb-card>
-
-
-
-
 </div>
 
+<app-edit-products *ngIf="editProductShow" [data]="selectedProduct"></app-edit-products>
 
 
 <div mdbModal #frame="mdbModal" class="modal fade top" id="frameModalTop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"

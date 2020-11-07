@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { productDetailsService ,removeproduct} from 'src/app/services/product.service';
 import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
+import { aProductDetails } from '../../models/aProductData';
 // import{productDetailsService, addproduct} from'../../services/product.service';
 
 @Component({
@@ -16,6 +17,9 @@ export class DisplayProductsComponent implements OnInit {
   productArray: any;
   popup_details:ProductDetails;
   productByshop: any;
+  selectedProduct:aProductDetails;
+  editProductShow:boolean=false;
+  displayProductShow:boolean =false;
 
   
   constructor(private auth:productDetailsService,
@@ -64,8 +68,11 @@ export class DisplayProductsComponent implements OnInit {
     this.router.navigate(['seller','addProducts']);
   }
 
-  editProductsClicked(){
-    this.router.navigate(['seller','editProducts']);
+  editProductsClicked(value:aProductDetails){
+    this.editProductShow=true;
+    this.displayProductShow=true;
+    this.selectedProduct=value;
+
   }
 
 
