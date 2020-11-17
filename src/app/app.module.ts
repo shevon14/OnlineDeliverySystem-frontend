@@ -41,6 +41,7 @@ import { AdminDashBoardComponent } from './admin/admin-dash-board/admin-dash-boa
 import { ProductByShopComponent } from './product-by-shop/product-by-shop.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
+import { PaymentComponent } from './payment/payment.component';
 
 
 @NgModule({
@@ -79,6 +80,7 @@ import { AboutusComponent } from './aboutus/aboutus.component';
     ProductByShopComponent,
 	ContactComponent,
     AboutusComponent,
+    PaymentComponent,
     
   ],
   imports: [

@@ -1,0 +1,81 @@
+<!-- Material form subscription -->
+<mdb-card>
+
+    <mdb-card-header class="info-color white-text text-center py-4">
+      <h5>
+        <strong>Confirm Order</strong>
+      </h5>
+    </mdb-card-header>
+  
+    <!--Card content-->
+    <mdb-card-body class="px-lg-5">
+        <table mdbTable striped="true">
+            <tbody >
+                <tr mdbTableCol>
+                    <td>Order ID</td>
+                    <td>: #104230</td>
+                    <td></td>
+                </tr>
+                <tr mdbTableCol>
+                    <td>Full Name</td>
+                    <td>: {{name}}</td>
+                    <td> <mdb-icon fas icon="pen" class="grey-text ml-3"></mdb-icon></td>
+                </tr>
+                <tr mdbTableCol>
+                    <td>Email</td>
+                    <td>: {{email}}</td>
+                    <td></td>
+                </tr>
+                <tr mdbTableCol>
+                    <td>Billing Address</td>
+                    <td>: {{address}}</td>
+                    <td><mdb-icon fas icon="pen" class="grey-text ml-3"></mdb-icon></td>
+                </tr>
+                <tr mdbTableCol>
+                    <td>Contact Number</td>
+                    <td>: {{contact}}</td>
+                    <td><mdb-icon fas icon="pen" class="grey-text ml-3"></mdb-icon></td>
+                </tr>
+                <tr mdbTableCol>
+                    <td>Total Price</td>
+                    <td>: Rs.1200/=</td>
+                    <td></td>
+                </tr>
+                <tr mdbTableCol>
+                    <td>Delivery Date</td>
+                    <td>: 2020-Nov-25</td>
+                    <td></td>
+                </tr>
+                <tr mdbTableCol>
+                    <td>Payement Type</td>
+                    <td>
+                        <div>
+                            <!-- Default inline 1-->
+                            <div class="custom-control custom-radio custom-control-inline">
+                              <input type="radio" class="custom-control-input" value ='Personal' id="defaultInline1" name="inlineDefaultRadios"  
+                              mdbInput >
+                              <label class="custom-control-label" for="defaultInline1">Cash On Delivery</label>
+                            </div>
+                    
+                            <!-- Default inline 2-->
+                            <div class="custom-control custom-radio custom-control-inline">
+                              <input type="radio" class="custom-control-input" value ="Shared" id="defaultInline2" name="inlineDefaultRadios"
+                              mdbInput >
+                              <label class="custom-control-label" for="defaultInline2">Card Payment</label>
+                            </div>
+                          </div>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button type="button" mdbBtn color="danger"  mdbWavesEffect>Confirm Order</button></td>
+                    <td></td>
+                </tr>
+            </tbody>
+          </table>
+    </mdb-card-body>
+
+  </mdb-card>
+  <!-- Material form subscription -->
+
