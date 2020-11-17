@@ -20,6 +20,7 @@ export class DisplayProductsComponent implements OnInit {
   selectedProduct:aProductDetails;
   editProductShow:boolean=false;
   displayProductShow:boolean =false;
+  fisrtReresh:boolean=true;
 
   
   constructor(private auth:productDetailsService,
@@ -36,7 +37,7 @@ export class DisplayProductsComponent implements OnInit {
   shopid = this.authSeller.getUserDetails()._id;
 
   ngOnInit(): void {
-
+    
     // console.log("aaa"+this.authSeller.getUserDetails().shopName);
 
     this.auth.productDetails().subscribe((list)=>{

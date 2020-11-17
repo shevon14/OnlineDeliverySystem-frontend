@@ -1,6 +1,6 @@
 <header class="h-100">
     <div class="row grey lighten-4">
-        <div class="col-6">
+        <div *ngIf="viewLogin" class="col-6">
                 <ul class="nav justify-content-start font-weight-bold">
                     <li class="mx-1 my-2">
                         <a (click)="SinginClicked()">sign in</a>
@@ -13,7 +13,15 @@
                     </li>
                 </ul>
         </div>
-        <div class="col-6 font-weight-bold">
+        <div *ngIf!="viewLogin" >
+            <ul class="nav justify-content-start font-weight-bold">
+                <li class="mx-3 my-2">
+                    Hello 
+                 </li>
+            </ul>
+
+        </div>
+        <div *ngIf="viewLogin" class="col-6 font-weight-bold">
             <ul class="nav justify-content-end">
                 <li class="nav-item">
                     <button type="button" mdbBtn color="danger" mdbWavesEffect size="sm" (click)="onRegisterClicked()" >Become a seller<mdb-icon fas icon="store-alt" class="ml-1"></mdb-icon></button>
@@ -57,7 +65,7 @@
                     <a class="nav-link" (click)="MyCartClicked()" mdbTooltip="My Cart" placement="bottom"><mdb-icon fas icon="shopping-cart"></mdb-icon></a>
                 </li>
                 <li class="nav-item waves-light" mdbWavesEffect>
-                    <a class="nav-link" (click)="SignOutClicked(frame)" mdbTooltip="Log Out" placement="bottom"><mdb-icon fas icon="external-link-square-alt" data-target="#basicExample"></mdb-icon></a>
+                    <a class="nav-link" (click)="SignOutClicked()" mdbTooltip="Log Out" placement="bottom"><mdb-icon fas icon="external-link-square-alt" data-target="#basicExample"></mdb-icon></a>
                 </li>
             </ul>
         </links>
@@ -70,13 +78,13 @@
   Bottom
 </button> -->
 
-<div mdbModal #frame="mdbModal" class="modal fade Bottom modal-scrolling" id="frameModalTop" tabindex="-1"
+<!-- <div mdbModal #frame="mdbModal" class="modal fade Bottom modal-scrolling" id="frameModalTop" tabindex="-1"
   role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
-  <div class="modal-dialog modal-frame modal-bottom modal-notify modal-info" role="document">
+  <div class="modal-dialog modal-frame modal-bottom modal-notify modal-info" role="document"> -->
     <!--Content-->
-    <div class="modal-content">
+    <!-- <div class="modal-content"> -->
       <!--Body-->
-      <div class="modal-body">
+      <!-- <div class="modal-body">
         <div class="row d-flex justify-content-center align-items-center">
 
           <p class="pt-3 pr-2"><b>You have successfuly log out from the system.</b></p>
@@ -85,8 +93,8 @@
             data-dismiss="modal" (click)="frame.hide()">Ok, thanks</a>
         </div>
       </div>
-    </div>
+    </div> -->
     <!--/.Content-->
-  </div>
-</div>
+  <!-- </div>
+</div> -->
  

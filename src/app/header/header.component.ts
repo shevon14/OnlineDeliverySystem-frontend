@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import{CustomerDetailsService, TokenPayload} from'../services/customer-reg.service';
+import { SellerDetailsService } from '../services/seller-details.service';
 
 @Component({
   selector: 'app-header',
@@ -9,10 +10,32 @@ import{CustomerDetailsService, TokenPayload} from'../services/customer-reg.servi
 })
 export class HeaderComponent implements OnInit {
 
+viewLogin:boolean=true;
+checkState:string="";
+// checkState1:string="";
+firstName="hhh";
+// lastName:string;
+
+
   constructor(private router: Router,
-              public auth:CustomerDetailsService,) {}
+              public auth:CustomerDetailsService,
+            public auth1:SellerDetailsService) {}
 
   ngOnInit(): void {
+    var checkState2=this.auth.getUserDetails();
+    var checkState1=this.auth1.getUserDetails();
+    // console.log(checkState2)
+    console.log("aagg")
+
+    if(checkState2!=null){
+      this.viewLogin=false;
+      this.firstName=this.auth.getUserDetails().full_name
+    }
+    if(checkState1!=null){
+      this.viewLogin=false;
+      this.firstName=this.auth1.getUserDetails().name
+      console.log(this.auth1.getUserDetails())
+    }
   }
 
   onRegisterClicked(){
@@ -47,9 +70,9 @@ export class HeaderComponent implements OnInit {
   }
 
   ////seller sign out ekata
-  SignOutClicked(frame){
+  SignOutClicked(){
     this.auth.logout();
-    frame.show()
+    // frame.show()
     this.router.navigate(['']);
 
   }
@@ -61,4 +84,5 @@ export class HeaderComponent implements OnInit {
   About(){
     this.router.navigate(['aboutus']);
   }
+
 }
