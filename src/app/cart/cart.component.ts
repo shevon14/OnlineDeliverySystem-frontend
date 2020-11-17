@@ -153,6 +153,7 @@ export class CartComponent implements OnInit {
       console.error(err)
     }
   )
+  this.router.navigate(['payment'])
   }
 
 

@@ -83,6 +83,8 @@ export class EditProductsComponent implements OnInit {
     //      console.error(err)
     //    }
     //   )
+    this.router.navigate(['seller'])
   }
+
 
 }

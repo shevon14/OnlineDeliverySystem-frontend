@@ -1,3 +1,4 @@
+import { PaymentComponent } from './payment/payment.component';
 import { ProductByShopComponent } from './product-by-shop/product-by-shop.component';
 import { AdminDashBoardComponent } from './admin/admin-dash-board/admin-dash-board.component';
 import { OrderHistoryComponent } from './order-history/order-history.component';
@@ -34,6 +35,7 @@ const routes: Routes = [
   {path: 'cart', component: CartComponent},
   {path: 'orderHistory', component: OrderHistoryComponent},
   {path: 'myProfile', component: MyProfileComponent},
+  {path: 'payment', component: PaymentComponent},
   // {path: 'itemDetail', component: ItemDetailsForCartComponent},
   {path : 'products', component: AllProductsComponent},
   {path : 'productsByShop', component: ProductByShopComponent},
