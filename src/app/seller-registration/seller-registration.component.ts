@@ -99,7 +99,7 @@
 // }
 
 import { Router } from '@angular/router';
-import { SellerDetailsService,TokenPayload } from './../services/seller-details.service';
+import { SellerDetailsService,TokenPayload } from '../services/seller-details.service';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import { Component, OnInit } from '@angular/core';
 

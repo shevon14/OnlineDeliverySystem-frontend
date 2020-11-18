@@ -1,4 +1,4 @@
-import { SellerDetailsService, UserDetails } from './../../services/seller-details.service';
+import { SellerDetailsService, UserDetails } from '../../services/seller-details.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import{productDetailsService, addproduct} from'../../services/product.service';

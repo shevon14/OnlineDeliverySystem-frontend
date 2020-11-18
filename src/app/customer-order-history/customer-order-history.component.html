@@ -1,0 +1,33 @@
+
+<div class="container">
+        <div class="card">
+          <h3 class="card-header text-center info-color font-weight-bold text-uppercase py-4">Customers</h3>
+          <div class="card-body">
+            <div id="table" class="table-editable text-center">
+              <table class="table table-bordered table-responsive-md table-striped text-center">
+                <thead  class="black white-text">
+                  <tr>
+                    <th class="text-center">Order Id:</th>
+                    <th class="text-center">Product Name</th>
+                    <th class="text-center">Quantity</th>
+                    <th class="text-center">More Details</th>
+                  </tr>
+                </thead>
+               
+                <tbody>
+                  <tr scope="row" *ngFor="let customerdata of getSelectedArray">
+                    <td>{{customerdata._id}}</td>
+                    <td>{{customerdata.productName}}</td>
+                    <td>{{customerdata.quantity}}</td>
+                    <td>
+                      <a class="waves-light text-info" data-toggle="modal" (click) = "openDetails()"><u>More Details</u></a>
+                    </td>
+                  </tr>
+                </tbody>
+      
+      
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>

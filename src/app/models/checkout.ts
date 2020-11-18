@@ -8,4 +8,6 @@ export class checkout{
         address: String;
         mobileNumber:String;
         customerName: String;
+        email:String;
+        payment:String;
 }

@@ -21,8 +21,11 @@ export class CartComponent implements OnInit {
   viewPrice:number;
 
   total:any;
+  date:Date;
   viewTotal:number;
   user:String;
+  showPayment:boolean=false;
+  showCart:boolean=true;
   // dataRead:CartDetails;
   dataTest2:addcart[]=new Array<addcart>();
   
@@ -51,7 +54,6 @@ export class CartComponent implements OnInit {
         this.cartDetails= res
 
         console.log(Object.keys(this.cartDetails).length)
-
     for (let i = 0; i <  Object.keys(this.cartDetails).length ; i++) {  
   this.price = Number(this.cartDetails[i].uniPrice)
   this.total = this.price * Number(this.cartDetails[i].quantity)
@@ -65,9 +67,7 @@ export class CartComponent implements OnInit {
         console.error(err)
       }
     )
-
     
-
 
   }
 
@@ -95,7 +95,8 @@ export class CartComponent implements OnInit {
   
 
   checkout(){
-
+    this.showCart=false;
+    this.showPayment=true;
     this.details = this.auth2.getUserDetails();
     console.log(this.details.address)
 
@@ -107,7 +108,6 @@ export class CartComponent implements OnInit {
   // this.dataRead2.push({key:"asd"  value:"ddd"})
   
   let  dataRead2: checkout=new checkout() 
-  let  dataRead3: addcart=new checkout() 
   for (let i = 0; i <  Object.keys(this.cartDetails).length ; i++) {   
 
  dataRead2.u_id=this.cartDetails[i].u_id,
@@ -117,44 +117,44 @@ export class CartComponent implements OnInit {
  dataRead2.quantity= this.cartDetails[i].quantity,
  dataRead2.address= this.details.address,
  dataRead2.mobileNumber= this.details.conatct,
- dataRead2.customerName= this.details.full_name,
+ dataRead2.customerName= this.details.full_name
     // dataRead3=dataRead2
     this.dataTest2.push(dataRead2)
-    this.addcheckout(dataRead2)
+    // this.addcheckout(dataRead2)
     console.log(this.dataTest2);
     // console.log(dataRead3);
   };
   
 
-    this.cartAuth.removeCart(this.user)
-    .subscribe(  
-      (res) => {
-        // this.router.navigate([''])
-        console.log(res)
-        this.cartDetails= res
-        window.location.reload();
-      },
+    // this.cartAuth.removeCart(this.user)
+    // .subscribe(  
+    //   (res) => {
+    //     // this.router.navigate([''])
+    //     console.log(res)
+    //     this.cartDetails= res
+    //     // window.location.reload();
+    //   },
 
-      err => {
-        console.error(err)
-      }
-    )
+    //   err => {
+    //     console.error(err)
+    //   }
+    // )
   }
 
-  addcheckout(add:addcart){
- this.checkCartAuth.add(add)
- .subscribe(  
-    (res) => {
-      // this.router.navigate([''])
-      console.log(res)
-    },
+//   addcheckout(add:addcart){
+// //  this.checkCartAuth.add(add)
+// //  .subscribe(  
+// //     (res) => {
+// //       // this.router.navigate([''])
+// //       console.log(res)
+// //     },
 
-    err => {
-      console.error(err)
-    }
-  )
-  this.router.navigate(['payment'])
-  }
+// //     err => {
+// //       console.error(err)
+// //     }
+// //   )
+//   // this.router.navigate(['payment'])
+//   }
 
 
 }

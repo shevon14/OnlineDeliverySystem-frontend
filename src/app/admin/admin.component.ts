@@ -1,8 +1,8 @@
-import { SellerDetails } from './../models/sellerDetails.models';
-import { SellerDetailsService } from './../services/seller-details.service';
-import { ProductDetails } from './../models/productDetails';
-import { productDetailsService } from './../services/product.service';
-import { NavBarService } from './../services/nav-bar.service';
+import { SellerDetails } from '../models/sellerDetails.models';
+import { SellerDetailsService } from '../services/seller-details.service';
+import { ProductDetails } from '../models/productDetails';
+import { productDetailsService } from '../services/product.service';
+import { NavBarService } from '../services/nav-bar.service';
 import { Component, OnInit } from '@angular/core';
 import{AuthenticationService, TokenPayload} from'../authentication.service'
 

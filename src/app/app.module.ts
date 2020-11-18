@@ -42,6 +42,8 @@ import { ProductByShopComponent } from './product-by-shop/product-by-shop.compon
 import { ContactComponent } from './contact/contact.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { PaymentComponent } from './payment/payment.component';
+import { CustomerOrderHistoryComponent } from './customer-order-history/customer-order-history.component';
+import { CustomerOrderHistoryDetailsComponent } from './customer-order-history-details/customer-order-history-details.component';
 
 
 @NgModule({
@@ -81,6 +83,8 @@ import { PaymentComponent } from './payment/payment.component';
 	ContactComponent,
     AboutusComponent,
     PaymentComponent,
+    CustomerOrderHistoryComponent,
+    CustomerOrderHistoryDetailsComponent
     
   ],
   imports: [

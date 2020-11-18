@@ -1,5 +1,5 @@
-import { CustomerDetailsService } from './../services/customer-reg.service';
-import { UserDetails } from './../services/seller-details.service';
+import { CustomerDetailsService } from '../services/customer-reg.service';
+import { UserDetails } from '../services/seller-details.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

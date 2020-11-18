@@ -1,4 +1,4 @@
-import { SellerDetails } from './../models/sellerDetails.models';
+import { SellerDetails } from '../models/sellerDetails.models';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';

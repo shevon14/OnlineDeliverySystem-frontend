@@ -8,7 +8,7 @@ import { cartDetailsService,addcart} from '../services/cart.service';
 import { MDBModalService, MDBModalRef } from 'angular-bootstrap-md';
 import { CartDetails } from '../models/cartDetails';
 import { ItemDetailsForCartComponent } from '../item-details-for-cart/item-details-for-cart.component';
-import { $ } from '../../../node_modules/protractor';
+import { $ } from 'protractor';
 import { NumberFormatStyle } from '@angular/common';
 
 @Component({

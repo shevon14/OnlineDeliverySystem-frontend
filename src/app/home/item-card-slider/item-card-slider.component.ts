@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { productDetailsService } from 'src/app/services/product.service';
-import { ProductDetails } from 'src/app/models/productDetails';
+import { productDetailsService } from '../../services/product.service';
+import { ProductDetails } from '../../models/productDetails';
 
 @Component({
   selector: 'app-item-card-slider',

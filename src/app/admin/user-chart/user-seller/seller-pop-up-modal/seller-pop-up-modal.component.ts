@@ -1,7 +1,7 @@
-import { SellerDetails } from './../../../../models/sellerDetails.models';
+import { SellerDetails } from '../../../../models/sellerDetails.models';
 import { Component, OnInit } from '@angular/core';
 import { MDBModalRef } from 'angular-bootstrap-md';
-import { SellerDetailsService } from 'src/app/services/seller-details.service';
+import { SellerDetailsService } from '../../../../services/seller-details.service';
 
 @Component({
   selector: 'app-seller-pop-up-modal',

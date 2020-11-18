@@ -1,8 +1,8 @@
-import { ProductDetails } from './../../models/productDetails';
-import { SellerDetailsService } from 'src/app/services/seller-details.service';
+import { ProductDetails } from '../../models/productDetails';
+import { SellerDetailsService } from '../../services/seller-details.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { productDetailsService ,removeproduct} from 'src/app/services/product.service';
+import { productDetailsService ,removeproduct} from '../../services/product.service';
 import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
 import { aProductDetails } from '../../models/aProductData';
 // import{productDetailsService, addproduct} from'../../services/product.service';

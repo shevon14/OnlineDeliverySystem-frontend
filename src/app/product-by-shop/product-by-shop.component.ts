@@ -1,8 +1,8 @@
-import { aProductDetails } from './../models/aProductData';
-import { ProductDetails } from 'src/app/models/productDetails';
+import { aProductDetails } from '../models/aProductData';
+import { ProductDetails } from '../models/productDetails';
 import { Router } from '@angular/router';
-import { SellerDetailsService } from 'src/app/services/seller-details.service';
-import { productDetailsService } from 'src/app/services/product.service';
+import { SellerDetailsService } from '../services/seller-details.service';
+import { productDetailsService } from '../services/product.service';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({

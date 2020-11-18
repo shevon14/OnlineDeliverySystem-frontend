@@ -4,7 +4,7 @@ import { Observable, of } from "rxjs"
 import { map } from 'rxjs/operators'
 import { Router } from '@angular/router'
 
-import { CustomerDetails } from './../models/customerDetails';
+import { CustomerDetails } from '../models/customerDetails';
 
 export interface UserDetails {
     _id: string,

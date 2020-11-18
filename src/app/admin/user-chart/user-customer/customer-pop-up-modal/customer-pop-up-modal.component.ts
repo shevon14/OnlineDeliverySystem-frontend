@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { CustomerDetails } from './../../../../models/customerDetails';
+import { CustomerDetails } from '../../../../models/customerDetails';
 import { MDBModalRef } from 'angular-bootstrap-md';
-import { CustomerDetailsService } from 'src/app/services/customer-reg.service';
+import { CustomerDetailsService } from '../../../../services/customer-reg.service';
 
 @Component({
   selector: 'app-customer-pop-up-modal',

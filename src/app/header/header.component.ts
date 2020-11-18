@@ -74,7 +74,7 @@ firstName="hhh";
     this.auth.logout();
     // frame.show()
     this.router.navigate(['']);
-
+    window.location.reload();
   }
 
   Contact(){
@@ -83,6 +83,10 @@ firstName="hhh";
 
   About(){
     this.router.navigate(['aboutus']);
+  }
+  
+  home(){
+    this.router.navigate(['']);
   }
 
 }

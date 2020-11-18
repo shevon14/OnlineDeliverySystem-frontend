@@ -1,5 +1,5 @@
 <!-- Material form subscription -->
-<mdb-card>
+<mdb-card *ngIf="showCart">
 
     <mdb-card-header class="info-color white-text text-center py-4">
       <h5>
@@ -45,4 +45,6 @@
           </table>
     </mdb-card-footer>
   </mdb-card>
+
+  <app-payment *ngIf="showPayment" [Total]="viewTotal" [cartDetails]="dataTest2"></app-payment>
   <!-- Material form subscription -->

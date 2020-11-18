@@ -1,6 +1,6 @@
 import { SellerPopUpModalComponent } from './seller-pop-up-modal/seller-pop-up-modal.component';
-import { SellerDetails } from './../../../models/sellerDetails.models';
-import { SellerDetailsService } from './../../../services/seller-details.service';
+import { SellerDetails } from '../../../models/sellerDetails.models';
+import { SellerDetailsService } from '../../../services/seller-details.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { MDBModalService, MDBModalRef } from 'angular-bootstrap-md';

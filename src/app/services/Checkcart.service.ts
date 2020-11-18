@@ -16,6 +16,8 @@ export interface addcart{
     address: String;
     mobileNumber: String;
     customerName: String;
+    email:String;
+    payment:String;
 
 }
 
@@ -50,6 +52,10 @@ export class checkCartService {
     } 
 
     public findHistory(u_id){
-        return this.http.delete<addcart>(this.traget+'checkout/aa/bb/'+u_id);
+        return this.http.get<addcart>(this.traget+'checkout/aa/bb/'+u_id);
+    }
+
+    public getall(){
+        return this.http.get<addcart>(this.traget+'checkout/all');
     }
 }

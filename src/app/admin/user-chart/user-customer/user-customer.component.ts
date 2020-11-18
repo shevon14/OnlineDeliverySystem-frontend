@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { CustomerPopUpModalComponent } from './customer-pop-up-modal/customer-pop-up-modal.component';
-import { CustomerDetails } from './../../../models/customerDetails';
-import { CustomerDetailsService } from './../../../services/customer-reg.service';
+import { CustomerDetails } from '../../../models/customerDetails';
+import { CustomerDetailsService } from '../../../services/customer-reg.service';
 import { Router } from '@angular/router';
 import { MDBModalService, MDBModalRef } from 'angular-bootstrap-md';
 
