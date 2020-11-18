@@ -1,0 +1,153 @@
+<!-- Material form subscription -->
+<div>
+    <mdb-card>
+  
+      <mdb-card-header class="info-color white-text text-center py-4">
+        <h5>
+          <strong>Manage Orders</strong>
+        </h5>
+      </mdb-card-header>
+    
+      <!--Card content-->
+      <mdb-card-body class="px-lg-5">
+          <table mdbTable class="text-center" striped="true">
+              <thead class="black white-text">
+                  <tr>
+                      <th>Order ID</th>
+                      <th>Customer</th>
+                      <th>Payment type</th>
+                      <th>Total Amount</th>
+                      <th>Order Status</th>
+                      <th></th>
+                    </tr>
+              </thead>
+              <!-- <tr scope="row" *ngFor="let customerdata of getSelectedArray">
+                <td>{{customerdata._id}}</td>
+                <td>{{customerdata.productName}}</td>
+                <td>{{customerdata.quantity}}</td>
+                <td>
+                  <a class="waves-light text-info" data-toggle="modal" (click) = "openDetails()"><u>More Details</u></a>
+                </td>
+              </tr> -->
+              <tbody >
+                  <tr mdbTableCol scope="row">
+                      <td>#10156</td>
+                      <td>Customer Name</td>
+                      <td>Cash On Delivery</td>
+                      <td>Rs.1500/=</td>
+                      <td>Order Confirmed</td>
+                      <td><a>more details details<mdb-icon fas icon="arrow-right" size="m-5"  style="margin-left: 10px;"></mdb-icon></a></td>
+                    </tr>
+              </tbody>
+            </table>
+      </mdb-card-body>
+  
+      <mdb-card-footer class="px-lg-5">
+          
+      </mdb-card-footer>
+    </mdb-card>
+</div>
+    <!-- Material form subscription -->
+
+
+ 
+<!-----------meka uda order details click kalma penna danna--------------------------------- -->
+<div>
+    <mdb-card >
+
+      <mdb-card-header class="info-color white-text text-center py-4">
+        <h5>
+          <strong>Order Details for #101351</strong>
+        </h5>
+      </mdb-card-header>
+    
+      <!--Card content-->
+      <mdb-card-body class="px-lg-5">
+          <table mdbTable striped="true">
+              <tbody >
+                <tr mdbTableCol>
+                  <td>Full Name</td>
+                  <!-- <td>{{": "+this.getShowArray.customerName}}</td> -->
+                  <td>: Customer 01</td>
+              </tr>
+              <tr mdbTableCol>
+                  <td>Email</td>
+                  <!-- <td>{{": "+this.getShowArray.email}}</td> -->
+                  <td>: Customer@gmail.com</td>
+              </tr>
+              <tr mdbTableCol>
+                  <td>Billing Address</td>
+                  <!-- <td>{{": "+this.getShowArray.address}}</td> -->
+                  <td>: No.25/A, Colombo</td>
+              </tr>
+              <tr mdbTableCol>
+                  <td>Contact Number</td>
+                  <!-- <td>{{": "+this.getShowArray.mobileNumber}}</td> -->
+                  <td>: 0773932831</td>
+              </tr>
+              <tr mdbTableCol>
+                <td>Asstimated Dilivey Date</td>
+                <td>: 2020-Nov-29</td>
+             </tr>
+             <tr mdbTableCol>
+                <td>Order Status</td>
+                <td>
+                    <div>
+                        <!-- Default inline 1-->
+                        <div class="custom-control custom-radio custom-control-inline">
+                          <input type="radio" class="custom-control-input" value ='Personal' id="defaultInline1" name="inlineDefaultRadios"  
+                          mdbInput >
+                          <label class="custom-control-label" for="defaultInline1">Order Received</label>
+                        </div>
+                
+                        <!-- Default inline 2-->
+                        <div class="custom-control custom-radio custom-control-inline">
+                          <input type="radio" class="custom-control-input" value ="Shared" id="defaultInline2" name="inlineDefaultRadios"
+                          mdbInput >
+                          <label class="custom-control-label" for="defaultInline2">Redy to Diliver</label>
+                        </div>
+
+                        <!-- Default inline 3-->
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" value ="Shared2" id="defaultInline3" name="inlineDefaultRadios"
+                            mdbInput >
+                            <label class="custom-control-label" for="defaultInline3">Order Complete</label>
+                          </div>
+                      </div>
+                </td>
+            </tr>
+              </tbody>
+            </table>
+            <h5 class="mt-5">Ordered Products</h5>
+            <table mdbTable striped="true">
+              <thead class="black white-text">
+                  <tr>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                  </tr>
+              </thead>
+              <tbody >
+                  <tr mdbTableCol>
+                    <td>Laptop</td>
+                    <!-- <td>{{" "+this.getShowArray.productName}}</td> -->
+                    <td>02</td>
+                    <!-- <td>{{" "+this.getShowArray.quantity}}</td> -->
+                    <td>Rs.65000/=</td>
+                    <!-- <td>{{"RS: "+this.getShowArray.total}}</td> -->
+                </tr>
+              </tbody>
+            </table>
+            
+      </mdb-card-body>
+  
+      <mdb-card-footer class="px-lg-5">
+          
+      </mdb-card-footer>
+    </mdb-card>
+
+  </div>
+
+
+
+

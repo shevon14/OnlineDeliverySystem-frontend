@@ -69,6 +69,10 @@ export class DisplayProductsComponent implements OnInit {
     this.router.navigate(['seller','addProducts']);
   }
 
+  manageOrdersClicked(){
+    this.router.navigate(['seller','manageOrders']);
+  }
+
   editProductsClicked(value:aProductDetails){
     this.editProductShow=true;
     this.displayProductShow=true;

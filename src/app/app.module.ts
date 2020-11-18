@@ -44,6 +44,7 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { PaymentComponent } from './payment/payment.component';
 import { CustomerOrderHistoryComponent } from './customer-order-history/customer-order-history.component';
 import { CustomerOrderHistoryDetailsComponent } from './customer-order-history-details/customer-order-history-details.component';
+import { ManageordersComponent } from './seller/manageorders/manageorders.component';
 
 
 @NgModule({
@@ -84,7 +85,8 @@ import { CustomerOrderHistoryDetailsComponent } from './customer-order-history-d
     AboutusComponent,
     PaymentComponent,
     CustomerOrderHistoryComponent,
-    CustomerOrderHistoryDetailsComponent
+    CustomerOrderHistoryDetailsComponent,
+    ManageordersComponent
     
   ],
   imports: [
