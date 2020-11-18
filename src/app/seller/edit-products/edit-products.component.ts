@@ -84,6 +84,7 @@ export class EditProductsComponent implements OnInit {
     //    }
     //   )
     this.router.navigate(['seller'])
+    window.location.reload();
   }
 
 

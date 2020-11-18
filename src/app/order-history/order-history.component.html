@@ -12,16 +12,20 @@
         <table mdbTable class="text-center" striped="true">
             <thead class="black white-text">
                 <tr>
-                    <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+                    <th>Order ID</th>
+                    <th>Payment type</th>
+                    <th>Total Amount</th>
+                    <th>Order Status</th>
+                    <th></th>
                   </tr>
             </thead>
             <tbody >
-                <tr mdbTableCol *ngFor="let el of elements">
-                    <th scope="row">{{el.id}}</th>
-                    <td>{{el.date}}</td>
-                    <td>{{el.paymenttype}}</td>
-                    <td>{{el.price}}</td>
-                    <td>{{el.status}}</td>
+                <tr mdbTableCol>
+                    <td>#105423</td>
+                    <td>Cash On Delivery</td>
+                    <td>Rs.3500/=</td>
+                    <td>Order Confirmed</td>
+                    <td><a>order details<mdb-icon fas icon="arrow-right" size="m-5"  style="margin-left: 10px;"></mdb-icon></a></td>
                   </tr>
             </tbody>
           </table>
@@ -32,4 +36,74 @@
     </mdb-card-footer>
   </mdb-card>
   <!-- Material form subscription -->
+
+
+
+  
+<!-----------meka uda order details click kalma penna danna--------------------------------- -->
+  <div>
+    <mdb-card>
+
+      <mdb-card-header class="info-color white-text text-center py-4">
+        <h5>
+          <strong>Order Details for #105423</strong>
+        </h5>
+      </mdb-card-header>
+    
+      <!--Card content-->
+      <mdb-card-body class="px-lg-5">
+          <table mdbTable striped="true">
+              <tbody >
+                <tr mdbTableCol>
+                  <td>Full Name</td>
+                  <td>: customer Name</td>
+              </tr>
+              <tr mdbTableCol>
+                  <td>Email</td>
+                  <td>: customer123@gmail.com</td>
+              </tr>
+              <tr mdbTableCol>
+                  <td>Billing Address</td>
+                  <td>: No.5/A, Main Street, Negombo</td>
+              </tr>
+              <tr mdbTableCol>
+                  <td>Contact Number</td>
+                  <td>: 077 3932 831</td>
+              </tr>
+              <tr mdbTableCol>
+                <td>Asstimated Dilivey Date</td>
+                <td>: 2020-Nov-29</td>
+             </tr>
+              </tbody>
+            </table>
+            <h5 class="mt-5">Ordered Products</h5>
+            <table mdbTable striped="true">
+              <tbody >
+                  <tr>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                  </tr>
+                  <tr mdbTableCol>
+                    <td>Laptop</td>
+                    <td>01</td>
+                    <td>Rs.55000/=</td>
+                </tr>
+                <tr mdbTableCol>
+                  <td>Mobile</td>
+                  <td>01</td>
+                  <td>Rs.20000/=</td>
+                </tr>
+              </tbody>
+            </table>
+            
+           
+      </mdb-card-body>
+  
+      <mdb-card-footer class="px-lg-5">
+          
+      </mdb-card-footer>
+    </mdb-card>
+
+  </div>
 
