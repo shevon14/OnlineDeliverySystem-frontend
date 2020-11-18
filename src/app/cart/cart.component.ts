@@ -58,9 +58,8 @@ export class CartComponent implements OnInit {
   this.price = Number(this.cartDetails[i].uniPrice)
   this.total = this.price * Number(this.cartDetails[i].quantity)
       this.viewTotal  += this.total
-      console.log(this.viewTotal)
+      console.log(res)
    };
-        // console.log(this.cartDetails[1].uniPrice)
       },
 
       err => {
@@ -116,6 +115,7 @@ export class CartComponent implements OnInit {
  dataRead2.uniPrice= this.cartDetails[i].uniPrice,
  dataRead2.quantity= this.cartDetails[i].quantity,
  dataRead2.total= this.cartDetails[i].total,
+ dataRead2.shopId= this.cartDetails[i].shopID,
  dataRead2.address= this.details.address,
  dataRead2.mobileNumber= this.details.conatct,
  dataRead2.customerName= this.details.full_name
@@ -123,7 +123,7 @@ export class CartComponent implements OnInit {
     this.dataTest2.push(dataRead2)
     // this.addcheckout(dataRead2)
     console.log(this.dataTest2);
-    // console.log(dataRead3);
+    console.log("cart data");
   };
   
 

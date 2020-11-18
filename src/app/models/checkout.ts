@@ -11,4 +11,6 @@ export class checkout{
         email:String;
         payment:String;
         total:String;
+        state:String;
+        shopId:String;
 }

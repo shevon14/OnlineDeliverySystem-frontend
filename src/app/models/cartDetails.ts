@@ -5,7 +5,7 @@ export class CartDetails{
     productName:string;
     uniPrice:string;
     quantity:string;
-    // shopename:String;
+    // shopID:string;
     
     constructor(_id:String,u_id:string, productId:string, ){
 

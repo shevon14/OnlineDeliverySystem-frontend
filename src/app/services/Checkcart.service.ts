@@ -19,6 +19,8 @@ export interface addcart{
     email:String;
     payment:String;
     total:String;
+    state:String;
+    shopId:String;
 
 }
 

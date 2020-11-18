@@ -61,8 +61,8 @@ export class ItemDetailsForCartComponent implements OnInit {
       productName:this._property.productName,
       uniPrice: this._property.uniPrice,
       quantity:this.validatingForm.itemQuantity,
-      total:this.totalPrice.toString()
-
+      total:this.totalPrice.toString(),
+      shopID:this._property.shopID
     }
     this.auth3.add(addCart).subscribe(  
       (res) => {

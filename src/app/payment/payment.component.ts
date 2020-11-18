@@ -44,8 +44,10 @@ export class PaymentComponent implements OnInit {
     mobileNumber: '',
     customerName : '',
     email:'',
-    payment:'',
-    total:''
+    payment:'Cash On Delivery',
+    total:'',
+    state:'Ordered Products',
+    shopId:''
    }
 
   ngOnInit(): void {
@@ -69,13 +71,14 @@ export class PaymentComponent implements OnInit {
       dataRead2.productName=this.dataTest1[i].productName,
       dataRead2.uniPrice= this.dataTest1[i].uniPrice,
       dataRead2.total= this.dataTest1[i].total,
+      dataRead2.shopId= this.dataTest1[i].shopId,
       dataRead2.quantity= this.dataTest1[i].quantity,
       dataRead2.address=  this.credentials.address,
       dataRead2.mobileNumber= this.credentials.mobileNumber,
       dataRead2.customerName= this.credentials.customerName,
       dataRead2.email= this.credentials.email
       dataRead2.payment= this.credentials.payment
-      
+      dataRead2.state= this.credentials.state
 
         // dataRead3=dataRead2
         this.dataTest2.push(dataRead2)

@@ -90,7 +90,8 @@ export class AllProductsComponent implements OnInit {
       productName:item.productName,
       uniPrice: item.uniPrice,
       quantity:"1",
-      total:this.num.toString()
+      total:this.num.toString(),
+      shopID:item.shopID
 
     }
     this.auth3.add(addCart).subscribe(  
