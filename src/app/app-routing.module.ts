@@ -25,6 +25,7 @@ import { UserCustomerComponent } from './admin/user-chart/user-customer/user-cus
 import { ContactComponent } from './contact/contact.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { CustomerOrderHistoryComponent } from './customer-order-history/customer-order-history.component';
+import { ManageordersComponent } from './seller/manageorders/manageorders.component';
 
 // import { CustomerPopUpModalComponent } from './admin/user-chart/user-customer/customer-pop-up-modal/customer-pop-up-modal.component';
 
@@ -46,7 +47,8 @@ const routes: Routes = [
     children: [
       { path: '', component: DisplayProductsComponent },
       { path: 'addProducts', component: AddProductsComponent },
-      {path: 'editProducts', component: EditProductsComponent}
+      {path: 'editProducts', component: EditProductsComponent},
+      {path: 'manageOrders', component: ManageordersComponent}
     ]
   },
   {

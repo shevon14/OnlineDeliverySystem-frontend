@@ -32,7 +32,7 @@
                 <tr mdbTableCol scope="row" *ngFor="let customerdata of getSelectedArray">
                     <td>{{customerdata._id}}</td>
                     <td>{{customerdata.payment}}</td>
-                    <td>{{"Rs. "+customerdata.total}}</td>
+                    <td>{{"Rs."+customerdata.total}}</td>
                     <td>{{customerdata.state}}</td>
                     <td><a>order details<mdb-icon fas icon="arrow-right" size="m-5"  style="margin-left: 10px;" (click)="inClicked(customerdata)"></mdb-icon></a></td>
                   </tr>
@@ -91,11 +91,13 @@
               <tbody >
                   <tr>
                     <th>Product Name</th>
+                    <th>Shop Name</th>
                     <th>Quantity</th>
                     <th>Price</th>
                   </tr>
                   <tr mdbTableCol>
                     <td>{{" "+this.getShowArray.productName}}</td>
+                    <td>ABC Stores</td>
                     <td>{{" "+this.getShowArray.quantity}}</td>
                     <td>{{"RS: "+this.getShowArray.total}}</td>
                 </tr>
