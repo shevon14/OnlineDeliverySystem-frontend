@@ -63,17 +63,19 @@ this.getFullArray=res
     this.getShowArray=value;
   }
 
-  OrderReceived(){
+  OrderReceived(value:any){
  this.credentials.state="Order Received";
-//  console.log(value._id)
-//  /this.changeState(value._id)
+ console.log(value)
+ this.changeState(value)
   }
 
-  RedyToDiliver(){
+  RedyToDiliver(value:any){
     this.credentials.state="Redy to Diliver";
+    this.changeState(value)
   }
-  OrderComplete(){
+  OrderComplete(value:any){
     this.credentials.state="Order Complete";
+    this.changeState(value)
   }
 
   changeState(id:String){
