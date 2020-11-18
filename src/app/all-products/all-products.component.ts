@@ -21,6 +21,7 @@ export class AllProductsComponent implements OnInit {
   productArray: any;
   showdetails:false;
   selectedProduct:aProductDetails;
+  num: number;
   // item:CartDetails;
   states=true;
   imgview = false;
@@ -81,12 +82,15 @@ export class AllProductsComponent implements OnInit {
     this.details = this.auth2.getUserDetails();
     console.log(this.details._id)
 
+    this.num=Number(item.uniPrice) +150
+
     const addCart = <addcart>{
       u_id: this.details._id,
       productId: item._id,
       productName:item.productName,
       uniPrice: item.uniPrice,
       quantity:"1",
+      total:this.num.toString()
 
     }
     this.auth3.add(addCart).subscribe(  

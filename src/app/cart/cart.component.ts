@@ -115,6 +115,7 @@ export class CartComponent implements OnInit {
  dataRead2.productName=this.cartDetails[i].productName,
  dataRead2.uniPrice= this.cartDetails[i].uniPrice,
  dataRead2.quantity= this.cartDetails[i].quantity,
+ dataRead2.total= this.cartDetails[i].total,
  dataRead2.address= this.details.address,
  dataRead2.mobileNumber= this.details.conatct,
  dataRead2.customerName= this.details.full_name

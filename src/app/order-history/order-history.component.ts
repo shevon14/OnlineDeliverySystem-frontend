@@ -12,16 +12,37 @@ export class OrderHistoryComponent implements OnInit {
   
   user:String;
   cartDetails:CartDetails;
+  getFullArray:any
+  getSelectedArray:any
+  showDetails:boolean=false;
+  hideTable:boolean=true;
+  getShowArray:any
 
   constructor(private auth:checkCartService,
-    private auth2: CustomerDetailsService) { }
-
+    private auth2: CustomerDetailsService, private checkCartAuth:checkCartService) { }
+   
+  
 
   elements: any = [
     
   ];
 
   ngOnInit(): void {
+    
+    this.user = this.auth2.getUserDetails()._id;
+    console.log(this.user)
+    this.checkCartAuth.getall()
+    .subscribe(  
+      (res) => {
+this.getFullArray=res
+        this.getSelectedArray = this.getFullArray.filter(xx => xx.u_id === this.user);
+        console.log(this.getSelectedArray)
+      },
+
+      err => {
+        console.error(err)
+      }
+    )
     // this.user = this.auth2.getUserDetails()._id;
     // this.auth.findHistory(this.user)
     // .subscribe(  
@@ -35,6 +56,12 @@ export class OrderHistoryComponent implements OnInit {
     //   }
     // )
 
+  }
+
+  inClicked(customerdata:any){
+this.showDetails=true;
+this.hideTable=false;
+this.getShowArray=customerdata
   }
 
 }

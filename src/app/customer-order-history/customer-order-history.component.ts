@@ -26,15 +26,6 @@ export class CustomerOrderHistoryComponent implements OnInit {
 this.getFullArray=res
         this.getSelectedArray = this.getFullArray.filter(xx => xx.u_id === this.user);
         console.log(this.getSelectedArray)
-
-  //       console.log(Object.keys(this.cartDetails).length)
-  //   for (let i = 0; i <  Object.keys(this.cartDetails).length ; i++) {  
-  // this.price = Number(this.cartDetails[i].uniPrice)
-  // this.total = this.price * Number(this.cartDetails[i].quantity)
-  //     this.viewTotal  += this.total
-  //     console.log(this.viewTotal)
-  //  };
-        // console.log(this.cartDetails[1].uniPrice)
       },
 
       err => {

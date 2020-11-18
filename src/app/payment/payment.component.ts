@@ -44,7 +44,8 @@ export class PaymentComponent implements OnInit {
     mobileNumber: '',
     customerName : '',
     email:'',
-    payment:''
+    payment:'',
+    total:''
    }
 
   ngOnInit(): void {
@@ -67,6 +68,7 @@ export class PaymentComponent implements OnInit {
       dataRead2.productId=this.dataTest1[i].productId,
       dataRead2.productName=this.dataTest1[i].productName,
       dataRead2.uniPrice= this.dataTest1[i].uniPrice,
+      dataRead2.total= this.dataTest1[i].total,
       dataRead2.quantity= this.dataTest1[i].quantity,
       dataRead2.address=  this.credentials.address,
       dataRead2.mobileNumber= this.credentials.mobileNumber,
@@ -126,6 +128,7 @@ addcheckout(add:addcart){
     }
   )
 // this.router.navigate(['payment'])
+window.location.reload();
 }
 
 

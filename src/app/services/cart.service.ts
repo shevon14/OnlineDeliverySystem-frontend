@@ -15,6 +15,7 @@ productId:string;
 productName:string;
 uniPrice:string;
 quantity:string;
+total:string;
 }
 
 export interface removeproduct {

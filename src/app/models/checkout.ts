@@ -10,4 +10,5 @@ export class checkout{
         customerName: String;
         email:String;
         payment:String;
+        total:String;
 }

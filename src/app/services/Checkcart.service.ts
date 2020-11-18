@@ -18,6 +18,7 @@ export interface addcart{
     customerName: String;
     email:String;
     payment:String;
+    total:String;
 
 }
 
