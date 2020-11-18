@@ -15,7 +15,7 @@ export class PaymentComponent implements OnInit {
   tatal:string;
   date:Date;
   user:string;
-  dataTest1:addcart[]=new Array<addcart>();
+  dataTest1:any;
   dataTest2:addcart[]=new Array<addcart>();
   constructor(private auth2 : CustomerDetailsService,
     private cartAuth:cartDetailsService,
@@ -63,6 +63,7 @@ export class PaymentComponent implements OnInit {
   
   }
   confirmOrder(){
+    console.log(this.dataTest1)
     let  dataRead2: checkout=new checkout() 
     for (let i = 0; i <  this.dataTest1.length ; i++) {   
 
@@ -71,7 +72,7 @@ export class PaymentComponent implements OnInit {
       dataRead2.productName=this.dataTest1[i].productName,
       dataRead2.uniPrice= this.dataTest1[i].uniPrice,
       dataRead2.total= this.dataTest1[i].total,
-      dataRead2.shopId=this.dataTest1[i].shopId,
+      dataRead2.shopId=this.dataTest1[i].shopID,
       dataRead2.quantity= this.dataTest1[i].quantity,
       dataRead2.address=  this.credentials.address,
       dataRead2.mobileNumber= this.credentials.mobileNumber,
@@ -83,9 +84,10 @@ export class PaymentComponent implements OnInit {
         // dataRead3=dataRead2
         this.dataTest2.push(dataRead2)
         this.addcheckout(dataRead2)
-        this.removedetails();
 
   }
+  
+  this.removedetails();
   
 
 //   this.dataRead.forEach(obj => {
@@ -118,7 +120,7 @@ addcheckout(add:addcart){
     }
   )
 // this.router.navigate(['payment'])
-window.location.reload();
+// window.location.reload();
 
 }
 removedetails(){
