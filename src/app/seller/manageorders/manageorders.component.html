@@ -1,5 +1,5 @@
 <!-- Material form subscription -->
-<div>
+<div *ngIf="startViewTable">
     <mdb-card>
   
       <mdb-card-header class="info-color white-text text-center py-4">
@@ -30,13 +30,13 @@
                 </td>
               </tr> -->
               <tbody >
-                  <tr mdbTableCol scope="row">
-                      <td>#10156</td>
-                      <td>Customer Name</td>
-                      <td>Cash On Delivery</td>
-                      <td>Rs.1500/=</td>
-                      <td>Order Confirmed</td>
-                      <td><a>more details details<mdb-icon fas icon="arrow-right" size="m-5"  style="margin-left: 10px;"></mdb-icon></a></td>
+                  <tr scope="row" *ngFor="let customerdata of getSelectedArray" mdbTableCol scope="row">
+                      <td>{{customerdata._id}}</td>
+                      <td>{{customerdata.customerName}}</td>
+                      <td>{{customerdata.payment}}</td>
+                      <td>{{"Rs."+customerdata.total}}</td>
+                      <td>{{customerdata.state}}</td>
+                      <td><a>more details details<mdb-icon fas icon="arrow-right" size="m-5"  style="margin-left: 10px;" (click)="openData(customerdata)"></mdb-icon></a></td>
                     </tr>
               </tbody>
             </table>
@@ -52,12 +52,12 @@
 
  
 <!-----------meka uda order details click kalma penna danna--------------------------------- -->
-<div>
+<div *ngIf="startView">
     <mdb-card >
 
       <mdb-card-header class="info-color white-text text-center py-4">
         <h5>
-          <strong>Order Details for #101351</strong>
+          <strong>{{"Order Details for "+this.getShowArray._id}}</strong>
         </h5>
       </mdb-card-header>
     
@@ -68,49 +68,49 @@
                 <tr mdbTableCol>
                   <td>Full Name</td>
                   <!-- <td>{{": "+this.getShowArray.customerName}}</td> -->
-                  <td>: Customer 01</td>
+                  <td>{{" : "+this.getShowArray.customerName}}</td>
               </tr>
               <tr mdbTableCol>
                   <td>Email</td>
                   <!-- <td>{{": "+this.getShowArray.email}}</td> -->
-                  <td>: Customer@gmail.com</td>
+                  <td>{{" : "+this.getShowArray.email}}</td>
               </tr>
               <tr mdbTableCol>
                   <td>Billing Address</td>
                   <!-- <td>{{": "+this.getShowArray.address}}</td> -->
-                  <td>: No.25/A, Colombo</td>
+                  <td>{{" : "+this.getShowArray.address}}</td>
               </tr>
               <tr mdbTableCol>
                   <td>Contact Number</td>
                   <!-- <td>{{": "+this.getShowArray.mobileNumber}}</td> -->
-                  <td>: 0773932831</td>
+                  <td>{{" : "+this.getShowArray.mobileNumber}}</td>
               </tr>
               <tr mdbTableCol>
                 <td>Asstimated Dilivey Date</td>
                 <td>: 2020-Nov-29</td>
              </tr>
              <tr mdbTableCol>
-                <td>Order Status</td>
+                <td>{{" "+this.getShowArray.state}}</td>
                 <td>
                     <div>
                         <!-- Default inline 1-->
                         <div class="custom-control custom-radio custom-control-inline">
                           <input type="radio" class="custom-control-input" value ='Personal' id="defaultInline1" name="inlineDefaultRadios"  
-                          mdbInput >
+                          (click)="OrderReceived()" mdbInput >
                           <label class="custom-control-label" for="defaultInline1">Order Received</label>
                         </div>
                 
                         <!-- Default inline 2-->
                         <div class="custom-control custom-radio custom-control-inline">
                           <input type="radio" class="custom-control-input" value ="Shared" id="defaultInline2" name="inlineDefaultRadios"
-                          mdbInput >
+                          (click)="RedyToDiliver()" mdbInput >
                           <label class="custom-control-label" for="defaultInline2">Redy to Diliver</label>
                         </div>
 
                         <!-- Default inline 3-->
                         <div class="custom-control custom-radio custom-control-inline">
                             <input type="radio" class="custom-control-input" value ="Shared2" id="defaultInline3" name="inlineDefaultRadios"
-                            mdbInput >
+                            (click)="OrderComplete()" mdbInput >
                             <label class="custom-control-label" for="defaultInline3">Order Complete</label>
                           </div>
                       </div>
@@ -129,11 +129,11 @@
               </thead>
               <tbody >
                   <tr mdbTableCol>
-                    <td>Laptop</td>
+                    <td>{{this.getShowArray.productName}}</td>
                     <!-- <td>{{" "+this.getShowArray.productName}}</td> -->
-                    <td>02</td>
+                    <td>{{this.getShowArray.quantity}}</td>
                     <!-- <td>{{" "+this.getShowArray.quantity}}</td> -->
-                    <td>Rs.65000/=</td>
+                    <td>{{" : Rs."+this.getShowArray.total}}</td>
                     <!-- <td>{{"RS: "+this.getShowArray.total}}</td> -->
                 </tr>
               </tbody>

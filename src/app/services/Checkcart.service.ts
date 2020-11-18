@@ -61,4 +61,8 @@ export class checkCartService {
     public getall(){
         return this.http.get<addcart>(this.traget+'checkout/all');
     }
+
+    public cartDataUpdate(code,product: addcart){
+        return this.http.put<addcart>(this.traget+'checkout/'+code,product);
+    }
 }
