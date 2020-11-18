@@ -120,7 +120,7 @@ addcheckout(add:addcart){
     }
   )
 // this.router.navigate(['payment'])
-// window.location.reload();
+window.location.reload();
 
 }
 removedetails(){
