@@ -71,35 +71,22 @@ export class PaymentComponent implements OnInit {
       dataRead2.productName=this.dataTest1[i].productName,
       dataRead2.uniPrice= this.dataTest1[i].uniPrice,
       dataRead2.total= this.dataTest1[i].total,
-      dataRead2.shopId= this.dataTest1[i].shopId,
+      dataRead2.shopId=this.dataTest1[i].shopId,
       dataRead2.quantity= this.dataTest1[i].quantity,
       dataRead2.address=  this.credentials.address,
       dataRead2.mobileNumber= this.credentials.mobileNumber,
       dataRead2.customerName= this.credentials.customerName,
-      dataRead2.email= this.credentials.email
-      dataRead2.payment= this.credentials.payment
-      dataRead2.state= this.credentials.state
+      dataRead2.email= this.credentials.email,
+      dataRead2.payment=this.credentials.payment
+      dataRead2.state=this.credentials.state
 
         // dataRead3=dataRead2
         this.dataTest2.push(dataRead2)
         this.addcheckout(dataRead2)
-
-        this.cartAuth.removeCart(this.user)
-        .subscribe(  
-          (res) => {
-            // this.router.navigate([''])
-            console.log(res)
-            // this.cartDetails= res
-            // window.location.reload();
-          },
-      
-          err => {
-            console.error(err)
-          }
-        )
-
+        this.removedetails();
 
   }
+  
 
 //   this.dataRead.forEach(obj => {
 //     obj.forEach(childObj=> {
@@ -132,7 +119,28 @@ addcheckout(add:addcart){
   )
 // this.router.navigate(['payment'])
 window.location.reload();
+
+}
+removedetails(){
+  this.cartAuth.removeCart(this.user)
+.subscribe(  
+  (res) => {
+    // this.router.navigate([''])
+    console.log(res)
+    // this.cartDetails= res
+    // window.location.reload();
+  },
+
+  err => {
+    console.error(err)
+  }
+)
 }
 
-
+getCash(){
+  this.credentials.payment="Cash On Delivery"
+}
+getCard(){
+  this.credentials.payment="Card Payment"
+}
 }
