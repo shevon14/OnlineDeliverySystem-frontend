@@ -76,5 +76,8 @@ public findProduct(uid){
 public productUpdatedData(code,product: addproduct){
     return this.http.put<ProductDetails>(this.traget+'products/'+code,product);
 }
+public productUpdatedQuntity(code,product: addproduct){
+    return this.http.put<addproduct>(this.traget+'products/qdata/'+code,product);
+}
 
 }
