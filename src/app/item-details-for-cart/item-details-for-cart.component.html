@@ -36,7 +36,7 @@
                         </div> -->
                         <td>
                             <input id="itemQuantity" name="itemQuantity" type="number" value="1" aria-label="Search" class="form-control" [(ngModel)]="validatingForm.itemQuantity"
-                                style="width: 100px" min="1"  (click)="increase()" >
+                                style="width: 100px" min="1" max="{{_property.availableQuantity}}"  (click)="increase()" >
                         </td>
                         <hr>
                         <!--Card footer-->

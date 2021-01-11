@@ -51,7 +51,7 @@
             <div class="col-md-2 pb-3" *ngFor="let card of electronicDeviceArray">
 
                 <mdb-card class="card text-center pb-0 rounded hoverable ">
-                    <div class="view overlay"  (click)="itemDetailsClicked(card)">
+                    <div class="view overlay"  (click)="itemDetailsClicked(card)" >
                         <img class="card-img-top img-responsive" style="height: 150px;" [src]= "card.imgName" >
                         <a>
                             <div class="mask rgba-white-slight"></div>

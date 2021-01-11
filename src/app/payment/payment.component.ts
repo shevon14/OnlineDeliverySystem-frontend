@@ -3,7 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { addcart, checkCartService } from '../services/Checkcart.service';
 import { checkout } from '../models/checkout';
 import { cartDetailsService } from '../services/cart.service';
-import { addproduct } from '../services/product.service';
+import { addproduct, productDetailsService } from '../services/product.service';
 
 @Component({
   selector: 'app-payment',
@@ -17,9 +17,14 @@ export class PaymentComponent implements OnInit {
   user:string;
   dataTest1:any;
   dataTest2:addcart[]=new Array<addcart>();
+  productArray: any;
+  productByshop: any;
+  chackstate:boolean=true;
   constructor(private auth2 : CustomerDetailsService,
     private cartAuth:cartDetailsService,
-    private checkCartAuth:checkCartService){ }
+    private checkCartAuth:checkCartService,
+    public auth:productDetailsService,
+  ){ }
 
   @Input() set Total (value:string){
     this.tatal = value;
@@ -48,8 +53,17 @@ export class PaymentComponent implements OnInit {
     total:'',
     state:'Ordered Products',
     shopId:''
-   }
-
+   };
+addProductData :addproduct= {
+    _id: '',
+    productName: '',
+    uniPrice: '',
+    availableQuantity: '',
+    category: '',
+    imgName : '',
+    shopName: '',
+    shopID : '',
+    }
   ngOnInit(): void {
     this.user = this.auth2.getUserDetails()._id;
 
@@ -60,6 +74,9 @@ export class PaymentComponent implements OnInit {
   this.credentials.email = this.auth2.getUserDetails().email;
   this.credentials.address = this.auth2.getUserDetails().address;
   this.credentials.mobileNumber = this.auth2.getUserDetails().conatct;
+  
+  this.getalldata();
+  
   
   }
   confirmOrder(){
@@ -84,9 +101,10 @@ export class PaymentComponent implements OnInit {
         // dataRead3=dataRead2
         this.dataTest2.push(dataRead2)
         this.addcheckout(dataRead2)
-
+    
+      
+        this.reduceCount(dataRead2.productId,dataRead2.quantity);
   }
-  
   this.removedetails();
   
 
@@ -120,7 +138,7 @@ addcheckout(add:addcart){
     }
   )
 // this.router.navigate(['payment'])
-window.location.reload();
+// window.location.reload();
 
 }
 removedetails(){
@@ -129,8 +147,9 @@ removedetails(){
   (res) => {
     // this.router.navigate([''])
     console.log(res)
+    this.chackstate=false;
     // this.cartDetails= res
-    // window.location.reload();
+    window.location.reload();
   },
 
   err => {
@@ -145,4 +164,31 @@ getCash(){
 getCard(){
   this.credentials.payment="Card Payment"
 }
+
+reduceCount(code,quantity){
+  this.productByshop = this.productArray.filter(xx => xx._id == code);
+  // if(this.chackstate){
+    
+  var AvailableQuantity=this.productByshop[0].availableQuantity;
+  this.addProductData.availableQuantity=(AvailableQuantity-quantity).toString();
+  this.auth.productUpdatedQuntity(code,this.addProductData).subscribe(
+    ()=>{ 
+      console.log("asd")
+    },
+
+    err=>{
+      console.error(err)
+    }
+  )
+  return true;
+  // }
+  }
+
+  getalldata(){
+    this.auth.productDetails().subscribe((list)=>{
+      this.productArray = list;
+      console.log(this.productArray);
+    });
+  }
+
 }
