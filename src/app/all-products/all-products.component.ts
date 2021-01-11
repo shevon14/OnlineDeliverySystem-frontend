@@ -94,17 +94,24 @@ export class AllProductsComponent implements OnInit {
       shopID:item.shopID
 
     }
+
+  if(item.availableQuantity!="0"){
     this.auth3.add(addCart).subscribe(  
       (res) => {
         // this.router.navigate([''])
         console.log(addCart)
         console.log(res)
+        window.location.reload();
       },
 
       err => {
         console.error(err)
       }
     )
+  }
+  else{
+    alert("YOU can't add the product because not available contity")
+  }
 
     // this.router.navigate(['itemDetail']);
 
