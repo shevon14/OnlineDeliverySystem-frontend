@@ -90,20 +90,17 @@
                 <td>: 2020-Nov-29</td>
              </tr>
              <tr mdbTableCol>
+                <td>Current Order Status</td>
                 <td>{{" "+this.getShowArray.state}}</td>
+             </tr>
+             <tr mdbTableCol>
+                <td>Change Status -</td>
                 <td>
                     <div>
-                        <!-- Default inline 1-->
-                        <div class="custom-control custom-radio custom-control-inline">
-                          <input type="radio" class="custom-control-input" value ='Personal' id="defaultInline1" name="inlineDefaultRadios"  
-                          (click)="OrderReceived()" mdbInput >
-                          <label class="custom-control-label" for="defaultInline1">Order Status</label>
-                        </div>
-                
                         <!-- Default inline 2-->
                         <div class="custom-control custom-radio custom-control-inline">
                           <input type="radio" class="custom-control-input" value ="Shared" id="defaultInline2" name="inlineDefaultRadios"
-                          (click)="RedyToDiliver()" mdbInput >
+                          (click)="RedyToDiliver(this.getShowArray._id)" mdbInput >
                           <label class="custom-control-label" for="defaultInline2">Ready to Diliver</label>
                         </div>
 

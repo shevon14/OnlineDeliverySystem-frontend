@@ -30,6 +30,8 @@ export class AllProductsComponent implements OnInit {
    details:UserDetails
    modalRef: MDBModalRef;
 
+   displayQuantity:any;
+
   constructor(private auth:productDetailsService,private auth2:CustomerDetailsService,private auth3:cartDetailsService,
      private modalService: MDBModalService,private router:Router
     ) { }
@@ -110,7 +112,7 @@ export class AllProductsComponent implements OnInit {
     )
   }
   else{
-    alert("YOU can't add the product because not available contity")
+    alert("The Selected Product is OUT OF STOCK")
   }
 
     // this.router.navigate(['itemDetail']);
