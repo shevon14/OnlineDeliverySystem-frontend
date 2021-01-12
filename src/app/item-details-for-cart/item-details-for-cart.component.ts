@@ -64,6 +64,7 @@ export class ItemDetailsForCartComponent implements OnInit {
       total:this.totalPrice.toString(),
       shopID:this._property.shopID
     }
+    if(this._property.availableQuantity!="0"){
     this.auth3.add(addCart).subscribe(  
       (res) => {
         // this.router.navigate([''])
@@ -76,5 +77,11 @@ export class ItemDetailsForCartComponent implements OnInit {
         console.error(err)
       }
     )
+  }
+
+  else{
+    alert("YOU can't add the product because not available contity")
+  }
+  
   }
 }
