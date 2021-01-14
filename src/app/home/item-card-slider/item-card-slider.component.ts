@@ -2,6 +2,8 @@ import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { productDetailsService } from '../../services/product.service';
 import { ProductDetails } from '../../models/productDetails';
+import { UserDetails, CustomerDetailsService } from '../../services/customer-reg.service';
+import { addcart, cartDetailsService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-item-card-slider',
@@ -10,9 +12,12 @@ import { ProductDetails } from '../../models/productDetails';
 })
 export class ItemCardSliderComponent implements OnInit {
 
-  constructor(private auth:productDetailsService,private router:Router) { }
+  constructor(private auth:productDetailsService,private router:Router,private auth2:CustomerDetailsService
+  ,private auth3:cartDetailsService) { }
 
   productrArray: ProductDetails;
+  details:UserDetails
+  num: number;
 
   //imgLink : string = 'https://moderndiplomacy.eu/wp-content/uploads/2019/01/rolex-oyster.jpg';
 
@@ -39,6 +44,44 @@ export class ItemCardSliderComponent implements OnInit {
 
   seeAllProducts(){
     this.router.navigate(['products']);
+  }
+
+  addcartClicked(item:any) {
+    console.log(item)
+    this.details = this.auth2.getUserDetails();
+    console.log(this.details._id)
+
+    this.num=Number(item.uniPrice) +150
+
+    const addCart = <addcart>{
+      u_id: this.details._id,
+      productId: item._id,
+      productName:item.productName,
+      uniPrice: item.uniPrice,
+      quantity:"1",
+      total:this.num.toString(),
+      shopID:item.shopID,
+      
+    }
+
+  if(item.availableQuantity!="0"){
+    this.auth3.add(addCart).subscribe(  
+      (res) => {
+        // this.router.navigate([''])
+        console.log(addCart)
+        console.log(res)
+        window.location.reload();
+      },
+
+      err => {
+        console.error(err)
+      }
+    )
+  }
+  else{
+    alert("The Selected Product is OUT OF STOCK")
+  }
+
   }
 
 }
