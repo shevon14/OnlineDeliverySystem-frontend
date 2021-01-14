@@ -33,7 +33,7 @@ export interface adddeliverycart{
 })
 
 
-export class checkCartService {
+export class deliveryCartService {
 
     constructor(private http: HttpClient, private router: Router) { }
 

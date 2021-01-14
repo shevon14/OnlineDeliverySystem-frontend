@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { checkCartService, addcart } from '../../services/Checkcart.service';
 import { CustomerDetailsService } from '../../services/customer-reg.service';
+import { adddeliverycart, deliveryCartService } from '../../services/deliverycart.service';
 
 @Component({
   selector: 'app-manageorders',
@@ -21,7 +22,8 @@ export class ManageordersComponent implements OnInit {
 
 
   constructor(
-    private auth2: CustomerDetailsService, private checkCartAuth:checkCartService) { }
+    private auth2: CustomerDetailsService, private checkCartAuth:checkCartService,
+    private auth3:deliveryCartService) { }
 
     credentials:addcart={
       u_id: '',
@@ -79,10 +81,39 @@ this.getFullArray=res
  window.location.reload();
   }
 
-  RedyToDiliver(value:any){
+  RedyToDiliver(value:any,usercredentials:any){
     this.credentials.state="Redy to Diliver";
     this.changeState(value)
-    window.location.reload();
+
+    const deliveryCart = <adddeliverycart>{
+      u_id:usercredentials.u_id,
+      productId: usercredentials.productId,
+      productName: usercredentials.productName,
+      uniPrice: usercredentials.uniPrice,
+      quantity:usercredentials.quantity,
+      address:usercredentials.address,
+      mobileNumber: usercredentials.mobileNumber,
+      customerName: usercredentials.customerName,
+      email:usercredentials.email,
+      payment:usercredentials.payment,
+      total:usercredentials.total,
+      state:this.credentials.state,
+      shopId:usercredentials.shopID,
+      deliverPersonId:null,
+      orderId:value,
+    }
+    this.auth3.add(deliveryCart).subscribe(  
+      (res) => {
+        // this.router.navigate([''])
+        console.log(deliveryCart)
+        console.log(res)
+      },
+
+      err => {
+        console.error(err)
+      }
+    )
+   // window.location.reload();
   }
   OrderComplete(value:any){
     this.credentials.state="Order Packing";

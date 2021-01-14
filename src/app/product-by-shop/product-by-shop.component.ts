@@ -79,6 +79,7 @@ export class ProductByShopComponent implements OnInit {
         // this.router.navigate([''])
         console.log(addCart)
         console.log(res)
+      
       },
 
       err => {
