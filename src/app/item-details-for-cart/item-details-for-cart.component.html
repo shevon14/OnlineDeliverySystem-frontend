@@ -76,7 +76,7 @@
                         
                     </dl>
                     <button type="button" mdbBtn color="info" block="true" mdbWavesEffect class="mb-lg-0 mb-5"
-                        (click)="CartClicked()">Add to Cart</button>
+                        (click)="CartClicked(); frame.show()">Add to Cart</button>
 
                 </mdb-card-body>
             </mdb-card>
@@ -115,3 +115,29 @@
     </div>
 
 </div> -->
+
+<div mdbModal #frame="mdbModal" class="modal fade top" id="frameModalTop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-notify modal-danger" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <!--Body-->
+      <div class="modal-body">
+        <div class="text-center">
+          <mdb-icon fas icon="check" size="4x" class="mb-3 animated rotateIn"></mdb-icon>
+          <p>A new item has bean added to shopping Cart</p>
+        </div>
+      </div>
+
+      <!--Footer-->
+      <div class="modal-footer justify-content-center">
+        <a type="button" mdbBtn color="danger" class="waves-effect" mdbWavesEffect (click)="viewShoppingCart()">View Shopping cart
+          <mdb-icon far icon="check" class="ml-1"></mdb-icon>
+        </a>
+        <a type="button" mdbBtn color="danger" outline="true" class="waves-effect" mdbWavesEffect (click)="continueShopping();frame.hide()">Continue shopping</a>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>

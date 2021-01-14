@@ -103,7 +103,6 @@ export class AllProductsComponent implements OnInit {
         // this.router.navigate([''])
         console.log(addCart)
         console.log(res)
-        window.location.reload();
       },
 
       err => {
@@ -208,5 +207,10 @@ export class AllProductsComponent implements OnInit {
     }
   }
   
-
+  viewShoppingCart(){
+    this.router.navigate(['cart']);
+  }
+  continueShopping(){
+    this.router.navigate(['products']);
+  }
 }

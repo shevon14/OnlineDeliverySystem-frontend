@@ -45,6 +45,7 @@ import { PaymentComponent } from './payment/payment.component';
 import { CustomerOrderHistoryComponent } from './customer-order-history/customer-order-history.component';
 import { CustomerOrderHistoryDetailsComponent } from './customer-order-history-details/customer-order-history-details.component';
 import { ManageordersComponent } from './seller/manageorders/manageorders.component';
+import { AddbutnComponent } from './components/popup/addbutn/addbutn.component';
 
 
 @NgModule({
@@ -86,7 +87,8 @@ import { ManageordersComponent } from './seller/manageorders/manageorders.compon
     PaymentComponent,
     CustomerOrderHistoryComponent,
     CustomerOrderHistoryDetailsComponent,
-    ManageordersComponent
+    ManageordersComponent,
+    AddbutnComponent
     
   ],
   imports: [

@@ -26,6 +26,7 @@ import { ContactComponent } from './contact/contact.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { CustomerOrderHistoryComponent } from './customer-order-history/customer-order-history.component';
 import { ManageordersComponent } from './seller/manageorders/manageorders.component';
+import { AddbutnComponent } from './components/popup/addbutn/addbutn.component';
 
 // import { CustomerPopUpModalComponent } from './admin/user-chart/user-customer/customer-pop-up-modal/customer-pop-up-modal.component';
 
@@ -69,7 +70,8 @@ const routes: Routes = [
   
   {path: 'contact' , component: ContactComponent},
   {path: 'aboutus' , component: AboutusComponent},
-  {path: 'qqq' , component: CustomerOrderHistoryComponent}
+  {path: 'qqq' , component: CustomerOrderHistoryComponent},
+  {path: 'wew', component: AddbutnComponent}
 ];
 
 @NgModule({

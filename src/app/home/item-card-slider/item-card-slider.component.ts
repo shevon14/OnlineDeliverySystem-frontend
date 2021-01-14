@@ -61,7 +61,7 @@ export class ItemCardSliderComponent implements OnInit {
       quantity:"1",
       total:this.num.toString(),
       shopID:item.shopID,
-      
+
     }
 
   if(item.availableQuantity!="0"){
@@ -70,7 +70,6 @@ export class ItemCardSliderComponent implements OnInit {
         // this.router.navigate([''])
         console.log(addCart)
         console.log(res)
-        window.location.reload();
       },
 
       err => {
@@ -83,7 +82,12 @@ export class ItemCardSliderComponent implements OnInit {
   }
 
   }
-
+  viewShoppingCart(){
+    this.router.navigate(['cart']);
+  }
+  continueShopping(){
+    this.router.navigate(['products']);
+  }
 }
   
 

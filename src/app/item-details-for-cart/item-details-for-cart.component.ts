@@ -4,6 +4,7 @@ import { aProductDetails } from '../models/aProductData';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import { UserDetails, CustomerDetailsService } from '../services/customer-reg.service';
 import { cartDetailsService, addcart } from '../services/cart.service';
+import { Router } from '../../../node_modules/@angular/router';
 @Component({
   selector: 'app-item-details-for-cart',
   templateUrl: './item-details-for-cart.component.html',
@@ -19,7 +20,7 @@ export class ItemDetailsForCartComponent implements OnInit {
   // itemQuantity:String;
 
   constructor(private auth2:CustomerDetailsService,private auth3:cartDetailsService
-   ) { }
+    ,private router:Router) { }
   // validatingForm : FormGroup;
   validatingForm=({
     itemQuantity: String('1')});
@@ -70,7 +71,6 @@ export class ItemDetailsForCartComponent implements OnInit {
         // this.router.navigate([''])
         console.log(addCart)
         console.log(res)
-        window.location.reload();
       },
 
       err => {
@@ -83,5 +83,12 @@ export class ItemDetailsForCartComponent implements OnInit {
     alert("YOU can't add the product because not available contity")
   }
   
+  }
+
+  viewShoppingCart(){
+    this.router.navigate(['cart']);
+  }
+  continueShopping(){
+    this.router.navigate(['products']);
   }
 }
