@@ -96,21 +96,30 @@
              <tr mdbTableCol>
                 <td>Change Status -</td>
                 <td>
+                    
                     <div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" value ="Shared1" id="defaultInline1" name="inlineDefaultRadios"
+                            (click)="OrderReceived(this.getShowArray._id)" mdbInput [checked]="orderReceived" >
+                            <label class="custom-control-label" for="defaultInline1">Order Received</label>
+                          </div>
+
+
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" value ="Shared2" id="defaultInline2" name="inlineDefaultRadios"
+                            (click)="OrderComplete(this.getShowArray._id)" mdbInput [checked]="orderPacking" >
+                            <label class="custom-control-label" for="defaultInline2">Order Packing</label>
+                          </div>
+                      
                         <!-- Default inline 2-->
                         <div class="custom-control custom-radio custom-control-inline">
-                          <input type="radio" class="custom-control-input" value ="Shared" id="defaultInline2" name="inlineDefaultRadios"
-                          (click)="RedyToDiliver(this.getShowArray._id)" mdbInput >
-                          <label class="custom-control-label" for="defaultInline2">Ready to Diliver</label>
+                          <input type="radio" class="custom-control-input" value ="Shared" id="defaultInline3" name="inlineDefaultRadios"
+                          (click)="RedyToDiliver(this.getShowArray._id)" mdbInput [checked]="redyToDiliver">
+                          <label class="custom-control-label" for="defaultInline3">Ready to Diliver</label>
                         </div>
-
-                        <!-- Default inline 3-->
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" value ="Shared2" id="defaultInline3" name="inlineDefaultRadios"
-                            (click)="OrderComplete(this.getShowArray._id)" mdbInput >
-                            <label class="custom-control-label" for="defaultInline3">Order Complete</label>
-                          </div>
                       </div>
+                        <!-- Default inline 3-->
+                        
                 </td>
             </tr>
               </tbody>

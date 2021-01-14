@@ -15,7 +15,9 @@ export class ManageordersComponent implements OnInit {
   getFullArray:any
   getSelectedArray:any;
   getShowArray:any;
-
+  orderReceived:boolean=false;
+  orderPacking:boolean=false;
+  redyToDiliver:boolean=false;
 
 
   constructor(
@@ -52,30 +54,40 @@ this.getFullArray=res
         console.error(err)
       }
     )
-
-    
-    
   }
 
   openData(value:any){
     this.startView=true;
     this.startViewTable=false;
     this.getShowArray=value;
+
+    if(value.state=="Order Received"){
+      this.orderReceived=true;
+    }
+    if(value.state=="Order Packing"){
+      this.orderPacking=true;
+    }
+    if(value.state=="Redy to Diliver"){
+    this.redyToDiliver=true;
+    }
   }
 
   OrderReceived(value:any){
  this.credentials.state="Order Received";
  console.log(value)
  this.changeState(value)
+ window.location.reload();
   }
 
   RedyToDiliver(value:any){
     this.credentials.state="Redy to Diliver";
     this.changeState(value)
+    window.location.reload();
   }
   OrderComplete(value:any){
-    this.credentials.state="Order Complete";
+    this.credentials.state="Order Packing";
     this.changeState(value)
+    window.location.reload();
   }
 
   changeState(id:String){
