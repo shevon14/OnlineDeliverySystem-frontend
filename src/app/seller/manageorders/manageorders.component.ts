@@ -113,7 +113,7 @@ this.getFullArray=res
         console.error(err)
       }
     )
-   // window.location.reload();
+    window.location.reload();
   }
   OrderComplete(value:any){
     this.credentials.state="Order Packing";

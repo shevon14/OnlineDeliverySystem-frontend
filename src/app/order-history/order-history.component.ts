@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CustomerDetailsService } from '../services/customer-reg.service';
 import { checkCartService } from '../services/Checkcart.service';
 import { CartDetails } from '../models/cartDetails';
+import { SellerDetailsService } from '../services/seller-details.service';
 
 @Component({
   selector: 'app-order-history',
@@ -16,10 +17,12 @@ export class OrderHistoryComponent implements OnInit {
   getSelectedArray:any
   showDetails:boolean=false;
   hideTable:boolean=true;
-  getShowArray:any
+  getShowArray:any;
+  getShopDetails:any;
 
   constructor(private auth:checkCartService,
-    private auth2: CustomerDetailsService, private checkCartAuth:checkCartService) { }
+    private auth2: CustomerDetailsService, private checkCartAuth:checkCartService,
+    private authSeller: SellerDetailsService) { }
    
   
 
@@ -34,9 +37,10 @@ export class OrderHistoryComponent implements OnInit {
     this.checkCartAuth.getall()
     .subscribe(  
       (res) => {
-this.getFullArray=res
+        this.getFullArray=res
         this.getSelectedArray = this.getFullArray.filter(xx => xx.u_id === this.user);
-        console.log(this.getSelectedArray)
+        console.log(this.getSelectedArray);
+
       },
 
       err => {
@@ -61,7 +65,20 @@ this.getFullArray=res
   inClicked(customerdata:any){
 this.showDetails=true;
 this.hideTable=false;
-this.getShowArray=customerdata
+this.getShowArray=customerdata;
+
+    this.authSeller.getShopData(this.getShowArray.shopID)
+    .subscribe(  
+      (res) => {
+        this.getShopDetails=res;
+
+      },
+
+      err => {
+        console.error(err)
+      }
+    )
+
   }
 
 }

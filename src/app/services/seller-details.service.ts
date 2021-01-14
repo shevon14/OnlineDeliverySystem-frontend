@@ -169,4 +169,9 @@ export class SellerDetailsService {
     
     return request
 }
+
+public getShopData(id:string){
+  return this.http.get<TokenPayload>( "http://localhost:3000/sellers/"+id);
+}
+
 }
