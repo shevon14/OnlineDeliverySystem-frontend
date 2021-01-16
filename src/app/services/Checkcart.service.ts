@@ -21,7 +21,7 @@ export interface addcart{
     total:String;
     state:String;
     shopId:String;
-
+    orderId:String;
 }
 
 

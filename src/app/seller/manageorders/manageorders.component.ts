@@ -39,6 +39,7 @@ export class ManageordersComponent implements OnInit {
       total:'',
       state:'',
       shopId:'',
+      orderId:''
    }
 
   ngOnInit(): void {
@@ -100,7 +101,7 @@ this.getFullArray=res
       state:this.credentials.state,
       shopId:usercredentials.shopID,
       deliverPersonId:null,
-      orderId:value,
+      orderId:usercredentials.orderId,
     }
     this.auth3.add(deliveryCart).subscribe(  
       (res) => {

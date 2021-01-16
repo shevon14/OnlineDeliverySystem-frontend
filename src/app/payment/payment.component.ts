@@ -52,7 +52,8 @@ export class PaymentComponent implements OnInit {
     payment:'Cash On Delivery',
     total:'',
     state:'Ordered Products',
-    shopId:''
+    shopId:'',
+    orderId:''
    };
 addProductData :addproduct= {
     _id: '',
@@ -82,6 +83,10 @@ addProductData :addproduct= {
   confirmOrder(){
     console.log(this.dataTest1)
     let  dataRead2: checkout=new checkout() 
+    let dateFormat = require('dateformat');
+let now = new Date();
+
+console.log(dateFormat(now, "ddmmyyyyhMM"));
     for (let i = 0; i <  this.dataTest1.length ; i++) {   
 
       dataRead2.u_id=this.dataTest1[i].u_id,
@@ -95,8 +100,9 @@ addProductData :addproduct= {
       dataRead2.mobileNumber= this.credentials.mobileNumber,
       dataRead2.customerName= this.credentials.customerName,
       dataRead2.email= this.credentials.email,
-      dataRead2.payment=this.credentials.payment
-      dataRead2.state=this.credentials.state
+      dataRead2.payment=this.credentials.payment,
+      dataRead2.state=this.credentials.state,
+      dataRead2.orderId=this.dataTest1[i].shopID+dateFormat(now, "ddmmyyyyhMM").toString()+this.credentials.mobileNumber,
 
         // dataRead3=dataRead2
         this.dataTest2.push(dataRead2)
