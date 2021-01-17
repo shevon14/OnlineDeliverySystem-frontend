@@ -116,7 +116,7 @@ this.getFullArray=res
     )
     window.location.reload();
   }
-  OrderComplete(value:any){
+  OrderPacking(value:any){
     this.credentials.state="Order Packing";
     this.changeState(value)
     window.location.reload();
