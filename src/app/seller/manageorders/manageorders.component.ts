@@ -14,11 +14,14 @@ export class ManageordersComponent implements OnInit {
   startViewTable:boolean=true;
   user:String;
   getFullArray:any
-  getSelectedArray:any;
+  getSelectedArray:any[]=[];
+  getSelectedArray1:any[];
   getShowArray:any;
+  getShowArrayProduct:any;
   orderReceived:boolean=false;
   orderPacking:boolean=false;
   redyToDiliver:boolean=false;
+  preOrderId:String;
 
 
   constructor(
@@ -49,20 +52,37 @@ export class ManageordersComponent implements OnInit {
     .subscribe(  
       (res) => {
 this.getFullArray=res
-        this.getSelectedArray = this.getFullArray.filter(xx => xx.shopID === this.user);
-        console.log(this.getSelectedArray)
+        this.getSelectedArray1 = this.getFullArray.filter(xx => xx.shopID === this.user);
+        console.log(this.getSelectedArray1)
+        for (var i = 0; i < this.getSelectedArray1.length; i++) {
+          if (this.preOrderId != this.getSelectedArray1[i].orderId) {
+            this.getSelectedArray.push(this.getSelectedArray1[i]);
+          }
+          else{
+            this.getSelectedArray[i-1].total=Number(this.getSelectedArray1[i].total) + Number(this.getSelectedArray1[i-1].total)
+          }
+          this.preOrderId =  this.getSelectedArray[i].orderId;
+        }
       },
 
       err => {
         console.error(err)
       }
     )
+
+
+    
+  
   }
 
   openData(value:any){
     this.startView=true;
     this.startViewTable=false;
     this.getShowArray=value;
+    this.checkCartAuth.getShopOrderListByOrderId(this.getShowArray.orderId).subscribe(  
+      (res) => {
+this.getShowArrayProduct=res;
+      });
 
     if(value.state=="Order Received"){
       this.orderReceived=true;

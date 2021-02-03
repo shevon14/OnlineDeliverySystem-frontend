@@ -57,7 +57,7 @@
 
       <mdb-card-header class="info-color white-text text-center py-4">
         <h5>
-          <strong>{{"Order Details for "+this.getShowArray._id}}</strong>
+          <strong>{{"Order Details for "+this.getShowArray.orderId}}</strong>
         </h5>
       </mdb-card-header>
     
@@ -134,12 +134,12 @@
                   </tr>
               </thead>
               <tbody >
-                  <tr mdbTableCol>
-                    <td>{{this.getShowArray.productName}}</td>
+                  <tr *ngFor="let produtData of getShowArrayProduct" mdbTableCol>
+                    <td>{{this.produtData.productName}}</td>
                     <!-- <td>{{" "+this.getShowArray.productName}}</td> -->
-                    <td>{{this.getShowArray.quantity}}</td>
+                    <td>{{this.produtData.quantity}}</td>
                     <!-- <td>{{" "+this.getShowArray.quantity}}</td> -->
-                    <td>{{" : Rs."+this.getShowArray.total}}</td>
+                    <td>{{" : Rs."+this.produtData.total}}</td>
                     <!-- <td>{{"RS: "+this.getShowArray.total}}</td> -->
                 </tr>
               </tbody>

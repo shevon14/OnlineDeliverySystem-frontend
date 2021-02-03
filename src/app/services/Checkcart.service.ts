@@ -65,4 +65,8 @@ export class checkCartService {
     public cartDataUpdate(code,product: addcart){
         return this.http.put<addcart>(this.traget+'checkout/'+code,product);
     }
+
+    public getShopOrderListByOrderId(orderId){
+        return this.http.get<addcart>(this.traget+'checkout/findOrderbyOrderId/'+orderId);
+    }
 }
