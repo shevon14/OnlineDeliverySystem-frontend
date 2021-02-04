@@ -60,11 +60,12 @@ this.getFullArray=res
         for (var i = 0; i < this.getSelectedArray1.length; i++) {
           if (this.preOrderId != this.getSelectedArray1[i].orderId) {
             this.getSelectedArray.push(this.getSelectedArray1[i]);
+            var j=this.getSelectedArray.length -1;
           }
           else{
-            this.getSelectedArray[i-1].total=Number(this.getSelectedArray1[i].total) + Number(this.getSelectedArray1[i-1].total)
+            this.getSelectedArray[j].total=Number(this.getSelectedArray[j].total) + Number(this.getSelectedArray1[i].total)
           }
-          this.preOrderId =  this.getSelectedArray[i].orderId;
+          this.preOrderId =  this.getSelectedArray[j].orderId;
         }
       },
 
@@ -116,36 +117,39 @@ this.getShowArrayProduct=res;
   RedyToDiliver(value:any,usercredentials:any){
     this.credentials.state="Redy to Diliver";
     this.changeState(value)
+for(var i=0;i<this.getShowArrayProduct.length; i++){
+  const deliveryCart = <adddeliverycart>{
+    u_id:usercredentials.u_id,
+    productId: this.getShowArrayProduct[i].productId,
+    productName: this.getShowArrayProduct[i].productName,
+    uniPrice: this.getShowArrayProduct[i].uniPrice,
+    quantity:this.getShowArrayProduct[i].quantity,
+    address:this.getShowArrayProduct[i].address,
+    mobileNumber: this.getShowArrayProduct[i].mobileNumber,
+    customerName: this.getShowArrayProduct[i].customerName,
+    email:this.getShowArrayProduct[i].email,
+    payment:this.getShowArrayProduct[i].payment,
+    total:this.getShowArrayProduct[i].total,
+    state:"Redy to Diliver",
+    shopId:this.getShowArrayProduct[i].shopID,
+    deliverPersonId:null,
+    orderId:this.getShowArrayProduct[i].orderId,
+  }
+  this.auth3.add(deliveryCart).subscribe(  
+    (res) => {
+      // this.router.navigate([''])
+      console.log(deliveryCart)
+      console.log(res)
+    },
 
-    const deliveryCart = <adddeliverycart>{
-      u_id:usercredentials.u_id,
-      productId: usercredentials.productId,
-      productName: usercredentials.productName,
-      uniPrice: usercredentials.uniPrice,
-      quantity:usercredentials.quantity,
-      address:usercredentials.address,
-      mobileNumber: usercredentials.mobileNumber,
-      customerName: usercredentials.customerName,
-      email:usercredentials.email,
-      payment:usercredentials.payment,
-      total:usercredentials.total,
-      state:this.credentials.state,
-      shopId:usercredentials.shopID,
-      deliverPersonId:null,
-      orderId:usercredentials.orderId,
+    err => {
+      console.error(err)
     }
-    this.auth3.add(deliveryCart).subscribe(  
-      (res) => {
-        // this.router.navigate([''])
-        console.log(deliveryCart)
-        console.log(res)
-      },
+  )
+  window.location.reload();
 
-      err => {
-        console.error(err)
-      }
-    )
-    window.location.reload();
+}
+    
   }
   OrderPacking(value:any){
     this.credentials.state="Order Packing";

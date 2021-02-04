@@ -8,6 +8,7 @@ import { Observable } from "rxjs";
 import { map, finalize } from "rxjs/operators";
 import { HttpClient } from '@angular/common/http';
 import * as _ from 'lodash';
+import { ServerStartPoint } from '../../services/server.service';
 
 @Component({
   selector: 'app-add-products',
@@ -16,6 +17,7 @@ import * as _ from 'lodash';
 })
 export class AddProductsComponent implements OnInit {
 
+  private traget:string;
   // export interface addproduct {
   //   _id: string,
   //   productName: string,
@@ -49,9 +51,14 @@ export class AddProductsComponent implements OnInit {
               private router:Router,
               private http: HttpClient,
               private authSeller : SellerDetailsService,
-              private formBuilder: FormBuilder) { }
+              private formBuilder: FormBuilder,
+              private serverStartPoint:ServerStartPoint) { 
+
+ this.traget = this.serverStartPoint.getStartPoint();//"http://localhost:3000/";
+}
 
   ngOnInit(): void {
+    
       this.fileUploadForm = this.formBuilder.group({
         uploadedImage: ['']
       })
@@ -76,9 +83,9 @@ export class AddProductsComponent implements OnInit {
 
 
     this.http
-      .post<any>('http://localhost:3000/uploadfile', formData).subscribe(response => {
+      .post<any>(this.traget +'uploadfile', formData).subscribe(response => {
         console.log(response);
-        this.credentials.imgName = 'http://localhost:3000/uploads/' + this.fileInputLabel;
+        this.credentials.imgName = this.traget +'/uploads/' + this.fileInputLabel;
         this.credentials.shopName =  this.authSeller.getUserDetails().shopName;
         this.credentials.shopID = this.authSeller.getUserDetails()._id;
 
