@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 
 import { Observable, of } from "rxjs";
 import { map } from 'rxjs/operators';
+import { ServerStartPoint } from './server.service';
 
 
 export interface UserDetails {
@@ -56,15 +57,16 @@ export class SellerDetailsService {
   private token: string
 
   constructor(private http: HttpClient,
-    private router: Router) { }
+    private router: Router,private serverStartPoint:ServerStartPoint) { }
 
   private sellerDetails: SellerDetails[] = [];
 
-  private GET_SellerDetails = "http://localhost:3000/sellers/";
-  private CREATE_Seller = "http://localhost:3000/sellers/";
-  private EDIT_SellerDetails = "http://localhost:3000/sellers/";
-  private DELETE_Seller = "http://localhost:3000/sellers/";
-  private LOGIN_Seller = "http://localhost:3000/sellers/login";
+  private traget = this.serverStartPoint.getStartPoint();//"http://localhost:3000/";
+  private GET_SellerDetails = this.traget+"sellers/";
+  private CREATE_Seller = this.traget+"sellers/";
+  private EDIT_SellerDetails = this.traget+"sellers/";
+  private DELETE_Seller = this.traget+"sellers/";
+  private LOGIN_Seller = this.traget+"sellers/login";
 
   //fetch data from database
   //put all details for above array
@@ -160,7 +162,6 @@ export class SellerDetailsService {
             if (data.token) {
                 this.saveToken(data.token)
                 
-    this.router.navigate(['seller']);
             }
             return data
         })

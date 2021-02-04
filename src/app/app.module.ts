@@ -46,6 +46,8 @@ import { CustomerOrderHistoryComponent } from './customer-order-history/customer
 import { CustomerOrderHistoryDetailsComponent } from './customer-order-history-details/customer-order-history-details.component';
 import { ManageordersComponent } from './seller/manageorders/manageorders.component';
 import { AddbutnComponent } from './components/popup/addbutn/addbutn.component';
+import { UserDeliversComponent } from './admin/user-chart/user-delivers/user-delivers.component';
+import { ServerStartPoint } from './services/server.service';
 
 
 @NgModule({
@@ -88,7 +90,9 @@ import { AddbutnComponent } from './components/popup/addbutn/addbutn.component';
     CustomerOrderHistoryComponent,
     CustomerOrderHistoryDetailsComponent,
     ManageordersComponent,
-    AddbutnComponent
+    AddbutnComponent,
+    UserDeliversComponent
+    
     
   ],
   imports: [
@@ -99,7 +103,7 @@ import { AddbutnComponent } from './components/popup/addbutn/addbutn.component';
     HttpClientModule,
     MDBBootstrapModule.forRoot()
   ],
-  providers: [AuthenticationService,AuthGuardService],
+  providers: [AuthenticationService,AuthGuardService,ServerStartPoint],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

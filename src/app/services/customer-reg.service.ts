@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators'
 import { Router } from '@angular/router'
 
 import { CustomerDetails } from '../models/customerDetails';
+import { ServerStartPoint } from './server.service';
 
 export interface UserDetails {
     _id: string,
@@ -46,11 +47,12 @@ export interface TokenPayload {
 export class CustomerDetailsService {
     private token: string
 
-    constructor(private http: HttpClient, private router: Router) { }
+    constructor(private http: HttpClient, private router: Router,
+        private serverStartPoint:ServerStartPoint) { }
 
     private customerDetails: CustomerDetails[] = [];
 
-    private traget = "http://localhost:3000/";
+    private traget = this.serverStartPoint.getStartPoint();//"http://localhost:3000/";
 
     private saveToken(token: string): void {
         localStorage.setItem('usertoken', token)

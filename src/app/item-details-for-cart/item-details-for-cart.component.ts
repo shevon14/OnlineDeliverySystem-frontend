@@ -4,7 +4,7 @@ import { aProductDetails } from '../models/aProductData';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import { UserDetails, CustomerDetailsService } from '../services/customer-reg.service';
 import { cartDetailsService, addcart } from '../services/cart.service';
-import { Router } from '../../../node_modules/@angular/router';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-item-details-for-cart',
   templateUrl: './item-details-for-cart.component.html',

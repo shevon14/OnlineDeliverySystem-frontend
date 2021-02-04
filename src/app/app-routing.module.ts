@@ -27,6 +27,7 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { CustomerOrderHistoryComponent } from './customer-order-history/customer-order-history.component';
 import { ManageordersComponent } from './seller/manageorders/manageorders.component';
 import { AddbutnComponent } from './components/popup/addbutn/addbutn.component';
+import { UserDeliversComponent } from './admin/user-chart/user-delivers/user-delivers.component';
 
 // import { CustomerPopUpModalComponent } from './admin/user-chart/user-customer/customer-pop-up-modal/customer-pop-up-modal.component';
 
@@ -58,6 +59,7 @@ const routes: Routes = [
       { path: 'users', component: UserChartComponent },
       { path: 'userSellers', component: UserSellerComponent },
       { path: 'userCustomers', component: UserCustomerComponent },
+      { path: 'userdelivers', component: UserDeliversComponent },
       { path: 'dashboard', component: AdminDashBoardComponent },
     ]
   },

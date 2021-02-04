@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators'
 import { Router } from '@angular/router'
 import { CartDetails } from '../models/cartDetails'
 import { checkout } from '../models/checkout'
+import { ServerStartPoint } from './server.service';
 
 
 export interface addcart {
@@ -32,11 +33,12 @@ export interface removeproduct {
 
   export class cartDetailsService {
 
-    constructor(private http: HttpClient, private router: Router) { }
+    constructor(private http: HttpClient, private router: Router,
+        private serverStartPoint:ServerStartPoint) { }
 
     private CartDetails: CartDetails[] = [];
 
-    private traget = "http://localhost:3000/";
+    private traget = this.serverStartPoint.getStartPoint();//"http://localhost:3000/";
 
     public add(cart: addcart): Observable<any> {
     console.log(cart)

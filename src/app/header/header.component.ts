@@ -72,6 +72,8 @@ firstName="hhh";
   ////seller sign out ekata
   SignOutClicked(){
     this.auth.logout();
+    localStorage.removeItem("seller");
+    localStorage.removeItem("token");
     // frame.show()
     this.router.navigate(['']);
     window.location.reload();

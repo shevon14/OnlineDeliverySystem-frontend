@@ -27,6 +27,9 @@ export class MyStoreComponent implements OnInit {
     private sellerDetailsService: SellerDetailsService) { }
 
   ngOnInit(): void {
+    if(localStorage.getItem("seller")!=undefined){
+      this.router.navigate(['seller']);
+    }
   }
 
   LogInClicked(){ 
@@ -34,7 +37,12 @@ export class MyStoreComponent implements OnInit {
     this.sellerDetailsService.login(this.credentials).subscribe(
       (res)=>{
        console.log(this.credentials)
-        console.log(res)
+        console.log(res);
+        if(res.error==undefined){
+        localStorage.setItem("seller",res.token)
+        localStorage.setItem("token",res.token)
+        this.router.navigate(['seller']);
+        }
        // this.router.navigate(['seller']);
       },
  

@@ -5,6 +5,7 @@ import { Observable, of } from "rxjs"
 import { map } from 'rxjs/operators'
 import { Router } from '@angular/router'
 import { ProductDetails } from '../models/productDetails'
+import { ServerStartPoint } from './server.service';
 
 
 export interface addproduct {
@@ -32,11 +33,12 @@ export interface removeproduct {
 
   export class productDetailsService {
 
-    constructor(private http: HttpClient, private router: Router) { }
+    constructor(private http: HttpClient, private router: Router,
+        private serverStartPoint:ServerStartPoint) { }
 
     private ProductDetails: ProductDetails[] = [];
 
-    private traget = "http://localhost:3000/";
+    private traget = this.serverStartPoint.getStartPoint();//"http://localhost:3000/";
 
     public add(product: addproduct): Observable<any> {
     console.log(product)

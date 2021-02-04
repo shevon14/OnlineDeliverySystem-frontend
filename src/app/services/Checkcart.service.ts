@@ -5,6 +5,7 @@ import { Observable, of } from "rxjs"
 import { map } from 'rxjs/operators'
 import { Router } from '@angular/router'
 import { checkout } from '../models/checkout'
+import { ServerStartPoint } from './server.service';
 
 
 export interface addcart{
@@ -33,11 +34,12 @@ export interface addcart{
 
 export class checkCartService {
 
-    constructor(private http: HttpClient, private router: Router) { }
+    constructor(private http: HttpClient, private router: Router,
+        private serverStartPoint:ServerStartPoint) { }
 
     private checkCart: checkout[] = [];
 
-    private traget = "http://localhost:3000/";
+    private traget = this.serverStartPoint.getStartPoint();//"http://localhost:3000/";
 
     public add(cart: addcart): Observable<any> {
         console.log(cart)
@@ -68,5 +70,8 @@ export class checkCartService {
 
     public getShopOrderListByOrderId(orderId){
         return this.http.get<addcart>(this.traget+'checkout/findOrderbyOrderId/'+orderId);
+    }
+    public cartStateUpdate(id,product: addcart){
+        return this.http.post<addcart>(this.traget+'checkout/'+id,product);
     }
 }

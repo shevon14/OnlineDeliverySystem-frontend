@@ -100,21 +100,21 @@
                     <div>
                         <div class="custom-control custom-radio custom-control-inline">
                             <input type="radio" class="custom-control-input" value ="Shared1" id="defaultInline1" name="inlineDefaultRadios"
-                            (click)="OrderReceived(this.getShowArray._id)" mdbInput [checked]="orderReceived" >
+                            (click)="OrderReceived(this.getShowArray.orderId)" mdbInput [checked]="orderReceived" [disabled]="disabledOrderReceived">
                             <label class="custom-control-label" for="defaultInline1">Order Received</label>
                           </div>
 
 
                         <div class="custom-control custom-radio custom-control-inline">
                             <input type="radio" class="custom-control-input" value ="Shared2" id="defaultInline2" name="inlineDefaultRadios"
-                            (click)="OrderPacking(this.getShowArray._id)" mdbInput [checked]="orderPacking" >
+                            (click)="OrderPacking(this.getShowArray.orderId)" mdbInput [checked]="orderPacking" [disabled]="disabledOrderPacking" >
                             <label class="custom-control-label" for="defaultInline2">Order Packing</label>
                           </div>
                       
                         <!-- Default inline 2-->
                         <div class="custom-control custom-radio custom-control-inline">
                           <input type="radio" class="custom-control-input" value ="Shared" id="defaultInline3" name="inlineDefaultRadios"
-                          (click)="RedyToDiliver(this.getShowArray._id,this.getShowArray)" mdbInput [checked]="redyToDiliver">
+                          (click)="RedyToDiliver(this.getShowArray.orderId,this.getShowArray)" mdbInput [checked]="redyToDiliver"  [disabled]="disabledRedyToDiliver" >
                           <label class="custom-control-label" for="defaultInline3">Ready to Diliver</label>
                         </div>
                       </div>

@@ -21,6 +21,9 @@ export class ManageordersComponent implements OnInit {
   orderReceived:boolean=false;
   orderPacking:boolean=false;
   redyToDiliver:boolean=false;
+  disabledOrderReceived:boolean=false;
+  disabledOrderPacking:boolean=false;
+  disabledRedyToDiliver:boolean=false;
   preOrderId:String;
 
 
@@ -89,10 +92,18 @@ this.getShowArrayProduct=res;
     }
     if(value.state=="Order Packing"){
       this.orderPacking=true;
+      this.disabledOrderReceived = true;
     }
     if(value.state=="Redy to Diliver"){
     this.redyToDiliver=true;
+    this.disabledOrderReceived = true;
+    this.disabledOrderPacking = true;
     }
+    if(value.state!="Redy to Diliver" && value.state!="Order Packing" && value.state!="Order Received" && value.state!="Ordered Products"){
+      // this.disabledRedyToDiliver=true;
+      // this.disabledOrderReceived = true;
+      // this.disabledOrderPacking = true;
+      }
   }
 
   OrderReceived(value:any){
@@ -143,7 +154,8 @@ this.getShowArrayProduct=res;
   }
 
   changeState(id:String){
-    this.checkCartAuth.cartDataUpdate(id,this.credentials).subscribe(
+    // this.checkCartAuth.cartDataUpdate(id,this.credentials).subscribe(
+      this.checkCartAuth.cartStateUpdate(id,this.credentials).subscribe(
       ()=>{ 
         console.log(this.credentials)
         //this.router.navigate(['seller'])

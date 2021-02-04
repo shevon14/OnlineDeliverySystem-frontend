@@ -1,0 +1,92 @@
+<div  class="container">
+    <!-- Editable table -->
+    <div class="card">
+        <h3 class="card-header text-center info-color font-weight-bold text-uppercase py-4">Delivers</h3>
+        <div class="card-body">
+            <div id="table" class="table-editable text-center">
+                <table class="table table-bordered table-responsive-md table-striped text-center">
+                    <thead class="black white-text">
+                        <tr>
+                            <th class="text-center">Delivers Name</th>
+                            <th class="text-center">Email</th>
+                            <th class="text-center">Address</th>
+                            <th class="text-center">More Details</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr scope="row" *ngFor="let customer of delivers">
+                            <td>{{customer.full_name}}</td>
+                            <td>{{customer.email}}</td>
+                            <td>{{customer.address}}</td>
+
+                            <td>
+                                <a class="waves-light text-info" (click)="moreData(customer.email)">
+                                    <u>More Details</u>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf="openPopup">
+        <div mdb-card class="modal-content">
+
+                <div class="modal-header bg-info text-center" style="margin-top: 5px;">
+                    <button type="button" class="close pull-right" aria-label="Close" >
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <h3 class="modal-title w-100 font-weight-bold" id="myModalLabel">Customer Details</h3>
+                </div>
+            
+                <div class="modal-body">
+                    <div class="col-md-12  list-group-item clearfix">
+                        <div class="float-left">
+                            <!-- <h5>Full Name : {{content.full_name}}</h5>
+                            <h5>Address : {{content.address}}</h5>
+                            <h5>Contact No : {{content.contact}}</h5>
+                            <h5>Email : {{content.email}}</h5>
+                            <h5>Registered date : {{content.date}}</h5>
+                             -->
+                          
+                            <!-- <h5>Personal Contact : {{content.personalPhone}}</h5>
+                            <h5>Office contact : {{content.officePhone}}</h5>
+                            <h5>Email: {{content.email}}</h5> -->
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            
+    <!-- Modal -->
+    <!-- <div class="modal top fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-mdb-backdrop="true"
+        data-mdb-keyboard="true">
+        <div class="modal-dialog  ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Delivers More details</h5>
+                    <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h5>Full Name : {{this.contentdeliver.full_name}}</h5>
+                    <h5>Address : {{this.contentdeliver.address}}</h5>
+                    <h5>Contact No : {{this.contentdeliver.contact}}</h5>
+                    <h5>Email : {{this.contentdeliver.email}}</h5>
+                    <h5>Registered date : {{this.contentdeliver.date}}</h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>
