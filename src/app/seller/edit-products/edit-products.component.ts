@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import { productDetailsService, addproduct } from '../../services/product.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { aProductDetails } from '../../models/aProductData';
+import { categoryDetailsService } from '../../services/category.service';
 
 @Component({
   selector: 'app-edit-products',
@@ -10,9 +11,11 @@ import { aProductDetails } from '../../models/aProductData';
 })
 export class EditProductsComponent implements OnInit {
 
-  constructor(public auth:productDetailsService, private router:Router) { }
+  constructor(public auth:productDetailsService, private router:Router,
+    private categoryService:categoryDetailsService) { }
   product:aProductDetails;
   selectProducr:any;
+  allCategoryList:any;
   as:number;
 
   @Input() set data (value:aProductDetails){
@@ -45,6 +48,7 @@ export class EditProductsComponent implements OnInit {
     this.credentials.imgName=this.product.imgName;
     this.credentials.shopID=this.product.shopID;
     this.credentials.shopName=this.product.shopName;
+    this.getAllCategory();
   }
 
   imgSrc; 
@@ -87,5 +91,14 @@ export class EditProductsComponent implements OnInit {
     window.location.reload();
   }
 
+  getAllCategory(){
+    this.categoryService.categoryDetails().subscribe((list)=>{
+      this.allCategoryList=list;
+    },
+  
+    err=>{
+      console.error(err)
+    })
+  }
 
 }

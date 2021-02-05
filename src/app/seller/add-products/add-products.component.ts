@@ -9,6 +9,7 @@ import { map, finalize } from "rxjs/operators";
 import { HttpClient } from '@angular/common/http';
 import * as _ from 'lodash';
 import { ServerStartPoint } from '../../services/server.service';
+import { categoryDetailsService } from '../../services/category.service';
 
 @Component({
   selector: 'app-add-products',
@@ -33,6 +34,7 @@ export class AddProductsComponent implements OnInit {
 
   selectedFile: File = null;
   downloadURL: Observable<string>;
+  allCategoryList:any;
 
   //saving data to db
   credentials:addproduct={
@@ -52,12 +54,15 @@ export class AddProductsComponent implements OnInit {
               private http: HttpClient,
               private authSeller : SellerDetailsService,
               private formBuilder: FormBuilder,
-              private serverStartPoint:ServerStartPoint) { 
+              private serverStartPoint:ServerStartPoint,
+            private categoryService:categoryDetailsService) { 
 
  this.traget = this.serverStartPoint.getStartPoint();//"http://localhost:3000/";
 }
 
   ngOnInit(): void {
+
+    this.getAllCategory();
     
       this.fileUploadForm = this.formBuilder.group({
         uploadedImage: ['']
@@ -142,6 +147,10 @@ export class AddProductsComponent implements OnInit {
     //  )
   }*/
 
-
+getAllCategory(){
+  this.categoryService.categoryDetails().subscribe((list)=>{
+    this.allCategoryList=list;
+  })
+}
 }
 

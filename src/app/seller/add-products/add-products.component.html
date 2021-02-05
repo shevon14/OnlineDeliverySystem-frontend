@@ -25,7 +25,11 @@
             <!-- Category -->
             <div class="md-form mt-3">
                 <p>Select Category :</p>
-                <select class="browser-default custom-select" name="materialSubscriptionFormPasswords" [(ngModel)]="credentials.category" >
+                <select class="browser-default custom-select" name="materialSubscriptionFormPasswords" [(ngModel)]="credentials.category">
+                        <!-- <option value="" [disabled]="true">Select quantity</option> -->
+                        <option *ngFor="let c of allCategoryList" [ngValue]="c.category_id">{{ c.category_name }}</option>
+                      </select>
+                <!-- <select class="browser-default custom-select" name="materialSubscriptionFormPasswords" [(ngModel)]="credentials.category" >
                     <option value="1">Electronic Devices</option>
                     <option value="2">Electronic Accessories</option>
                     <option value="3">Woman's Fashion</option>
@@ -34,7 +38,7 @@
                     <option value="6">Health & Beauty</option>
                     <option value="7">Home & Kitchen</option>
                     <option value="8">Sports & Outdoor</option>
-                </select>
+                </select> -->
             </div>
 
             <!-- Unit Price -->
