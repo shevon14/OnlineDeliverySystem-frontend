@@ -1,5 +1,6 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { categoryDetailsService } from '../../services/category.service';
 
 @Component({
   selector: 'app-categories-tab',
@@ -8,13 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriesTabComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  allCategoryList:any;
+  constructor(private router: Router,private categoryService:categoryDetailsService) { }
 
   ngOnInit(): void {
+    this.getAllCategory();
   }
 
   cat1Click(){
     this.router.navigate(['products']);
   }
 
+  getAllCategory(){
+    this.categoryService.categoryDetails().subscribe((list)=>{
+      this.allCategoryList=list;
+    },
+  
+    err=>{
+      console.error(err)
+    })
+  }
 }

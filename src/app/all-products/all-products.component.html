@@ -1,7 +1,12 @@
 <div *ngIf="states" >
     <div>
         <ul class="nav justify-content-center grey lighten-4 ">
-            <li class="nav-item">
+                <div *ngFor="let header of allCategoryList">
+                        <li class="nav-item">
+                                <a class="nav-link" (click)="categoryCatClick(header._id)">{{header.category_name}}</a>
+                            </li>
+                    </div>
+            <!-- <li class="nav-item">
                 <a class="nav-link" (click)="cat1Click()">Electronic Devices</a>
             </li>
             <li class="nav-item">
@@ -24,7 +29,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" (click)="cat8Click()" >Sports & Outdoor</a>
-            </li>
+            </li> -->
         </ul>
     </div>
 
@@ -36,8 +41,55 @@
         iure provident voluptate esse quasi,
         veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.</p>
 </section>
+
+<!-- Electronic Devices test -->
+<div *ngFor="let header of allCategoryList">
+<mdb-card  class="card pb-3 rounded w-100" >
+        <mdb-card-body>
+                <!-- {{filterItem1234(header._id)}} -->
+            <div class="container-fluid" id=cat{{header._id}}>
+                <div class="row">
+                    <h4 class="font-weight-bold">{{header.category_name}}</h4>
+                </div>
+                <hr class="bg-info">
+            </div>
+    
+            <div class="row">{{filterItem123(header.category_id)}}
+                <div class="col-md-2 pb-3" *ngFor="let card of electronicDeviceArray1">
+    
+                    <mdb-card class="card text-center pb-0 rounded hoverable ">
+                        <div class="view overlay"  (click)="itemDetailsClicked(card)" >
+                            <img class="card-img-top img-responsive" style="height: 150px;" [src]= "card.imgName" >
+                            <a>
+                                <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+    
+                        <mdb-card-body>
+                            <mdb-card-text class="text-center" style="margin-top: 5px;">
+                                <h6 class="font-weight-bold">{{card.productName}}</h6>
+                                <h5>Rs.{{card.uniPrice}}/=</h5>
+                                <p>Available Quantity- {{card.availableQuantity}}</p>
+                                <hr>
+                                <p><a (click)="shopViewClicked(card)">Shop : {{card.shopName}}</a></p>
+                            </mdb-card-text>
+                        </mdb-card-body>
+    
+                        <mdb-card-footer>
+                            <span class="float-center">
+                                <button type="button" mdbBtn color="info" mdbWavesEffect size="sm" (click)="addcartClicked(card); frame.show()" >Add<mdb-icon fas icon="shopping-cart" class="ml-1"></mdb-icon></button>
+                            </span>
+                        </mdb-card-footer>
+                    </mdb-card>
+                </div>
+            </div>
+    
+        </mdb-card-body>
+    </mdb-card>
+    </div>
+
 <!-- Electronic Devices -->
-<mdb-card  class="card pb-3 rounded w-100">
+<!-- <mdb-card  class="card pb-3 rounded w-100" >
     <mdb-card-body>
 
         <div class="container-fluid" id="cat1">
@@ -78,10 +130,10 @@
         </div>
 
     </mdb-card-body>
-</mdb-card>
+</mdb-card> -->
 
 <!-- Electronic Accessories -->
-<mdb-card class="card pb-3 rounded w-100">
+<!-- <mdb-card class="card pb-3 rounded w-100">
     <mdb-card-body>
 
         <div class="container-fluid" id="cat2">
@@ -122,10 +174,10 @@
         </div>
 
     </mdb-card-body>
-</mdb-card>
+</mdb-card> -->
 
 <!-- Woman's Fashion -->
-<mdb-card class="card pb-3 rounded w-100">
+<!-- <mdb-card class="card pb-3 rounded w-100">
     <mdb-card-body>
 
         <div class="container-fluid" id="cat3">
@@ -166,10 +218,10 @@
         </div>
 
     </mdb-card-body>
-</mdb-card>
+</mdb-card> -->
 
 <!-- Men's Fashion -->
-<mdb-card class="card pb-3 rounded w-100">
+<!-- <mdb-card class="card pb-3 rounded w-100">
     <mdb-card-body>
 
         <div class="container-fluid" id="cat4">
@@ -210,10 +262,10 @@
         </div>
 
     </mdb-card-body>
-</mdb-card>
+</mdb-card> -->
 
 <!-- Watches & Accessories -->
-<mdb-card class="card pb-3 rounded w-100">
+<!-- <mdb-card class="card pb-3 rounded w-100">
     <mdb-card-body>
 
         <div class="container-fluid" id="cat5">
@@ -254,10 +306,10 @@
         </div>
 
     </mdb-card-body>
-</mdb-card>
+</mdb-card> -->
 
 <!-- Health & Beauty -->
-<mdb-card class="card pb-3 rounded w-100">
+<!-- <mdb-card class="card pb-3 rounded w-100">
     <mdb-card-body>
 
         <div class="container-fluid" id="cat6">
@@ -298,10 +350,10 @@
         </div>
 
     </mdb-card-body>
-</mdb-card>
+</mdb-card> -->
 
 <!-- Home & Kitchen -->
-<mdb-card class="card pb-3 rounded w-100">
+<!-- <mdb-card class="card pb-3 rounded w-100">
     <mdb-card-body>
 
         <div class="container-fluid" id="cat7">
@@ -342,10 +394,10 @@
         </div>
 
     </mdb-card-body>
-</mdb-card>
+</mdb-card> -->
 
 <!-- Sports & Outdoor -->
-<mdb-card class="card pb-3 rounded w-100">
+<!-- <mdb-card class="card pb-3 rounded w-100">
     <mdb-card-body>
 
         <div class="container-fluid" id="cat8">
@@ -386,7 +438,7 @@
         </div>
 
     </mdb-card-body>
-</mdb-card>
+</mdb-card> -->
 </div>
 
 <app-item-details-for-cart *ngIf="imgview" [property]="selectedProduct">

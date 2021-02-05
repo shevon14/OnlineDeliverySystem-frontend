@@ -10,6 +10,7 @@ import { CartDetails } from '../models/cartDetails';
 import { ItemDetailsForCartComponent } from '../item-details-for-cart/item-details-for-cart.component';
 import { $ } from 'protractor';
 import { NumberFormatStyle } from '@angular/common';
+import { categoryDetailsService } from '../services/category.service';
 
 @Component({
   selector: 'app-all-products',
@@ -31,9 +32,14 @@ export class AllProductsComponent implements OnInit {
    modalRef: MDBModalRef;
 
    displayQuantity:any;
+   allCategoryList:any;
+   electronicDeviceArray1:any;
+
+  //  category_name: '',
+  //  category_id: '',
 
   constructor(private auth:productDetailsService,private auth2:CustomerDetailsService,private auth3:cartDetailsService,
-     private modalService: MDBModalService,private router:Router
+     private modalService: MDBModalService,private router:Router,private categoryService:categoryDetailsService
     ) { }
 
   electronicDeviceArray: any; electrocAccessoriesArray: any; womansFashionArray: any; mensFashionarray: any;
@@ -42,6 +48,7 @@ export class AllProductsComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.getAllCategory();
     this.auth.productDetails().subscribe((list) => {
       this.productArray = list
       console.log(this.productArray);
@@ -212,5 +219,28 @@ export class AllProductsComponent implements OnInit {
   }
   continueShopping(){
     this.router.navigate(['products']);
+  }
+
+
+  filterItem123(data){
+    this.electronicDeviceArray1= this.productArray.filter(xx => xx.category === data);
+    console.log("lll")
+  }
+
+  getAllCategory(){
+    this.categoryService.categoryDetails().subscribe((list)=>{
+      this.allCategoryList=list;
+    },
+  
+    err=>{
+      console.error(err)
+    })
+  }
+
+  categoryCatClick(data){
+    let x = document.querySelector("#cat"+data);
+    if(x){
+      x.scrollIntoView();
+    }
   }
 }
