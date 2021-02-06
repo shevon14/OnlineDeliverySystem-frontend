@@ -127,6 +127,14 @@ as:number;
     const file = event.target.files[0];
     this.fileInputLabel = file.name;
     this.fileUploadForm.get('uploadedImage').setValue(file);
+    
+    if(event.target.files){
+      var reader=new FileReader();
+      reader.readAsDataURL(event.target.files[0]);
+      reader.onload=(event:any)=>{
+        this.product.imgName=event.target.result;
+      }
+    }
   }
 
 
@@ -134,10 +142,39 @@ as:number;
 
   
     if (!this.fileUploadForm.get('uploadedImage').value) {
-      alert('Please fill valid details!');
-      return false;
+      // alert('Please fill valid details!');
+      // var aa=this.credentials.imgName
+      // this.credentials.imgName=this.product.imgName
+      // this.auth.add(this.credentials).subscribe(
+      //   (res)=>{ 
+      //     if(res.statusCode==200){
+            // this.addtoDB();
+      //     }
+          
+      //   },
+      //   err=>{
+      //     console.error(err)
+      //   }
+      //  )
+      this.auth.productUpdatedData(this.product._id,this.credentials).subscribe(
+        (data:any)=>{ 
+          if(data.statusCode==200){
+            window.location.reload();
+            console.log(data);
+            return true;
+          }
+          
+          //this.router.navigate(['seller'])
+        },
+   
+        err=>{
+          console.error(err)
+          return false;
+        })
+      
     }
 
+    if (this.fileUploadForm.get('uploadedImage').value) {
     const formData = new FormData();
     formData.append('uploadedImage', this.fileUploadForm.get('uploadedImage').value);
     formData.append('agentId', '007');
@@ -148,18 +185,18 @@ as:number;
         console.log(response);
         this.credentials.imgName = this.traget +'uploads/' + this.fileInputLabel;
         if (response.statusCode === 200) {
-          this.auth.add(this.credentials).subscribe(
-            (res)=>{ 
-              if(res.statusCode==200){
+          // this.auth.add(this.credentials).subscribe(
+          //   (res)=>{ 
+          //     if(res.statusCode==200){
                 this.addtoDB();
-              }
+          //     }
               
-            },
+          //   },
        
-            err=>{
-              console.error(err)
-            }
-           )
+          //   err=>{
+          //     console.error(err)
+          //   }
+          //  )
           // Reset the file input
           this.uploadFileInput.nativeElement.value = "";
           this.fileInputLabel = undefined;
@@ -169,5 +206,6 @@ as:number;
         alert(er.error.error);
       });
     }
+  }
 
 }
