@@ -12,7 +12,7 @@
         <mdb-card-body class="px-lg-5">
 
             <!-- Form -->
-            <form style="color: #757575;" (submit)="addtoDB()">
+            <form style="color: #757575;" (submit)="aaa()">
 
                 <div class="row">
 
@@ -58,7 +58,7 @@
                         <label>Change Image</label>
                         <div>
                             <!-- <input mdbInput type='file' (change)="onImgUploadClick($event)" id="imgUpload"> -->
-                            <input mdbInput type='file' id="customFile"  name="uploadedImage" #UploadFileInput>
+                            <input mdbInput type='file' id="customFile" (change)="onFileSelect($event)"  name="uploadedImage" #UploadFileInput>
                         </div>
                     </div>
 

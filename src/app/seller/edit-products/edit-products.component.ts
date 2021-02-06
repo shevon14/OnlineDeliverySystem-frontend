@@ -1,8 +1,11 @@
 import { Router } from '@angular/router';
 import { productDetailsService, addproduct } from '../../services/product.service';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { aProductDetails } from '../../models/aProductData';
 import { categoryDetailsService } from '../../services/category.service';
+import { FormGroup, FormBuilder } from '../../../../node_modules/@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { ServerStartPoint } from '../../services/server.service';
 
 @Component({
   selector: 'app-edit-products',
@@ -10,18 +13,29 @@ import { categoryDetailsService } from '../../services/category.service';
   styleUrls: ['./edit-products.component.scss']
 })
 export class EditProductsComponent implements OnInit {
+  fileUploadForm: FormGroup;
+  fileInputLabel: string;
+product:aProductDetails;
+selectProducr:any;
+allCategoryList:any;
+as:number;
 
   constructor(public auth:productDetailsService, private router:Router,
-    private categoryService:categoryDetailsService) { }
-  product:aProductDetails;
-  selectProducr:any;
-  allCategoryList:any;
-  as:number;
+    private categoryService:categoryDetailsService, private http: HttpClient,
+    private serverStartPoint:ServerStartPoint,
+    private formBuilder: FormBuilder,) { 
+      this.traget = this.serverStartPoint.getStartPoint();
+    }
+
+
+
+  private traget:string;
 
   @Input() set data (value:aProductDetails){
     this.product = value;
     console.log(this.product)
   }
+  @ViewChild('UploadFileInput', { static: false }) uploadFileInput: ElementRef;
 
   credentials:addproduct={
     _id: '',
@@ -49,6 +63,10 @@ export class EditProductsComponent implements OnInit {
     this.credentials.shopID=this.product.shopID;
     this.credentials.shopName=this.product.shopName;
     this.getAllCategory();
+
+    this.fileUploadForm = this.formBuilder.group({
+      uploadedImage: ['']
+    })
   }
 
   imgSrc; 
@@ -69,8 +87,12 @@ export class EditProductsComponent implements OnInit {
   addtoDB(){
 
     this.auth.productUpdatedData(this.product._id,this.credentials).subscribe(
-      ()=>{ 
-        console.log(this.credentials)
+      (data:any)=>{ 
+        if(data.statusCode==200){
+          window.location.reload();
+          console.log(data);
+        }
+        
         //this.router.navigate(['seller'])
       },
  
@@ -87,8 +109,8 @@ export class EditProductsComponent implements OnInit {
     //      console.error(err)
     //    }
     //   )
-    this.router.navigate(['seller'])
-    window.location.reload();
+    // this.router.navigate(['seller'])
+    // window.location.reload();
   }
 
   getAllCategory(){
@@ -100,5 +122,52 @@ export class EditProductsComponent implements OnInit {
       console.error(err)
     })
   }
+
+  onFileSelect(event) {
+    const file = event.target.files[0];
+    this.fileInputLabel = file.name;
+    this.fileUploadForm.get('uploadedImage').setValue(file);
+  }
+
+
+   aaa(){
+
+  
+    if (!this.fileUploadForm.get('uploadedImage').value) {
+      alert('Please fill valid details!');
+      return false;
+    }
+
+    const formData = new FormData();
+    formData.append('uploadedImage', this.fileUploadForm.get('uploadedImage').value);
+    formData.append('agentId', '007');
+
+
+     this.http
+      .post<any>(this.traget +'uploadfile', formData).subscribe(response => {
+        console.log(response);
+        this.credentials.imgName = this.traget +'uploads/' + this.fileInputLabel;
+        if (response.statusCode === 200) {
+          this.auth.add(this.credentials).subscribe(
+            (res)=>{ 
+              if(res.statusCode==200){
+                this.addtoDB();
+              }
+              
+            },
+       
+            err=>{
+              console.error(err)
+            }
+           )
+          // Reset the file input
+          this.uploadFileInput.nativeElement.value = "";
+          this.fileInputLabel = undefined;
+        }
+      }, er => {
+        console.log(er);
+        alert(er.error.error);
+      });
+    }
 
 }

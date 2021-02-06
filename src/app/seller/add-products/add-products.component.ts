@@ -90,7 +90,7 @@ export class AddProductsComponent implements OnInit {
     this.http
       .post<any>(this.traget +'uploadfile', formData).subscribe(response => {
         console.log(response);
-        this.credentials.imgName = this.traget +'/uploads/' + this.fileInputLabel;
+        this.credentials.imgName = this.traget +'uploads/' + this.fileInputLabel;
         this.credentials.shopName =  this.authSeller.getUserDetails().shopName;
         this.credentials.shopID = this.authSeller.getUserDetails()._id;
 
