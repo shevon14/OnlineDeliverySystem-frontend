@@ -15,14 +15,14 @@
           </thead>
 
           <tbody>
-            <tr scope="row" *ngFor="let customer of delivers">
+            <tr scope="row" *ngFor="let customer of delivers;  let i = index">
               <td>{{customer.full_name}}</td>
               <td>{{customer.email}}</td>
               <td>{{customer.address}}</td>
 
               <td>
                 <a data-toggle="tooltip" data-placement="top" title="Delete" data-target="#basicExample"
-                  (click)="frame.show()">
+                  (click)="frame.show() ; moreData(i) ">
                   <u>More Details</u>
                 </a>
               </td>
@@ -51,11 +51,11 @@
       <div class="modal-body">
         <div class="col-md-12  list-group-item clearfix">
           <div class="float-left">
-            <h5>Full Name : </h5>
-            <h5>Email : </h5>
-            <h5>Contact No : </h5>
-            <h5>Licence No : </h5>
-            <h5>Vehicle No : </h5>
+            <h5>Full Name : {{full_name}}</h5>
+            <h5>Email :{{email}} </h5>
+            <h5>Contact No : {{conatct}}</h5>
+            <h5>Licence No : {{drivingLicenceId}}</h5>
+            <h5>Vehicle No :{{vehicaleLicenceNumber}} </h5>
 
           </div>
         </div>
