@@ -42,7 +42,7 @@ export class SignupComponent implements OnInit {
       },
  
       err=>{
-        console.log(err, 'error')
+        alert(err.error.error)
       }
      )
   }

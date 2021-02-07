@@ -215,8 +215,9 @@ export class SellerRegistrationComponent implements OnInit {
         this.router.navigate(['myStore']);
       }
       console.log(data)},
-  err => console.log(err
-));
+  err => {
+    alert(err.error.error)}
+);
 
 }
 else{

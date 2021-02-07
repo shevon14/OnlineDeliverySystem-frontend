@@ -54,6 +54,7 @@ export class MyStoreComponent implements OnInit {
       },
  
       err=>{
+        alert(err.error.error)
         //this.router.navigate(['']);
         console.log("error ekak")
       }
