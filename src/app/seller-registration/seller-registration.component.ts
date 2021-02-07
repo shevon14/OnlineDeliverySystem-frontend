@@ -207,10 +207,17 @@ export class SellerRegistrationComponent implements OnInit {
 
 
   this.sellerDetailsService.addNewSeller1 (this.credentials).subscribe(
-    data => {console.log(data)},
+    data => {
+      if(data.error!=undefined){
+        alert(data.error)
+      }
+      else{
+        this.router.navigate(['myStore']);
+      }
+      console.log(data)},
   err => console.log(err
 ));
-this.router.navigate(['myStore']);
+
 }
 else{
   console.log("Password does not match....")

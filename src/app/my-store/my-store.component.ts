@@ -36,14 +36,21 @@ export class MyStoreComponent implements OnInit {
 
     this.sellerDetailsService.login(this.credentials).subscribe(
       (res)=>{
-       console.log(this.credentials)
-        console.log(res);
+
+        
+        if(res.error!=undefined){
+          alert(res.error)
+
+        }
         if(res.error==undefined){
         localStorage.setItem("seller",res.token)
         localStorage.setItem("token",res.token)
         this.router.navigate(['seller']);
         }
        // this.router.navigate(['seller']);
+       
+       console.log(this.credentials)
+        console.log(res);
       },
  
       err=>{

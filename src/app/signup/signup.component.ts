@@ -30,9 +30,15 @@ export class SignupComponent implements OnInit {
 
   c_register(){
     this.auth.register(this.credentials).subscribe(
-      ()=>{
+      (res)=>{
+
+        if(res.error!=undefined){
+          alert(res.error)
+        }
+        else{
        this.router.navigateByUrl('signin')
        console.log(this.credentials)
+      }
       },
  
       err=>{

@@ -33,7 +33,9 @@ export class SigninComponent implements OnInit {
     this.auth.login(this.credentials).subscribe(
       (res)=>{
        // this.router.navigateByUrl('/'+this.auth.getUserDetails().user_type)
-       
+       if(res.error!=undefined){
+         alert(res.error)
+       }
        console.log(this.credentials)
        console.log(res)
       },
