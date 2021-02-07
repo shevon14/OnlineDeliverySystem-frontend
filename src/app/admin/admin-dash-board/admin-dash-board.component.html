@@ -51,7 +51,7 @@
                             <tr>
                                 <th>Category Id</th>
                                 <th>Available Categories</th>
-                                <th>Edit</th>
+                                <!-- <th>Edit</th> -->
                                 <th>Delete</th>
                               </tr>
                         </thead>
@@ -60,7 +60,7 @@
                                 <tr mdbTableCol scope="row" *ngFor="let category of categoryData">
                                         <td>{{category.category_id}}</td>
                                         <td>{{category.category_name}}</td>
-                                        <td><mdb-icon type="button" fas icon="pen" size="m-5"  style="margin-left: 10px;"></mdb-icon></td>
+                                        <!-- <td><mdb-icon type="button" fas icon="pen" size="m-5"  style="margin-left: 10px;"></mdb-icon></td> -->
                                         <td><mdb-icon type="button" fas icon="trash" size="m-5"  style="margin-left: 10px;" (click)="deleteData(category._id)"></mdb-icon></td>
                                 </tr>
                             <!-- <tr mdbTableCol scope="row">
@@ -111,16 +111,16 @@
                             <tr mdbTableCol scope="row" class="black white-text">
                                 <td>Add a New Category</td>
                                 <td></td><td></td>
-                                <td><mdb-icon type="button" fas icon="plus" size="m-5"  style="margin-left: 10px;" (click)="addData()"></mdb-icon></td>
+                                <!-- <td><mdb-icon type="button" fas icon="plus" size="m-5"  style="margin-left: 10px;" (click)="addData()"></mdb-icon></td> -->
                             </tr>
                              <tr mdbTableCol scope="row">
-                                <td><input type="text" name="materialSubscriptionFormid"  class="form-control"  [(ngModel)]="categorylist.category_id" mdbInput></td>
-                                <td><input type="text" name="materialSubscriptionFormname"  class="form-control"  [(ngModel)]="categorylist.category_name" mdbInput></td>
-                                <td><mdb-icon fas icon="pen" size="m-5"  style="margin-left: 10px;"></mdb-icon></td>
-                                <td><mdb-icon fas icon="trash" size="m-5"  style="margin-left: 10px;"></mdb-icon></td>
+                                <td><input placeholder="Add Category ID" type="text" name="materialSubscriptionFormid"  class="form-control"  [(ngModel)]="categorylist.category_id" mdbInput></td>
+                                <td><input placeholder="Add Category Name" type="text" name="materialSubscriptionFormname"  class="form-control"  [(ngModel)]="categorylist.category_name" mdbInput></td>
+                                <!-- <td><mdb-icon fas icon="pen" size="m-5"  style="margin-left: 10px;"></mdb-icon></td> -->
+                                <td><mdb-icon type="button" fas icon="plus" size="m-5"  style="margin-left: 10px;" (click)="addData()"></mdb-icon></td>
                             </tr>
                         </tbody>
-                      </table>
+                      </table> 
                 </section>
             </mdb-card-body>
         </mdb-card>

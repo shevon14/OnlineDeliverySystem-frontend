@@ -26,7 +26,7 @@
             <div class="md-form mt-3">
                 <p>Select Category :</p>
                 <select class="browser-default custom-select" name="materialSubscriptionFormPasswords" [(ngModel)]="credentials.category">
-                        <!-- <option value="" [disabled]="true">Select quantity</option> -->
+                        <option value="" [disabled]="true">Select Category</option>
                         <option *ngFor="let c of allCategoryList" [ngValue]="c.category_id">{{ c.category_name }}</option>
                       </select>
                 <!-- <select class="browser-default custom-select" name="materialSubscriptionFormPasswords" [(ngModel)]="credentials.category" >
