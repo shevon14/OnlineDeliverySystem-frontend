@@ -102,7 +102,7 @@ console.log(dateFormat(now, "ddmmyyyyhMM"));
       dataRead2.email= this.credentials.email,
       dataRead2.payment=this.credentials.payment,
       dataRead2.state=this.credentials.state,
-      dataRead2.orderId=this.dataTest1[i].shopID+dateFormat(now, "ddmmyyyyhMM").toString()+this.credentials.mobileNumber,
+      dataRead2.orderId=this.dataTest1[i].shopID+dateFormat(now, "ddmmyyyyhhMM").toString()+this.credentials.mobileNumber,
 
         // dataRead3=dataRead2
         this.dataTest2.push(dataRead2)

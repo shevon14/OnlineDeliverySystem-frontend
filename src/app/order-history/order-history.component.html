@@ -95,12 +95,21 @@
                     <th>Quantity</th>
                     <th>Price</th>
                   </tr>
-                  <tr mdbTableCol>
+                  <tr *ngFor="let produtData of getShowArrayProduct" mdbTableCol>
+                    <td>{{this.produtData.productName}}</td>
+                    <td>{{" "+this.getShopDetails.shopName}}</td>
+                    <!-- <td>{{" "+this.getShowArray.productName}}</td> -->
+                    <td>{{this.produtData.quantity}}</td>
+                    <!-- <td>{{" "+this.getShowArray.quantity}}</td> -->
+                    <td>{{" : Rs."+this.produtData.total}}</td>
+                    <!-- <td>{{"RS: "+this.getShowArray.total}}</td> -->
+                </tr>
+                  <!-- <tr mdbTableCol>
                     <td>{{" "+this.getShowArray.productName}}</td>
                     <td>{{" "+this.getShopDetails.shopName}}</td>
                     <td>{{" "+this.getShowArray.quantity}}</td>
                     <td>{{"RS: "+this.getShowArray.total}}</td>
-                </tr>
+                </tr> -->
               </tbody>
             </table>
             
