@@ -4,6 +4,7 @@ import { addcart, checkCartService } from '../services/Checkcart.service';
 import { checkout } from '../models/checkout';
 import { cartDetailsService } from '../services/cart.service';
 import { addproduct, productDetailsService } from '../services/product.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-payment',
@@ -13,7 +14,8 @@ import { addproduct, productDetailsService } from '../services/product.service';
 export class PaymentComponent implements OnInit {
 
   tatal:string;
-  date:Date;
+  date1:Date;
+  date2:number;
   user:string;
   dataTest1:any;
   dataTest2:addcart[]=new Array<addcart>();
@@ -30,8 +32,9 @@ export class PaymentComponent implements OnInit {
     this.tatal = value;
     console.log(this.tatal)
 
-    this.date = new Date();
-    this.date.setDate( this.date.getDate() + 7);
+    this.date1 = new Date();
+    //this.date2=this.date1.setDate( this.date1.getDate() + 7);
+    this.date1.setDate( this.date1.getDate() + 7);
   }
 
   @Input() set cartDetails (value:addcart[]){
@@ -53,7 +56,8 @@ export class PaymentComponent implements OnInit {
     total:'',
     state:'Ordered Products',
     shopId:'',
-    orderId:''
+    orderId:'',
+    date:new Date()
    };
 addProductData :addproduct= {
     _id: '',
@@ -103,7 +107,7 @@ console.log(dateFormat(now, "ddmmyyyyhMM"));
       dataRead2.payment=this.credentials.payment,
       dataRead2.state=this.credentials.state,
       dataRead2.orderId=this.dataTest1[i].shopID+dateFormat(now, "ddmmyyyyhhMM").toString()+this.credentials.mobileNumber,
-
+      dataRead2.date= this.date1
         // dataRead3=dataRead2
         this.dataTest2.push(dataRead2)
         this.addcheckout(dataRead2)
