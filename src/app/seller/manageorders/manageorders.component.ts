@@ -106,9 +106,9 @@ this.getShowArrayProduct=res;
     this.disabledOrderPacking = true;
     }
     if(value.state!="Redy to Diliver" && value.state!="Order Packing" && value.state!="Order Received" && value.state!="Ordered Products"){
-      this.disabledRedyToDiliver=true;
-      this.disabledOrderReceived = true;
-      this.disabledOrderPacking = true;
+      // this.disabledRedyToDiliver=true;
+      // this.disabledOrderReceived = true;
+      // this.disabledOrderPacking = true;
       }
   }
 
