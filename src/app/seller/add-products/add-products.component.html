@@ -17,6 +17,8 @@
             <p class="text-center">Add Your Products, Grow your Business Effortlessly !</p>
 
             <!-- Name -->
+            <div class="row">
+            <div class="col-md-8">
             <div class="md-form mt-4">
                 <input type="text" name="materialSubscriptionFormPasswords" class="form-control"  [(ngModel)]="credentials.productName" mdbInput>
                 <label for="materialSubscriptionFormPasswords">Product Name</label>
@@ -60,14 +62,15 @@
                     <input mdbInput type='file' id="customFile" (change)="onFileSelect($event)" name="uploadedImage" #UploadFileInput>
                 </div>
             </div>
-            <div>
-                <mdb-card-img
+        </div>
+            <div class="col-md-4">
+                <mdb-card-img class="d-block w-100 py-2"
                 src={{imgPath}}
                 >
             </mdb-card-img>
             <!-- <img class="img-responsive" style="height: 300px; width: 300;" src="https://moderndiplomacy.eu/wp-content/uploads/2019/01/rolex-oyster.jpg"> -->
         </div>
-
+</div>
             <!-- Sign in button -->
             <button mdbBtn color="info" outline="true" rounded="true" block="true" class="z-depth-0 my-4 waves-effect"
                 mdbWavesEffect type="submit">Add Product</button>
