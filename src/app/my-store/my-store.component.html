@@ -1,40 +1,61 @@
 <!-- Material form subscription -->
 <mdb-card>
 
-    <mdb-card-header class="info-color white-text text-center py-4">
-      <h5>
-        <strong>Log into my Shop</strong>
-      </h5>
-    </mdb-card-header>
-  
-    <!--Card content-->
-    <mdb-card-body class="px-lg-5">
-  
-      <!-- Form -->
-      <form style="color: #757575;">
-  
-        <p class="text-center">Connect With Us, Grow your Business Effortlessly !</p>
-  
-        <!-- E-mail -->
-        <div class="md-form">
-          <input type="email" id="materialSubscriptionFormEmail" name="materialSubscriptionFormEmail" [(ngModel)]="credentials.email" class="form-control" mdbInput>
-          <label for="materialSubscriptionFormEmail">E-mail</label>
-        </div>
+  <mdb-card-header class="info-color white-text text-center py-4">
+    <h5>
+      <strong>Log into my Shop</strong>
+    </h5>
+  </mdb-card-header>
 
-        <!-- Password -->
-        <div class="md-form">
-            <input type="password" id="materialSubscriptionFormPassword" name="materialSubscriptionFormPassword"[(ngModel)]="credentials.password" class="form-control" mdbInput>
-            <label for="materialSubscriptionFormEmail">Password</label>
-          </div>
-  
-        <!-- Sign in button -->
-        <button mdbBtn color="info" outline="true" rounded="true" block="true" class="z-depth-0 my-4 waves-effect" mdbWavesEffect
-          type="submit" (click)="LogInClicked()">Log In</button>
-  
-      </form>
-      <!-- Form -->
-  
-    </mdb-card-body>
-  
-  </mdb-card>
-  <!-- Material form subscription -->
+  <!--Card content-->
+  <mdb-card-body class="px-lg-5">
+
+    <div class="container">
+      <div class="row banner">
+        <div class="col-md-8">
+          <!-- Form -->
+          <form style="color: #757575;">
+
+            <p class="text-center">Connect With Us, Grow your Business Effortlessly !</p>
+
+            <!-- E-mail -->
+            <div class="md-form">
+              <input type="email" id="materialSubscriptionFormEmail" name="materialSubscriptionFormEmail"
+                [(ngModel)]="credentials.email" class="form-control" mdbInput>
+              <label for="materialSubscriptionFormEmail">E-mail</label>
+            </div>
+
+            <!-- Password -->
+            <div class="md-form">
+              <input type="password" id="materialSubscriptionFormPassword" name="materialSubscriptionFormPassword"
+                [(ngModel)]="credentials.password" class="form-control" mdbInput>
+              <label for="materialSubscriptionFormEmail">Password</label>
+            </div>
+
+            <!-- Sign in button -->
+            <button mdbBtn color="info" outline="true" rounded="true" block="true" class="z-depth-0 my-4 waves-effect"
+              mdbWavesEffect type="submit" (click)="LogInClicked()">Log In</button>
+
+          </form>
+        </div>
+        <div class="col-md-4">
+          <img class="d-block w-100 py-2" src="https://i.pinimg.com/originals/7f/f8/60/7ff860c5c4756a4db4164410341a00f9.gif" alt="First slide">
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="md-6">
+
+        <!-- Form -->
+      </div>
+      <div class="md-6">
+
+      </div>
+    </div>
+
+
+  </mdb-card-body>
+
+</mdb-card>
+<!-- Material form subscription -->
