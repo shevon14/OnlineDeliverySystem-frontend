@@ -14,4 +14,5 @@ export class checkout{
         state:String;
         shopId:String;
         orderId:String;
+        date:Date;
 }

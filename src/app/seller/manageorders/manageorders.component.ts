@@ -25,6 +25,7 @@ export class ManageordersComponent implements OnInit {
   disabledOrderPacking:boolean=false;
   disabledRedyToDiliver:boolean=false;
   preOrderId:String;
+  date1:Date;
 
 
   constructor(
@@ -45,10 +46,14 @@ export class ManageordersComponent implements OnInit {
       total:'',
       state:'',
       shopId:'',
-      orderId:''
+      orderId:'',
+      date:new Date()
    }
 
   ngOnInit(): void {
+    this.date1 = new Date();
+    //this.date2=this.date1.setDate( this.date1.getDate() + 7);
+    this.date1.setDate( this.date1.getDate() + 7);
     this.user = this.auth2.getUserDetails()._id;
     console.log(this.user)
     this.checkCartAuth.getall()
@@ -158,6 +163,7 @@ for(var i=0;i<this.getShowArrayProduct.length; i++){
   }
 
   changeState(id:String){
+    this.credentials.date=this.date1
     // this.checkCartAuth.cartDataUpdate(id,this.credentials).subscribe(
       this.checkCartAuth.cartStateUpdate(id,this.credentials).subscribe(
       ()=>{ 

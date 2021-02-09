@@ -23,6 +23,7 @@ export interface addcart{
     state:String;
     shopId:String;
     orderId:String;
+    date:Date;
 }
 
 
