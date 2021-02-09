@@ -10,73 +10,84 @@
     <!--Card content-->
     <mdb-card-body class="px-lg-5">
 
-        <!-- Form -->
+        <div class="container">
+            <div class="row banner">
+              <div class="col-md-8">
+                <!-- Form -->
         <!-- <form style="color: #757575;"  (submit)="addtoDB()"> -->
        <form style="color: #757575;"  (ngSubmit)="onFormSubmit()">
 
-            <p class="text-center">Add Your Products, Grow your Business Effortlessly !</p>
+        <p class="text-center">Add Your Products, Grow your Business Effortlessly !</p>
 
-            <!-- Name -->
-            <div class="row">
-            <div class="col-md-8">
-            <div class="md-form mt-4">
-                <input type="text" name="materialSubscriptionFormPasswords" class="form-control"  [(ngModel)]="credentials.productName" mdbInput>
-                <label for="materialSubscriptionFormPasswords">Product Name</label>
-            </div>
 
-            <!-- Category -->
-            <div class="md-form mt-3">
-                <p>Select Category :</p>
-                <select class="browser-default custom-select" name="materialSubscriptionFormPasswords" [(ngModel)]="credentials.category">
-                        <option value="" [disabled]="true">Select Category</option>
-                        <option *ngFor="let c of allCategoryList" [ngValue]="c.category_id">{{ c.category_name }}</option>
-                      </select>
-                <!-- <select class="browser-default custom-select" name="materialSubscriptionFormPasswords" [(ngModel)]="credentials.category" >
-                    <option value="1">Electronic Devices</option>
-                    <option value="2">Electronic Accessories</option>
-                    <option value="3">Woman's Fashion</option>
-                    <option value="4">Men's Fashion</option>
-                    <option value="5">Watches & Accessories</option>
-                    <option value="6">Health & Beauty</option>
-                    <option value="7">Home & Kitchen</option>
-                    <option value="8">Sports & Outdoor</option>
-                </select> -->
-            </div>
+        <!-- Name -->
+        <div class="md-form mt-4">
+            <input type="text" name="materialSubscriptionFormPasswords" class="form-control"  [(ngModel)]="credentials.productName" mdbInput>
+            <label for="materialSubscriptionFormPasswords">Product Name</label>
+        </div>
 
-            <!-- Unit Price -->
-            <div class="md-form mt-3">
-                <input type="text" name="materialSubscriptionFormComapnyName" class="form-control" [(ngModel)]="credentials.uniPrice" mdbInput>
-                <label for="materialSubscriptionFormComapnyName">Uni Price</label>
-            </div>
+        <!-- Category -->
+        <div class="md-form mt-3">
+            <p>Select Category :</p>
+            <select class="browser-default custom-select" name="materialSubscriptionFormPasswords" [(ngModel)]="credentials.category">
+                    <option value="" [disabled]="true">Select Category</option>
+                    <option *ngFor="let c of allCategoryList" [ngValue]="c.category_id">{{ c.category_name }}</option>
+                  </select>
+            <!-- <select class="browser-default custom-select" name="materialSubscriptionFormPasswords" [(ngModel)]="credentials.category" >
+                <option value="1">Electronic Devices</option>
+                <option value="2">Electronic Accessories</option>
+                <option value="3">Woman's Fashion</option>
+                <option value="4">Men's Fashion</option>
+                <option value="5">Watches & Accessories</option>
+                <option value="6">Health & Beauty</option>
+                <option value="7">Home & Kitchen</option>
+                <option value="8">Sports & Outdoor</option>
+            </select> -->
+        </div>
 
-            <!-- Available Quantity -->
-            <div class="md-form mt-3">
-                <input type="text" name="materialSubscriptionFormComapnyID" class="form-control" [(ngModel)]="credentials.availableQuantity" mdbInput>
-                <label for="materialSubscriptionFormComapnyID">Available Quantity</label>
-            </div>
+        <!-- Unit Price -->
+        <div class="md-form mt-3">
+            <input type="text" name="materialSubscriptionFormComapnyName" class="form-control" [(ngModel)]="credentials.uniPrice" mdbInput>
+            <label for="materialSubscriptionFormComapnyName">Uni Price</label>
+        </div>
 
-             <!-- Upload Image -->
-             <div class="mt-3">
-                <label>Upload an Image</label>
-                <div>
-                    <input mdbInput type='file' id="customFile" (change)="onFileSelect($event)" name="uploadedImage" #UploadFileInput>
-                </div>
+        <!-- Available Quantity -->
+        <div class="md-form mt-3">
+            <input type="text" name="materialSubscriptionFormComapnyID" class="form-control" [(ngModel)]="credentials.availableQuantity" mdbInput>
+            <label for="materialSubscriptionFormComapnyID">Available Quantity</label>
+        </div>
+
+
+         <!-- Upload Image -->
+         <div class="mt-3">
+            <label>Upload an Image</label>
+            <div>
+                <input mdbInput type='file' id="customFile" (change)="onFileSelect($event)" name="uploadedImage" #UploadFileInput>
             </div>
         </div>
-            <div class="col-md-4">
-                <mdb-card-img class="d-block w-100 py-2"
+        <div>
+            
+        <!-- <img class="img-responsive" style="height: 300px; width: 300;" src="https://moderndiplomacy.eu/wp-content/uploads/2019/01/rolex-oyster.jpg"> -->
+    </div>
+
+        <!-- Sign in button -->
+        <button mdbBtn color="info" outline="true" rounded="true" block="true" class="z-depth-0 my-4 waves-effect"
+            mdbWavesEffect type="submit">Add Product</button>
+
+    </form>
+    <!-- Form -->
+                
+              </div>
+              <div class="col-md-4">
+                <mdb-card-img
                 src={{imgPath}}
                 >
             </mdb-card-img>
-            <!-- <img class="img-responsive" style="height: 300px; width: 300;" src="https://moderndiplomacy.eu/wp-content/uploads/2019/01/rolex-oyster.jpg"> -->
-        </div>
-</div>
-            <!-- Sign in button -->
-            <button mdbBtn color="info" outline="true" rounded="true" block="true" class="z-depth-0 my-4 waves-effect"
-                mdbWavesEffect type="submit">Add Product</button>
+              </div>
+            </div>
+          </div>
 
-        </form>
-        <!-- Form -->
+        
 
     </mdb-card-body>
 

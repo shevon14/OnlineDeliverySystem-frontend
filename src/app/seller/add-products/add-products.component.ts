@@ -35,7 +35,7 @@ export class AddProductsComponent implements OnInit {
   selectedFile: File = null;
   downloadURL: Observable<string>;
   allCategoryList:any;
-  imgPath="https://www.teaenterprise.com/ProductImages/example_detailed_image.gif";
+  imgPath="https://www.mibdirectory.com/MIBADMIN/img/upload/nopreview.png";
 
   //saving data to db
   credentials:addproduct={
