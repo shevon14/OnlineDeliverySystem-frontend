@@ -35,6 +35,7 @@ export class AddProductsComponent implements OnInit {
   selectedFile: File = null;
   downloadURL: Observable<string>;
   allCategoryList:any;
+  imgPath="https://www.teaenterprise.com/ProductImages/example_detailed_image.gif";
 
   //saving data to db
   credentials:addproduct={
@@ -73,6 +74,15 @@ export class AddProductsComponent implements OnInit {
     const file = event.target.files[0];
     this.fileInputLabel = file.name;
     this.fileUploadForm.get('uploadedImage').setValue(file);
+
+    if(event.target.files){
+      var reader=new FileReader();
+      reader.readAsDataURL(event.target.files[0]);
+      reader.onload=(event:any)=>{
+        this.imgPath=event.target.result;
+      }
+    }
+
   }
 
   onFormSubmit() {
