@@ -21,7 +21,9 @@ export class SignupComponent implements OnInit {
     password:'',
     user_type:'customer'
   }
-
+  credentials1:any={
+    rpassword:''
+  }
 
   constructor(public auth:CustomerDetailsService,private router:Router) { }
 
@@ -29,22 +31,28 @@ export class SignupComponent implements OnInit {
   }
 
   c_register(){
-    this.auth.register(this.credentials).subscribe(
-      (res)=>{
-
-        if(res.error!=undefined){
-          alert(res.error)
+    if(this.credentials.password==this.credentials1.rpassword){
+      this.auth.register(this.credentials).subscribe(
+        (res)=>{
+  
+          if(res.error!=undefined){
+            alert(res.error)
+          }
+          else{
+         this.router.navigateByUrl('signin')
+         console.log(this.credentials)
         }
-        else{
-       this.router.navigateByUrl('signin')
-       console.log(this.credentials)
-      }
-      },
- 
-      err=>{
-        alert(err.error.error)
-      }
-     )
+        },
+   
+        err=>{
+          alert(err.error.error)
+        }
+       )
+    }
+    else{
+      alert("Password does not match....")
+    }
+    
   }
 
 
