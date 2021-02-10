@@ -28,7 +28,7 @@
             </div>
         </div>
 
-        <div class="col-md-4 col-xl-4 offset-xl-1 pt-3">
+        <div class="col-md-4 col-xl-4 offset-xl-1 pt-1">
             <!--Form-->
             
             <mdb-card class="wow fadeInRight form-deco" data-wow-delay="0.3s">
@@ -49,18 +49,25 @@
                             <label for="materialContactForFirstName" >Full Name</label>
                           </div>
 
-                        <div class="md-form">
-                            <input type="text" id="materialContactForContact" name="materialContactForContact" class="form-control" [(ngModel)]="credentials.conatct" mdbInput>
-                            <label for="materialContactForContact" >Contact</label>
-                        </div>
+                       
                         <div class="md-form">
                             <input type="text"  id="materialContactForAddress" name="materialContactForAddress" class="form-control" [(ngModel)]="credentials.address" mdbInput>
                             <label for="materialContactForAddress"  >Your Address</label>
                         </div>
-                        
-                        <div class="md-form">
-                            <input type="text"  id="materialContactForPostalCode" name="materialContactForPostalCode" class="form-control"  [(ngModel)]="credentials.postalcode" mdbInput>
-                            <label for="materialContactForPostalCode"  >Postal Code</label>
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="md-form">
+                                    <input type="text" id="materialContactForContact" name="materialContactForContact" class="form-control" [(ngModel)]="credentials.conatct" mdbInput>
+                                    <label for="materialContactForContact" >Contact</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="md-form">
+                                    <input type="text"  id="materialContactForPostalCode" name="materialContactForPostalCode" class="form-control"  [(ngModel)]="credentials.postalcode" mdbInput>
+                                    <label for="materialContactForPostalCode"  >Postal Code</label>
+                                </div>
+                            </div>
                         </div>
                         <div class="md-form">
                             <input type="text"  id="materialContactForEmail" name="materialContactForEmail" class="form-control" [(ngModel)]="credentials.email" mdbInput>
@@ -70,10 +77,10 @@
                             <input type="password"  id="materialContactForPassword" name="materialContactForPassword" class="form-control" [(ngModel)]="credentials.password" mdbInput>
                             <label for="materialContactForPassword" >Your Password</label>
                         </div>
-                        <!-- <div class="md-form">
+                        <div class="md-form">
                             <input type="text" name="materialContactForRPassword" class="text-white form-control" mdbInput>
-                            <label for="materialContactForRPassword" >Confirm Password</label>
-                        </div> -->
+                            <label for="materialContactForRPassword" >Re enter Password</label>
+                        </div>
                         <div class="form-group mt-4">
                             <div class="text-center">
                                 <input class="form-check-input" type="checkbox" name="checkbox624">
